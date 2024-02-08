@@ -10,17 +10,17 @@ Welcome to my College Coursework Repository! This repository serves as a compreh
 2. **Laboratórios de Informática**
    - Find practical and hands-on work from computer labs.
 
-3. **Sistemas Operativos**
+3. **Programação Orientada a Objetos**
+   - Uncover object-oriented programming projects and design principles.
+
+4. **Sistemas Operativos**
    - Delve into the intricacies of operating systems with practical implementations.
 
-4. **Programação Funcional**
+5. **Programação Funcional**
    - Discover functional programming concepts and code examples.
 
-5. **Programação Imperativa**
+6. **Programação Imperativa**
    - Review projects and exercises focusing on imperative programming paradigms.
-
-6. **Programação Orientada a Objetos**
-   - Uncover object-oriented programming projects and design principles.
 
 ## Navigation
 
