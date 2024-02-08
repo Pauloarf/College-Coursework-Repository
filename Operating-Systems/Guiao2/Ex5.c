@@ -1,0 +1,3 @@
+//numero de forks igual ao numero de linhas...
+// no caso de termos recursos ilimitados, (cores) e o fork não custar tempo, poderiamos fazer
+// tantos forks como colunas2
