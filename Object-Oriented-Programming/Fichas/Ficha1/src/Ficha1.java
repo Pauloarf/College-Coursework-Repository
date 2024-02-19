@@ -1,4 +1,6 @@
 import java.lang.Math;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class Ficha1 {
     //implementação dos metodos que permitem
@@ -29,6 +31,28 @@ public class Ficha1 {
         int max = Math.max(a,b);
         int min = Math.min(a,b);
         int average = (max + min)/2;
-        return "" + max + " " + average + " " + min;
+        return max + " " + average + " " + min;
+    }
+
+    public long factorial(int num){
+        int result = num;
+        for (int i = num-1; i > 0; i--) {
+            result *= i;
+        }
+        return result;
+    }
+
+    public long tempoGasto(){
+        LocalDateTime currentDateTime = LocalDateTime.now();
+
+        System.out.println("Data: " + currentDateTime.getYear() + "/" + currentDateTime.getMonthValue() + "/" + currentDateTime.getDayOfMonth());
+        System.out.println("Hora antes factorial: " + currentDateTime.getHour() + ":" + currentDateTime.getMinute() + ":" + currentDateTime.getSecond());
+
+        factorial(5000);
+
+        LocalDateTime currentDateTime2 = LocalDateTime.now();
+        System.out.println("Hora apos factorial: " + currentDateTime2.getHour() + ":" + currentDateTime2.getMinute() + ":" + currentDateTime2.getSecond());
+
+        return ChronoUnit.MILLIS.between(currentDateTime, currentDateTime2);
     }
 }
