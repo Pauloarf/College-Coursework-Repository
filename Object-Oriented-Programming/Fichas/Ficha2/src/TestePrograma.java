@@ -13,16 +13,17 @@ public class TestePrograma {
             case 1:
                 System.out.println("Insira o tamanho do array:");
                 int arraySize = sc.nextInt();
+                sc.nextLine(); // Consume the newline character after reading the integer
+
                 int[] arr = new int[arraySize];
-                System.out.println("Insira os numeros a ser inseridos no array:");
-                for (int i = 0; i < arraySize; i++) {
-                    System.out.println(sc.toString());
-                    arr[i] = sc.nextInt();
-                    if (!sc.hasNext()) {
-                        System.out.println("Não há mais entradas.");
-                        break;
-                    }
+                System.out.println("Insira os numeros a serem inseridos no array:");
+                String numeros = sc.nextLine();
+                Scanner nsc = new Scanner(numeros);
+
+                for (int i = 0; i < arraySize && nsc.hasNextInt(); i++) {
+                    arr[i] = nsc.nextInt();
                 }
+
                 IntArray intArray = new IntArray(arr);
                 System.out.println(Arrays.toString(intArray.array));
                 break;
