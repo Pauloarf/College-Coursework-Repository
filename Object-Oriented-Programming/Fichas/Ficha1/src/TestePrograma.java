@@ -33,8 +33,7 @@ public class TestePrograma {
                 String nome = sc.nextLine();
                 System.out.println("Insira o saldo: ");
                 float saldo = sc.nextFloat();
-                String str = f.criaDescricaoConta(nome, saldo);
-                System.out.println("Resposta = " + str);
+                System.out.println("Resposta = " + f.criaDescricaoConta(nome, saldo));
                 break;
             case 4:
                 System.out.println("Insira o valor que quer converter:");
