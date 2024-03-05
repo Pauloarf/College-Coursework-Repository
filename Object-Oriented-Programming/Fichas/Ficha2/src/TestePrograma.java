@@ -116,6 +116,43 @@ public class TestePrograma {
                 String str = sc.nextLine();
                 System.out.println("A string aparece " + myArrStr.howMany(arr, str) + " vezes.");
                 break;
+            case 5:
+                int[][] notasTurma = new int[5][5];
+                NotasTurma nt = new NotasTurma();
+                System.out.println("Introduza o numero do aluno(1 - 5): ");
+                int aluno = sc.nextInt();
+
+                int[] notas = new int[5];
+                System.out.println("Insira as notas a serem inseridas: ");
+                sc.nextLine();
+                String notasStr = sc.nextLine();
+                Scanner nsc = new Scanner(notasStr);
+
+                for (int i = 0; i < 5 && nsc.hasNextInt(); i++) {
+                    notas[i] = nsc.nextInt();
+                }
+
+                System.out.println("Notas inicias:");
+                nt.printTurma(notasTurma);
+                System.out.println("Notas atualizadas");
+                nt.updateNotas(aluno, notasTurma, notas);
+                nt.printTurma(notasTurma);
+
+                System.out.println("Introduza o numero da uc(1 - 5)(soma das notas): ");
+                int uc = sc.nextInt();
+                System.out.println("A soma das notas á uc é: " + nt.somaUC(notasTurma, uc));
+
+                System.out.println("Introduza o numero do aluno(1 - 5)(media): ");
+                aluno = sc.nextInt();
+                System.out.println("A media do aluno é: " + nt.mediaAluno(notasTurma, aluno));
+
+                System.out.println("Introduza o numero da uc(1 - 5)(media): ");
+                uc = sc.nextInt();
+                System.out.println("A media da uc é: " + nt.mediaUc(notasTurma, uc));
+
+                nt.notasMaisAltas(notasTurma);
+                nt.notasMaisBaixas(notasTurma);
+                break;
             default:
                 System.out.println("O numero que colocou nao esta correto...\nTry again!!");
         }
