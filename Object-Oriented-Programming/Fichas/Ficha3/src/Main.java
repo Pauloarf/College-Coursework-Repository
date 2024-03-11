@@ -69,8 +69,6 @@ public class Main {
             default:
                 System.out.println("O numero que introduziu nao corresponde a nenhum exercicio!");
                 System.out.println("Tente novamente...");
-
-
         }
     }
 }
