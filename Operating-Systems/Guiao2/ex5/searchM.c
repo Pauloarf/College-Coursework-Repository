@@ -13,6 +13,8 @@ int main(int argc, char *argv[]) {
         printf("O valor não existe...\n");
     }
 
+    linesWithValue(matrix, 0);
+
     // free matrix
     for (int i = 0; i < ROWS; i++) {
         free(matrix[i]);

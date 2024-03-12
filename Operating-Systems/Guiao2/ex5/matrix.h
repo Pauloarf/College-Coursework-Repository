@@ -1,14 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/wait.h>
 #include <time.h>
 #include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <sys/wait.h>
 
 #define MAX_RAND 100
-#define ROWS 10
+#define ROWS 5
 #define COLUMNS 10
-
-
 
 int **createMatrix();
 

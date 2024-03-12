@@ -39,21 +39,45 @@ int valueExists(int **matrix, int value) {
     for (int i = 0; i < ROWS; i++) {
         if ((pid = fork()) == 0) {
             for (int j = 0; j < COLUMNS; j++) {
-                if (matrix[i][j] == value) existe = 1;
+                if (matrix[i][j] == value) _exit(1);
             }
-            if (existe) {
-                _exit(1);
-            } else {
-                _exit(0);
-            }
+            _exit(0);
         }
+    }
+
+    for (int i = 0; i < ROWS; i++) {
         wait(&status);
-        if (WEXITSTATUS(status) == 1) existe = 1;
+        if (WEXITSTATUS(status) == 1) {
+            existe = 1;
+        }
     }
     return existe;
 }
 
 // ex.6
 void linesWithValue(int **matrix, int value) {
-    // TO DOm
+    pid_t* pids = malloc(sizeof(pid_t) * ROWS);
+    pid_t pid;
+    int status;  // valor do status pode ser o valor da linha
+
+    for (int i = 0; i < ROWS; i++) {
+        if ((pid = fork()) == 0) {
+            for (int j = 0; j < COLUMNS; j++) {
+                if (matrix[i][j] == value) _exit(1);
+            }
+            _exit(0);
+        }
+        pids[i] = pid;
+    }
+
+    for (int i = 0; i < ROWS; i++) {
+        waitpid(pids[i], &status, 0);
+        if (WIFEXITED(status)){
+            if (WEXITSTATUS(status) == 1) {
+                printf("O valor existe na linha %d\n", i);
+            } 
+        } else {
+            printf("error\n");
+        }
+    }
 }
