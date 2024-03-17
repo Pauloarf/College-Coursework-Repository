@@ -25,6 +25,7 @@ public class LinhaEncomenda
     private int quantidade;
     private double imposto;
     private double desconto;
+    
     public LinhaEncomenda() {
         this.referencia = "n/a";
         this.descricao = "n/a";
@@ -67,8 +68,7 @@ public class LinhaEncomenda
      * C)
      */
     public double calculaValorDesconto() {
-        double valor = this.quantidade * this.preco * this.desconto;
-        return valor;
+        return this.quantidade * this.preco * this.desconto;
     }  
     
     public String getReferencia() {

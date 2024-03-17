@@ -1,5 +1,29 @@
-import java.util.Objects;
+/*********************************************************************************/
+/** DISCLAIMER: Este código foi criado e alterado durante as aulas práticas      */
+/** de POO. Representa uma solução em construção, com base na matéria leccionada */
+/** até ao momento da sua elaboração, e resulta da discussão e experimentação    */
+/** durante as aulas. Como tal, não deverá ser visto como uma solução canónica,  */
+/** ou mesmo acabada. É disponibilizado para auxiliar o processo de estudo.      */
+/** Os alunos são encorajados a testar adequadamente o código fornecido e a      */
+/** procurar soluções alternativas, à medida que forem adquirindo mais           */
+/** conhecimentos de POO.                                                        */
+/*********************************************************************************/
 
+/**
+ * Classe que implementa uma Lâmpada cf exercício da Ficha 3.
+ * Esta classe foi desenvolvida durante as aulas práticas pelo que algumas das
+ * linhas de código decorrem de decisões tomadas na altura. Existe naturalmente
+ * espaço para melhorar e alterar este código.
+ *
+ * ATENÇÃO: a classe Lampada utiliza um enum para guardar os diferentes tipos
+ * de consumo. Poderia também ser feito com constantes.
+
+ *
+ * @author  MaterialPOO
+ * @version 20220321
+ * @version 20230320
+ */
+ 
 public class Lampada
 {
     public enum Modo {
@@ -146,7 +170,7 @@ public class Lampada
     }
 
     public boolean equals(Object o){
-        if (o == this) return true;
+        if (this==o) return true;
         if ((o == null) || (this.getClass() != o.getClass())) return false;
 
         Lampada l = (Lampada) o;
@@ -156,10 +180,5 @@ public class Lampada
                 l.getConsumoTotal() == this.consumoTotal &&
                 l.getConsumoPeriodo() == this.consumoPeriodo &&
                 l.getStamp() == this.stamp;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(modo, cpSOn, cpSEco, consumoTotal, consumoPeriodo, stamp);
     }
 }
