@@ -1,13 +1,16 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Telemovel {
     private String marca;
     private String modelo;
     private final int[] display = new int[2];
+    private int totalStorage;
     private int smsStorage;
     private int photoStorage;
     private int appStorage;
-    private int totalStorage;
+    private int usedStorage;
     private int nPhotos;
     private int nApps;
     private String[] appNames;
@@ -16,10 +19,11 @@ public class Telemovel {
         this.marca = "N/a";
         this.modelo = "N/a";
         //display is already 0
+        this.totalStorage = 0;
         this.smsStorage = 0;
         this.photoStorage = 0;
         this.appStorage = 0;
-        this.totalStorage = 0;
+        this.usedStorage = 0;
         this.nPhotos = 0;
         this.nApps = 0;
         this.appNames = new String[0];
@@ -30,10 +34,11 @@ public class Telemovel {
             String modelo,
             int displayX,
             int displayY,
+            int totalStorage,
             int smsStorage,
             int photoStorage,
             int appStorage,
-            int totalStorage,
+            int usedStorage,
             int nPhotos,
             int nApps,
             String[] appNames) {
@@ -42,10 +47,11 @@ public class Telemovel {
         this.modelo = modelo;
         this.display[0] = displayX;
         this.display[1] = displayY;
+        this.totalStorage = totalStorage;
         this.smsStorage = smsStorage;
         this.photoStorage = photoStorage;
         this.appStorage = appStorage;
-        this.totalStorage = totalStorage;
+        this.usedStorage = usedStorage;
         this.nPhotos = nPhotos;
         this.nApps = nApps;
         this.appNames = appNames;
@@ -56,10 +62,11 @@ public class Telemovel {
         this.modelo = tele.getModelo();
         this.display[0] = tele.getDisplayX();
         this.display[1] = tele.getDisplayY();
+        this.totalStorage = tele.getTotalStorage();
         this.smsStorage = tele.getSmsStorage();
         this.photoStorage = tele.getPhotoStorage();
         this.appStorage = tele.getAppStorage();
-        this.totalStorage = tele.getTotalStorage();
+        this.usedStorage = tele.getUsedStorage();
         this.nPhotos = tele.getnPhotos();
         this.nApps = tele.getnApps();
         this.appNames = tele.getAppNames();
@@ -97,6 +104,14 @@ public class Telemovel {
         this.display[1] = y;
     }
 
+    public int getTotalStorage() {
+        return this.totalStorage;
+    }
+
+    public void setTotalStorage(int totalStorage){
+        this.totalStorage = totalStorage;
+    }
+
     public int getSmsStorage(){
         return this.smsStorage;
     }
@@ -121,12 +136,12 @@ public class Telemovel {
         this.appStorage = appStorage;
     }
 
-    public int getTotalStorage(){
-        return this.totalStorage;
+    public int getUsedStorage(){
+        return this.usedStorage;
     }
 
-    public void setTotalStorage(int totalStorage) {
-        this.totalStorage = totalStorage;
+    public void setUsedStorage(int usedStorage) {
+        this.usedStorage = usedStorage;
     }
 
     public int getnPhotos(){
@@ -153,6 +168,35 @@ public class Telemovel {
         this.appNames = appNames;
     }
 
+    public boolean existeEspaco(int numeroBytes){
+        return numeroBytes <= this.getTotalStorage();
+    }
+
+    public void instalaApp(String nome, int tamanho){
+        if(this.getnApps() == this.getAppNames().length){
+            this.setAppNames(Arrays.copyOf(this.getAppNames(),this.getAppNames().length + 1));
+        }
+        this.setAppStorage(this.getAppStorage() + tamanho);
+        this.setnApps(this.getnApps() + 1);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Telemovel telemovel = (Telemovel) o;
+        return getSmsStorage() == telemovel.getSmsStorage()
+                && getPhotoStorage() == telemovel.getPhotoStorage()
+                && getAppStorage() == telemovel.getAppStorage()
+                && getUsedStorage() == telemovel.getUsedStorage()
+                && getnPhotos() == telemovel.getnPhotos()
+                && getnApps() == telemovel.getnApps()
+                && Objects.equals(getMarca(), telemovel.getMarca())
+                && Objects.equals(getModelo(), telemovel.getModelo())
+                && Arrays.equals(display, telemovel.display)
+                && Arrays.equals(getAppNames(), telemovel.getAppNames());
+    }
+
     public String toString(){
         return ("Telemovel {\n" +
                 "\tMarca - " + this.marca + "\n" +
@@ -161,10 +205,14 @@ public class Telemovel {
                 "\tStorage(sms) - " + this.smsStorage + "\n" +
                 "\tStorage(Photo) - " + this.photoStorage + "\n" +
                 "\tStorage(Apps) - " + this.appStorage + "\n" +
-                "\tStorage(Total) - " + this.totalStorage + "\n" +
+                "\tStorage(Total) - " + this.usedStorage + "\n" +
                 "\tnPhotos - " + this.nPhotos + "\n" +
                 "\tnApps - " + this.nApps + "\n" +
                 "\tApp Names - " + Arrays.toString(this.appNames) + "\n"
                 );
+    }
+
+    public Telemovel clone(){
+        return new Telemovel(this);
     }
 }
