@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class EncEficiente {
     private static int quantidade = 0;
@@ -117,8 +118,8 @@ public class EncEficiente {
     }
 
     public boolean existeProdutoEncomenda(String refProduto){
-        LinhaEncomenda l = (LinhaEncomenda) this.listEncomendas.stream().filter(a -> Objects.equals(a.getReferencia(), refProduto));
-        return Objects.equals(l.getReferencia(), refProduto);
+        Optional<LinhaEncomenda> l = this.listEncomendas.stream().filter(a -> refProduto.equals(a.getReferencia())).findFirst();
+        return  l.isPresent();
     }
 
     public void adicionaLinha(LinhaEncomenda linha){
@@ -127,7 +128,7 @@ public class EncEficiente {
 
     public void removeProduto(String codProd){
         for(LinhaEncomenda enc : this.listEncomendas){
-            if (Objects.equals(enc.getReferencia(), codProd)){
+            if (codProd.equals(enc.getReferencia())){
                 this.listEncomendas.remove(enc);
             }
         }
