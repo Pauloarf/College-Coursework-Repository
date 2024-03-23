@@ -180,6 +180,22 @@ public class Telemovel {
         this.setnApps(this.getnApps() + 1);
     }
 
+    public void recebeMsg(String msg){
+
+    }
+
+    public double tamMedioApps(){
+        return 0;
+    }
+
+    public String maiorMsg(){
+        return " ";
+    }
+
+    public void removeApp(String nome, int tamanho){
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -1,5 +1,7 @@
 /*Completo*/
 
+import java.util.Objects;
+
 public class Circulo {
     private double x;
     private double y;
@@ -58,6 +60,19 @@ public class Circulo {
 
     public double calculaPerimetro(){
         return 2 * Math.PI * this.getRaio();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Circulo circulo = (Circulo) o;
+        return Double.compare(getX(), circulo.getX()) == 0 && Double.compare(getY(), circulo.getY()) == 0 && Double.compare(getRaio(), circulo.getRaio()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getX(), getY(), getRaio());
     }
 
     @Override
