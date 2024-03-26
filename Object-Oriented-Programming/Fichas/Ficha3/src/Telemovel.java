@@ -1,199 +1,226 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Telemovel {
     private String marca;
     private String modelo;
-    private final int[] display = new int[2];
-    private int totalStorage;
-    private int smsStorage;
-    private int photoStorage;
-    private int appStorage;
-    private int usedStorage;
-    private int nPhotos;
-    private int nApps;
-    private String[] appNames;
+    private int displayX;
+    private int displayY;
+    private int dimensaoArmazenamentoMsg;
+    private int dimensaoArmazenamentoTotal;
+    private int dimensaoArmazenamentoFotos;
+    private int dimensaoArmazenamentoApps;
+    private int espacoTotalOcupado;
+    private int numFotosGuardadas;
+    private int numAppsInstaladas;
+    private ArrayList<String> nomesApps;
+    private ArrayList<String> mensagensTexto;
 
-    public Telemovel(){
+    public Telemovel() {
         this.marca = "N/a";
         this.modelo = "N/a";
-        //display is already 0
-        this.totalStorage = 0;
-        this.smsStorage = 0;
-        this.photoStorage = 0;
-        this.appStorage = 0;
-        this.usedStorage = 0;
-        this.nPhotos = 0;
-        this.nApps = 0;
-        this.appNames = new String[0];
+        this.displayX = 0;
+        this.displayY = 0;
+        this.dimensaoArmazenamentoMsg = 0;
+        this.dimensaoArmazenamentoTotal = 0;
+        this.dimensaoArmazenamentoFotos = 0;
+        this.dimensaoArmazenamentoApps = 0;
+        this.espacoTotalOcupado = 0;
+        this.numFotosGuardadas = 0;
+        this.numAppsInstaladas = 0;
+        this.nomesApps = new ArrayList<>();
+        this.mensagensTexto = new ArrayList<>();
     }
 
-    public Telemovel(
-            String marca,
-            String modelo,
-            int displayX,
-            int displayY,
-            int totalStorage,
-            int smsStorage,
-            int photoStorage,
-            int appStorage,
-            int usedStorage,
-            int nPhotos,
-            int nApps,
-            String[] appNames) {
-
+    public Telemovel(String marca, String modelo, int displayX, int displayY, int dimensaoArmazenamentoMsg,
+                     int dimensaoArmazenamentoTotal, int dimensaoArmazenamentoFotos, int dimensaoArmazenamentoApps) {
         this.marca = marca;
         this.modelo = modelo;
-        this.display[0] = displayX;
-        this.display[1] = displayY;
-        this.totalStorage = totalStorage;
-        this.smsStorage = smsStorage;
-        this.photoStorage = photoStorage;
-        this.appStorage = appStorage;
-        this.usedStorage = usedStorage;
-        this.nPhotos = nPhotos;
-        this.nApps = nApps;
-        this.appNames = appNames;
+        this.displayX = displayX;
+        this.displayY = displayY;
+        this.dimensaoArmazenamentoMsg = dimensaoArmazenamentoMsg;
+        this.dimensaoArmazenamentoTotal = dimensaoArmazenamentoTotal;
+        this.dimensaoArmazenamentoFotos = dimensaoArmazenamentoFotos;
+        this.dimensaoArmazenamentoApps = dimensaoArmazenamentoApps;
+        this.espacoTotalOcupado = 0;
+        this.numFotosGuardadas = 0;
+        this.numAppsInstaladas = 0;
+        this.nomesApps = new ArrayList<>();
+        this.mensagensTexto = new ArrayList<>();
     }
 
-    public Telemovel(Telemovel tele){
-        this.marca = tele.getMarca();
-        this.modelo = tele.getModelo();
-        this.display[0] = tele.getDisplayX();
-        this.display[1] = tele.getDisplayY();
-        this.totalStorage = tele.getTotalStorage();
-        this.smsStorage = tele.getSmsStorage();
-        this.photoStorage = tele.getPhotoStorage();
-        this.appStorage = tele.getAppStorage();
-        this.usedStorage = tele.getUsedStorage();
-        this.nPhotos = tele.getnPhotos();
-        this.nApps = tele.getnApps();
-        this.appNames = tele.getAppNames();
+    public Telemovel(Telemovel t) {
+        this.marca = t.getMarca();
+        this.modelo = t.getModelo();
+        this.displayX = t.getDisplayX();
+        this.displayY = t.getDisplayY();
+        this.dimensaoArmazenamentoMsg = t.getDimensaoArmazenamentoMsg();
+        this.dimensaoArmazenamentoTotal = t.getDimensaoArmazenamentoTotal();
+        this.dimensaoArmazenamentoFotos = t.getDimensaoArmazenamentoFotos();
+        this.dimensaoArmazenamentoApps = t.getDimensaoArmazenamentoApps();
+        this.espacoTotalOcupado = t.getEspacoTotalOcupado();
+        this.numFotosGuardadas = t.getNumFotosGuardadas();
+        this.numAppsInstaladas = t.getNumAppsInstaladas();
+        this.nomesApps = t.getNomesApps();
+        this.mensagensTexto = t.getMensagensTexto();
     }
 
     public String getMarca() {
         return this.marca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
     public String getModelo() {
         return this.modelo;
     }
 
-    public void setModelo(String modelo){
+    public int getDisplayX() {
+        return this.displayX;
+    }
+
+    public int getDisplayY() {
+        return this.displayY;
+    }
+
+    public int getDimensaoArmazenamentoMsg() {
+        return this.dimensaoArmazenamentoMsg;
+    }
+
+    public int getDimensaoArmazenamentoTotal() {
+        return this.dimensaoArmazenamentoTotal;
+    }
+
+    public int getDimensaoArmazenamentoFotos() {
+        return this.dimensaoArmazenamentoFotos;
+    }
+
+    public int getDimensaoArmazenamentoApps() {
+        return  this.dimensaoArmazenamentoApps;
+    }
+
+    public int getEspacoTotalOcupado() {
+        return this.espacoTotalOcupado;
+    }
+
+    public int getNumFotosGuardadas() {
+        return this.numFotosGuardadas;
+    }
+
+    public int getNumAppsInstaladas() {
+        return this.numAppsInstaladas;
+    }
+
+    public ArrayList<String> getNomesApps() {
+        return new ArrayList<String>(this.nomesApps);
+    }
+
+    public ArrayList<String> getMensagensTexto() {
+        return new ArrayList<String>(this.mensagensTexto);
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
-    public int getDisplayX(){
-        return this.display[0];
+    public void setDisplayX(int displayX) {
+        this.displayX = displayX;
     }
 
-    public void setDisplayX(int x){
-        this.display[0] = x;
+    public void setDisplayY(int displayY) {
+        this.displayY = displayY;
     }
 
-    public int getDisplayY(){
-        return this.display[1];
+    public void setDimensaoArmazenamentoMsg(int dimensaoArmazenamentoMsg) {
+        this.dimensaoArmazenamentoMsg = dimensaoArmazenamentoMsg;
     }
 
-    public void setDisplayY(int y){
-        this.display[1] = y;
+    public void setDimensaoArmazenamentoTotal(int dimensaoArmazenamentoTotal) {
+        this.dimensaoArmazenamentoTotal = dimensaoArmazenamentoTotal;
     }
 
-    public int getTotalStorage() {
-        return this.totalStorage;
+    public void setDimensaoArmazenamentoFotos(int dimensaoArmazenamentoFotos) {
+        this.dimensaoArmazenamentoFotos = dimensaoArmazenamentoFotos;
     }
 
-    public void setTotalStorage(int totalStorage){
-        this.totalStorage = totalStorage;
+    public void setDimensaoArmazenamentoApps(int dimensaoArmazenamentoApps) {
+        this.dimensaoArmazenamentoApps = dimensaoArmazenamentoApps;
     }
 
-    public int getSmsStorage(){
-        return this.smsStorage;
+    public void setEspacoTotalOcupado(int espacoTotalOcupado) {
+        this.espacoTotalOcupado = espacoTotalOcupado;
     }
 
-    public void setSmsStorage(int smsStorage){
-        this.smsStorage = smsStorage;
+    public void setNumFotosGuardadas(int numFotosGuardadas) {
+        this.numFotosGuardadas = numFotosGuardadas;
     }
 
-    public int getPhotoStorage(){
-        return this.photoStorage;
+    public void setNumAppsInstaladas(int numAppsInstaladas) {
+        this.numAppsInstaladas = numAppsInstaladas;
     }
 
-    public void setPhotoStorage(int photoStorage){
-        this.photoStorage = photoStorage;
+    public void setNomesApps(ArrayList<String> nomesApps) {
+        this.nomesApps = nomesApps;
     }
 
-    public int getAppStorage(){
-        return  this.appStorage;
+    public void setMensagensTexto(ArrayList<String> mensagensTexto) {
+        this.mensagensTexto = mensagensTexto;
     }
 
-    public void setAppStorage(int appStorage) {
-        this.appStorage = appStorage;
+    public boolean existeEspaco(int numeroBytes) {
+        return (this.espacoTotalOcupado + numeroBytes) <= this.dimensaoArmazenamentoTotal;
     }
 
-    public int getUsedStorage(){
-        return this.usedStorage;
-    }
-
-    public void setUsedStorage(int usedStorage) {
-        this.usedStorage = usedStorage;
-    }
-
-    public int getnPhotos(){
-        return this.nPhotos;
-    }
-
-    public void setnPhotos(int nPhotos){
-        this.nPhotos = nPhotos;
-    }
-
-    public int getnApps() {
-        return this.nApps;
-    }
-
-    public void setnApps(int nApps) {
-        this.nApps = nApps;
-    }
-
-    public String[] getAppNames() {
-        return this.appNames;
-    }
-
-    public void setAppNames(String[] appNames){
-        this.appNames = appNames;
-    }
-
-    public boolean existeEspaco(int numeroBytes){
-        return numeroBytes <= this.getTotalStorage();
-    }
-
-    public void instalaApp(String nome, int tamanho){
-        if(this.getnApps() == this.getAppNames().length){
-            this.setAppNames(Arrays.copyOf(this.getAppNames(),this.getAppNames().length + 1));
+    public void instalaApp(String nome, int tamanho) {
+        if (existeEspaco(tamanho)) {
+            this.nomesApps.add(nome);
+            this.espacoTotalOcupado += tamanho;
+            this.dimensaoArmazenamentoApps -= tamanho;
+            this.numAppsInstaladas++;
+        } else {
+            System.out.println("Não há espaço suficiente para instalar a aplicação " + nome);
         }
-        this.setAppStorage(this.getAppStorage() + tamanho);
-        this.setnApps(this.getnApps() + 1);
     }
 
-    public void recebeMsg(String msg){
-
+    public void recebeMsg(String msg) {
+        if (this.mensagensTexto.size() < this.dimensaoArmazenamentoMsg) {
+            this.mensagensTexto.add(msg);
+        } else {
+            System.out.println("A capacidade de armazenamento de mensagens está cheia.");
+        }
     }
 
-    public double tamMedioApps(){
-        return 0;
+    public double tamMedioApps() {
+        if (this.numAppsInstaladas == 0) {
+            return 0.0;
+        }
+        return (double) this.espacoTotalOcupado / this.numAppsInstaladas;
     }
 
-    public String maiorMsg(){
-        return " ";
+    public String maiorMsg() {
+        if (this.mensagensTexto.isEmpty()) {
+            return null;
+        }
+        String maior = this.mensagensTexto.get(0);
+        for (String msg : this.mensagensTexto) {
+            if (msg.length() > maior.length()) {
+                maior = msg;
+            }
+        }
+        return maior;
     }
 
-    public void removeApp(String nome, int tamanho){
-
+    public void removeApp(String nome, int tamanho) {
+        if (this.nomesApps.contains(nome)) {
+            this.nomesApps.remove(nome);
+            this.espacoTotalOcupado -= tamanho;
+            this.dimensaoArmazenamentoApps += tamanho;
+            this.numAppsInstaladas--;
+        } else {
+            System.out.println("A aplicação " + nome + " não está instalada.");
+        }
     }
 
     @Override
@@ -201,31 +228,38 @@ public class Telemovel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Telemovel telemovel = (Telemovel) o;
-        return getSmsStorage() == telemovel.getSmsStorage()
-                && getPhotoStorage() == telemovel.getPhotoStorage()
-                && getAppStorage() == telemovel.getAppStorage()
-                && getUsedStorage() == telemovel.getUsedStorage()
-                && getnPhotos() == telemovel.getnPhotos()
-                && getnApps() == telemovel.getnApps()
-                && Objects.equals(getMarca(), telemovel.getMarca())
-                && Objects.equals(getModelo(), telemovel.getModelo())
-                && Arrays.equals(display, telemovel.display)
-                && Arrays.equals(getAppNames(), telemovel.getAppNames());
+        return displayX == telemovel.displayX &&
+                displayY == telemovel.displayY &&
+                dimensaoArmazenamentoMsg == telemovel.dimensaoArmazenamentoMsg &&
+                dimensaoArmazenamentoTotal == telemovel.dimensaoArmazenamentoTotal &&
+                dimensaoArmazenamentoFotos == telemovel.dimensaoArmazenamentoFotos &&
+                dimensaoArmazenamentoApps == telemovel.dimensaoArmazenamentoApps &&
+                espacoTotalOcupado == telemovel.espacoTotalOcupado &&
+                numFotosGuardadas == telemovel.numFotosGuardadas &&
+                numAppsInstaladas == telemovel.numAppsInstaladas &&
+                Objects.equals(marca, telemovel.marca) &&
+                Objects.equals(modelo, telemovel.modelo) &&
+                Objects.equals(nomesApps, telemovel.nomesApps) &&
+                Objects.equals(mensagensTexto, telemovel.mensagensTexto);
     }
 
-    public String toString(){
-        return ("Telemovel {\n" +
-                "\tMarca - " + this.marca + "\n" +
-                "\tModelo - " + this.modelo + "\n" +
-                "\tDisplay - " + "[" + this.getDisplayX() + "x" + this.getDisplayY() + "]" + "\n" +
-                "\tStorage(sms) - " + this.smsStorage + "\n" +
-                "\tStorage(Photo) - " + this.photoStorage + "\n" +
-                "\tStorage(Apps) - " + this.appStorage + "\n" +
-                "\tStorage(Total) - " + this.usedStorage + "\n" +
-                "\tnPhotos - " + this.nPhotos + "\n" +
-                "\tnApps - " + this.nApps + "\n" +
-                "\tApp Names - " + Arrays.toString(this.appNames) + "\n"
-                );
+    @Override
+    public String toString() {
+        return "Telemovel{\n" +
+                "\tmarca='" + marca + "'\n" +
+                "\tmodelo='" + modelo + "'\n" +
+                "\tdisplayX=" + displayX + "\n" +
+                "\tdisplayY=" + displayY + "\n" +
+                "\tdimensaoArmazenamentoMsg=" + dimensaoArmazenamentoMsg + "\n" +
+                "\tdimensaoArmazenamentoTotal=" + dimensaoArmazenamentoTotal + "\n" +
+                "\tdimensaoArmazenamentoFotos=" + dimensaoArmazenamentoFotos + "\n" +
+                "\tdimensaoArmazenamentoApps=" + dimensaoArmazenamentoApps + "\n" +
+                "\tespacoTotalOcupado=" + espacoTotalOcupado + "\n" +
+                "\tnumFotosGuardadas=" + numFotosGuardadas + "\n" +
+                "\tnumAppsInstaladas=" + numAppsInstaladas + "\n" +
+                "\tnomesApps=" + nomesApps + "\n" +
+                "\tmensagensTexto=" + mensagensTexto + "\n" +
+                '}';
     }
 
     public Telemovel clone(){

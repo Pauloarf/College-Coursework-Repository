@@ -3,9 +3,9 @@ public class Carro {
     private String modelo;
     private int ano;
     private double consumo; //consumo por km, a uma velocidade de 100km/h
-    private int kmRealizados;
+    private double kmRealizados;
     private double mediaConsumo;
-    private int lastKmRealizados;
+    private double lastKmRealizados;
     private double lastMediaConsumo;
     private int regeneration;
 
@@ -27,7 +27,7 @@ public class Carro {
                  int consumo,
                  int kmRealizados,
                  int mediaConsumo,
-                 int lastKmRealizados,
+                 double lastKmRealizados,
                  int lastMediaConsumo,
                  int regeneration){
         this.marca = marca;
@@ -85,11 +85,11 @@ public class Carro {
         this.consumo = consumo;
     }
 
-    public int getKmRealizados(){
+    public double getKmRealizados(){
         return this.kmRealizados;
     }
 
-    public void setKmRealizados(int kmRealizados) {
+    public void setKmRealizados(double kmRealizados) {
         this.kmRealizados = kmRealizados;
     }
 
@@ -101,11 +101,11 @@ public class Carro {
         this.mediaConsumo = mediaConsumo;
     }
 
-    public int getLastKmRealizados(){
+    public double getLastKmRealizados(){
         return this.lastKmRealizados;
     }
 
-    public void setLastKmRealizados(int lastKmRealizados) {
+    public void setLastKmRealizados(double lastKmRealizados) {
         this.lastKmRealizados = lastKmRealizados;
     }
 
@@ -136,15 +136,22 @@ public class Carro {
     }
 
     public void resetUltimaViagem(){
-
+        this.setKmRealizados(this.getKmRealizados() + this.getLastKmRealizados());
+        this.setMediaConsumo((this.getMediaConsumo() + this.getLastMediaConsumo())/2);
+        this.setLastKmRealizados(0);
+        this.setLastMediaConsumo(0);
     }
 
     public void avancaCarro(double metros, double velocidade){
-
+        double consumoAtual = ((metros*0.001*velocidade)*(this.getConsumo())/100);
+        double kmAtual = this.getLastKmRealizados();
+        this.setLastKmRealizados(kmAtual + metros*0.001);
+        this.setLastMediaConsumo((consumoAtual + this.getLastMediaConsumo())/2);
     }
 
     public void travaCarro(double metros){
-
+        double regen = (metros*0.001*this.getRegeneration());
+        this.setLastMediaConsumo(this.getLastMediaConsumo() - regen);
     }
 
     public boolean equals(Object o){
