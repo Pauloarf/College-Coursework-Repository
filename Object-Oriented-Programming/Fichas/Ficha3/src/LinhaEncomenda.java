@@ -1,110 +1,103 @@
 import java.util.Objects;
 
 public class LinhaEncomenda {
-    private String reference;
-    private String description;
-    private double price;
-    private int amount;
-    private int tax; //valor em percentagem
-    private int discount; // valor em percentagem
+    private String referenciaProduto;
+    private String descricaoProduto;
+    private double precoProduto;
+    private int quantidadeEncomendada;
+    private double regimeImposto; // Em percentagem (ex: 6%, 13%, 23%, etc.)
+    private double descontoComercial; // Em percentagem
 
     public LinhaEncomenda(){
-        this.reference = "";
-        this.description = "";
-        this.price = 0;
-        this.amount = 0;
-        this.tax = 0;
-        this.discount = 0;
+        this.referenciaProduto = "N/a";
+        this.descricaoProduto = "N/a";
+        this.precoProduto = 0;
+        this.quantidadeEncomendada = 0;
+        this.regimeImposto = 0;
+        this.descontoComercial = 0;
     }
 
-    public LinhaEncomenda(String ref, String des, double price, int amount, int tax, int discount){
-        this.reference = ref;
-        this.description = des;
-        this.price = price;
-        this.amount = amount;
-        this.tax = tax;
-        this.discount = discount;
+    public LinhaEncomenda(String referenciaProduto, String descricaoProduto, double precoProduto, int quantidadeEncomendada, double regimeImposto, double descontoComercial) {
+        this.referenciaProduto = referenciaProduto;
+        this.descricaoProduto = descricaoProduto;
+        this.precoProduto = precoProduto;
+        this.quantidadeEncomendada = quantidadeEncomendada;
+        this.regimeImposto = regimeImposto;
+        this.descontoComercial = descontoComercial;
     }
 
-    public LinhaEncomenda(LinhaEncomenda linha){
-        this.reference = linha.getReference();
-        this.description = linha.getDescription();
-        this.price = linha.getPrice();
-        this.amount = linha.getAmount();
-        this.tax = linha.getTax();
-        this.discount = linha.getDiscount();
+    public LinhaEncomenda(LinhaEncomenda l){
+        this.referenciaProduto = this.getReferenciaProduto();
+        this.descricaoProduto = this.getDescricaoProduto();
+        this.precoProduto = this.getPrecoProduto();
+        this.quantidadeEncomendada = this.getQuantidadeEncomendada();
+        this.regimeImposto = this.getRegimeImposto();
+        this.descontoComercial = this.getDescontoComercial();
     }
 
-    public String getReference(){
-        return this.reference;
+    public String getReferenciaProduto() {
+        return this.referenciaProduto;
     }
 
-    public void setReference(String reference){
-        this.reference = reference;
+    public void setReferenciaProduto(String referenciaProduto) {
+        this.referenciaProduto = referenciaProduto;
     }
 
-    public String getDescription(){
-        return this.description;
+    public String getDescricaoProduto() {
+        return this.descricaoProduto;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescricaoProduto(String descricaoProduto) {
+        this.descricaoProduto = descricaoProduto;
     }
 
-    public double getPrice(){
-        return this.price;
+    public double getPrecoProduto() {
+        return this.precoProduto;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPrecoProduto(double precoProduto) {
+        this.precoProduto = precoProduto;
     }
 
-    public int getAmount() {
-        return this.amount;
+    public int getQuantidadeEncomendada() {
+        return this.quantidadeEncomendada;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setQuantidadeEncomendada(int quantidadeEncomendada) {
+        this.quantidadeEncomendada = quantidadeEncomendada;
     }
 
-    public int getTax() {
-        return this.tax;
+    public double getRegimeImposto() {
+        return this.regimeImposto;
     }
 
-    public void setTax(int tax) {
-        this.tax = tax;
+    public void setRegimeImposto(double regimeImposto) {
+        this.regimeImposto = regimeImposto;
     }
 
-    public int getDiscount() {
-        return this.discount;
+    public double getDescontoComercial() {
+        return this.descontoComercial;
     }
 
-    public void setDiscount(int discount) {
-        this.discount = discount;
+    public void setDescontoComercial(double descontoComercial) {
+        this.descontoComercial = descontoComercial;
     }
 
-    public double calculaValorLinhaEnc(){
-        double valor = this.price * (1 + (double) this.tax /100);
-        valor -= this.calculaValorDesconto();
-        return valor;
+    public double calculaValorLinhaEnc() {
+        double precoSemImpostos = precoProduto * quantidadeEncomendada;
+        double valorImpostos = precoSemImpostos * (regimeImposto / 100.0);
+        double precoComImpostos = precoSemImpostos + valorImpostos;
+        double valorDesconto = calculaValorDesconto();
+        return precoComImpostos - valorDesconto;
     }
 
-    public double calculaValorDesconto(){
-        double valor = this.price * (1 + (double) this.tax /100);
-        valor *= (double) this.discount /100;
-        return valor*this.amount;
+    public double calculaValorDesconto() {
+        double precoSemImpostos = precoProduto * quantidadeEncomendada;
+        return precoSemImpostos * (descontoComercial / 100.0);
     }
 
-    @Override
-    public String toString() {
-        return "LinhaEncomenda{" +
-                "reference='" + this.reference + '\'' +
-                ", description='" + this.description + '\'' +
-                ", price=" + this.price +
-                ", amount=" + this.amount +
-                ", tax=" + this.tax +
-                ", discount=" + this.discount +
-                '}';
+    public LinhaEncomenda clone(){
+        return new LinhaEncomenda(this);
     }
 
     @Override
@@ -112,7 +105,24 @@ public class LinhaEncomenda {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LinhaEncomenda that = (LinhaEncomenda) o;
-        return Double.compare(price, that.price) == 0 && amount == that.amount && tax == that.tax && discount == that.discount && Objects.equals(reference, that.reference) && Objects.equals(description, that.description);
+        return Double.compare(precoProduto, that.precoProduto) == 0 &&
+                quantidadeEncomendada == that.quantidadeEncomendada &&
+                Double.compare(regimeImposto, that.regimeImposto) == 0 &&
+                Double.compare(descontoComercial, that.descontoComercial) == 0 &&
+                Objects.equals(referenciaProduto, that.referenciaProduto) &&
+                Objects.equals(descricaoProduto, that.descricaoProduto);
     }
 
+    @Override
+    public String toString() {
+        return "LinhaEncomenda{" +
+                "referenciaProduto='" + referenciaProduto + '\'' +
+                ", descricaoProduto='" + descricaoProduto + '\'' +
+                ", precoProduto=" + precoProduto +
+                ", quantidadeEncomendada=" + quantidadeEncomendada +
+                ", regimeImposto=" + regimeImposto +
+                ", descontoComercial=" + descontoComercial +
+                '}';
+    }
 }
+

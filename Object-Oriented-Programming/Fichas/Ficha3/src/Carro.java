@@ -1,67 +1,65 @@
+import java.util.Objects;
+
 public class Carro {
     private String marca;
     private String modelo;
-    private int ano;
-    private double consumo; //consumo por km, a uma velocidade de 100km/h
-    private double kmRealizados;
-    private double mediaConsumo;
-    private double lastKmRealizados;
-    private double lastMediaConsumo;
-    private int regeneration;
+    private int anoConstrucao;
+    private double consumo100Kmh;
+    private double kmsTotais;
+    private double mediaConsumoTotal;
+    private double kmsUltimaViagem;
+    private double mediaConsumoUltimaViagem;
+    private double capacidadeRegeneracao;
+    private boolean ligado;
 
-    public Carro(){
+    public Carro() {
         this.marca = "N/a";
         this.modelo = "N/a";
-        this.ano = 0;
-        this.consumo = 0;
-        this.kmRealizados = 0;
-        this.mediaConsumo = 0;
-        this.lastKmRealizados = 0;
-        this.lastMediaConsumo = 0;
-        this.regeneration = 0;
+        this.anoConstrucao = 0;
+        this.consumo100Kmh = 0;
+        this.kmsTotais = 0;
+        this.mediaConsumoTotal = 0;
+        this.kmsUltimaViagem = 0;
+        this.mediaConsumoUltimaViagem = 0;
+        this.capacidadeRegeneracao = 0;
+        this.ligado = false;
     }
 
-    public Carro(String marca,
-                 String modelo,
-                 int ano,
-                 int consumo,
-                 int kmRealizados,
-                 int mediaConsumo,
-                 double lastKmRealizados,
-                 int lastMediaConsumo,
-                 int regeneration){
+    public Carro(String marca, String modelo, int anoConstrucao, double consumo100Kmh, double capacidadeRegeneracao) {
         this.marca = marca;
         this.modelo = modelo;
-        this.ano = ano;
-        this.consumo = consumo;
-        this.kmRealizados = kmRealizados;
-        this.mediaConsumo = mediaConsumo;
-        this.lastKmRealizados = lastKmRealizados;
-        this.lastMediaConsumo = lastMediaConsumo;
-        this.regeneration = regeneration;
+        this.anoConstrucao = anoConstrucao;
+        this.consumo100Kmh = consumo100Kmh;
+        this.kmsTotais = 0;
+        this.mediaConsumoTotal = 0;
+        this.kmsUltimaViagem = 0;
+        this.mediaConsumoUltimaViagem = 0;
+        this.capacidadeRegeneracao = capacidadeRegeneracao;
+        this.ligado = false;
     }
 
-    public Carro(Carro carro){
-        this.marca = carro.getMarca();
-        this.modelo = carro.getModelo();
-        this.ano = carro.getAno();
-        this.consumo = carro.getConsumo();
-        this.kmRealizados = carro.getKmRealizados();
-        this.mediaConsumo = carro.getMediaConsumo();
-        this.lastKmRealizados = carro.getLastKmRealizados();
-        this.lastMediaConsumo = carro.getLastMediaConsumo();
-        this.regeneration = carro.getRegeneration();
+    public Carro(Carro c) {
+        this.marca = c.getMarca();
+        this.modelo = c.getModelo();
+        this.anoConstrucao = c.getAnoConstrucao();
+        this.consumo100Kmh = c.getConsumo100Kmh();
+        this.kmsTotais = c.getKmsTotais();
+        this.mediaConsumoTotal = c.getMediaConsumoTotal();
+        this.kmsUltimaViagem = c.getKmsUltimaViagem();
+        this.mediaConsumoUltimaViagem = c.getMediaConsumoUltimaViagem();
+        this.capacidadeRegeneracao = c.getCapacidadeRegeneracao();
+        this.ligado = c.isLigado();
     }
 
-    public String getMarca(){
+    public String getMarca() {
         return this.marca;
     }
 
-    public void setMarca(String marca){
+    public void setMarca(String marca) {
         this.marca = marca;
     }
 
-    public String getModelo(){
+    public String getModelo() {
         return this.modelo;
     }
 
@@ -69,122 +67,138 @@ public class Carro {
         this.modelo = modelo;
     }
 
-    public int getAno(){
-        return this.ano;
+    public int getAnoConstrucao() {
+        return this.anoConstrucao;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
+    public void setAnoConstrucao(int anoConstrucao) {
+        this.anoConstrucao = anoConstrucao;
     }
 
-    public double getConsumo(){
-        return this.consumo;
+    public double getConsumo100Kmh() {
+        return this.consumo100Kmh;
     }
 
-    public void setConsumo(double consumo) {
-        this.consumo = consumo;
+    public void setConsumo100Kmh(double consumo100Kmh) {
+        this.consumo100Kmh = consumo100Kmh;
     }
 
-    public double getKmRealizados(){
-        return this.kmRealizados;
+    public double getKmsTotais() {
+        return this.kmsTotais;
     }
 
-    public void setKmRealizados(double kmRealizados) {
-        this.kmRealizados = kmRealizados;
+    public void setKmsTotais(double kmsTotais) {
+        this.kmsTotais = kmsTotais;
     }
 
-    public double getMediaConsumo(){
-        return this.mediaConsumo;
+    public double getMediaConsumoTotal() {
+        return this.mediaConsumoTotal;
     }
 
-    public void setMediaConsumo(double mediaConsumo) {
-        this.mediaConsumo = mediaConsumo;
+    public void setMediaConsumoTotal(double mediaConsumoTotal) {
+        this.mediaConsumoTotal = mediaConsumoTotal;
     }
 
-    public double getLastKmRealizados(){
-        return this.lastKmRealizados;
+    public double getKmsUltimaViagem() {
+        return this.kmsUltimaViagem;
     }
 
-    public void setLastKmRealizados(double lastKmRealizados) {
-        this.lastKmRealizados = lastKmRealizados;
+    public void setKmsUltimaViagem(double kmsUltimaViagem) {
+        this.kmsUltimaViagem = kmsUltimaViagem;
     }
 
-    public double getLastMediaConsumo(){
-        return this.lastMediaConsumo;
+    public double getMediaConsumoUltimaViagem() {
+        return this.mediaConsumoUltimaViagem;
     }
 
-    public void setLastMediaConsumo(double lastMediaConsumo) {
-        this.lastMediaConsumo = lastMediaConsumo;
+    public void setMediaConsumoUltimaViagem(double mediaConsumoUltimaViagem) {
+        this.mediaConsumoUltimaViagem = mediaConsumoUltimaViagem;
     }
 
-    public int getRegeneration(){
-        return this.regeneration;
+    public double getCapacidadeRegeneracao() {
+        return this.capacidadeRegeneracao;
     }
 
-    public void setRegeneration(int regeneration) {
-        this.regeneration = regeneration;
+    public void setCapacidadeRegeneracao(double capacidadeRegeneracao) {
+        this.capacidadeRegeneracao = capacidadeRegeneracao;
     }
 
-    public void ligaCarro(){
-        this.setLastKmRealizados(0);
-        this.setLastMediaConsumo(0);
+    public boolean isLigado() {
+        return this.ligado;
     }
 
-    public void desligaCarro(){
-        this.setKmRealizados(this.getKmRealizados() + this.getLastKmRealizados());
-        this.setMediaConsumo((this.getMediaConsumo() + this.getLastMediaConsumo())/2);
+    public void ligaCarro() {
+        ligado = true;
+        resetUltimaViagem();
     }
 
-    public void resetUltimaViagem(){
-        this.setKmRealizados(this.getKmRealizados() + this.getLastKmRealizados());
-        this.setMediaConsumo((this.getMediaConsumo() + this.getLastMediaConsumo())/2);
-        this.setLastKmRealizados(0);
-        this.setLastMediaConsumo(0);
+    public void desligaCarro() {
+        ligado = false;
     }
 
-    public void avancaCarro(double metros, double velocidade){
-        double consumoAtual = ((metros*0.001*velocidade)*(this.getConsumo())/100);
-        double kmAtual = this.getLastKmRealizados();
-        this.setLastKmRealizados(kmAtual + metros*0.001);
-        this.setLastMediaConsumo((consumoAtual + this.getLastMediaConsumo())/2);
+    public void resetUltimaViagem() {
+        kmsUltimaViagem = 0;
+        mediaConsumoUltimaViagem = 0;
     }
 
-    public void travaCarro(double metros){
-        double regen = (metros*0.001*this.getRegeneration());
-        this.setLastMediaConsumo(this.getLastMediaConsumo() - regen);
+    public void avancaCarro(double metros, double velocidade) {
+        if (!ligado) {
+            System.out.println("O carro precisa ser ligado para avançar.");
+            return;
+        }
+        double horas = metros / (velocidade / 3.6); // Convertendo velocidade de km/h para m/s
+        double consumo = consumo100Kmh * (velocidade / 100.0);
+        kmsUltimaViagem += metros / 1000.0; // Convertendo metros para quilômetros
+        mediaConsumoUltimaViagem = (mediaConsumoUltimaViagem * (kmsUltimaViagem - (metros / 1000.0)) + consumo) / kmsUltimaViagem;
+        kmsTotais += metros / 1000.0; // Convertendo metros para quilômetros
+        mediaConsumoTotal = (mediaConsumoTotal * (kmsTotais - (metros / 1000.0)) + consumo) / kmsTotais;
     }
 
-    public boolean equals(Object o){
-        if(this == o) return true;
-        if(o == null || this.getClass() != o.getClass()) return false;
-        Carro carro = (Carro) o;
-        return this.getMarca().equals(carro.getMarca()) &&
-                this.getModelo().equals(carro.getModelo()) &&
-                this.getAno() == carro.getAno() &&
-                this.getConsumo() == carro.getConsumo() &&
-                this.getKmRealizados() == carro.getKmRealizados() &&
-                this.getMediaConsumo() == carro.getMediaConsumo() &&
-                this.getLastKmRealizados() == carro.getLastKmRealizados() &&
-                this.getLastMediaConsumo() == carro.getLastMediaConsumo() &&
-                this.getRegeneration() == carro.getRegeneration();
+    public void travaCarro(double metros) {
+        if (!ligado) {
+            System.out.println("O carro precisa ser ligado para travar.");
+            return;
+        }
+        double consumo = this.capacidadeRegeneracao * (metros / 1000.0); // Converter metros para Km
+        this.kmsUltimaViagem += metros / 1000.0; // Converter metros para Km
+        this.mediaConsumoUltimaViagem = (this.mediaConsumoUltimaViagem * (this.kmsUltimaViagem - (metros / 1000.0)) - consumo) / this.kmsUltimaViagem;
+        this.kmsTotais += metros / 1000.0; // Converter metros para Km
+        this.mediaConsumoTotal = (this.mediaConsumoTotal * (this.kmsTotais - (metros / 1000.0)) - consumo) / this.kmsTotais;
     }
-
     public Carro clone(){
         return new Carro(this);
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Carro carro = (Carro) o;
+        return anoConstrucao == carro.anoConstrucao &&
+                Double.compare(consumo100Kmh, carro.consumo100Kmh) == 0 &&
+                Double.compare(kmsTotais, carro.kmsTotais) == 0 &&
+                Double.compare(mediaConsumoTotal, carro.mediaConsumoTotal) == 0 &&
+                Double.compare(kmsUltimaViagem, carro.kmsUltimaViagem) == 0 &&
+                Double.compare(mediaConsumoUltimaViagem, carro.mediaConsumoUltimaViagem) == 0 &&
+                Double.compare(capacidadeRegeneracao, carro.capacidadeRegeneracao) == 0 &&
+                ligado == carro.ligado &&
+                Objects.equals(marca, carro.marca) &&
+                Objects.equals(modelo, carro.modelo);
+    }
+
+    @Override
     public String toString() {
-        return "Carro{\n" +
-                "\tmarca='" + marca + "' \n" +
-                "\tmodelo='" + modelo + "' \n" +
-                "\tano=" + ano + '\n' +
-                "\tconsumo=" + consumo + '\n' +
-                "\tkmRealizados=" + kmRealizados + '\n' +
-                "\tmediaConsumo=" + mediaConsumo + '\n' +
-                "\tlastKmRealizados=" + lastKmRealizados + '\n' +
-                "\tlastMediaConsumo=" + lastMediaConsumo + '\n' +
-                "\tregeneration=" + regeneration + '\n' +
+        return "Carro{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", anoConstrucao=" + anoConstrucao +
+                ", consumo100Kmh=" + consumo100Kmh +
+                ", kmsTotais=" + kmsTotais +
+                ", mediaConsumoTotal=" + mediaConsumoTotal +
+                ", kmsUltimaViagem=" + kmsUltimaViagem +
+                ", mediaConsumoUltimaViagem=" + mediaConsumoUltimaViagem +
+                ", capacidadeRegeneracao=" + capacidadeRegeneracao +
+                ", ligado=" + ligado +
                 '}';
     }
 }

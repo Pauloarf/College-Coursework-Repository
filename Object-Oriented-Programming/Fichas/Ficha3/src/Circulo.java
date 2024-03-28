@@ -70,9 +70,8 @@ public class Circulo {
         return Double.compare(getX(), circulo.getX()) == 0 && Double.compare(getY(), circulo.getY()) == 0 && Double.compare(getRaio(), circulo.getRaio()) == 0;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getX(), getY(), getRaio());
+    public Circulo clone(){
+        return new Circulo(this);
     }
 
     @Override
