@@ -144,7 +144,7 @@ public class CasaInteligenteTest {
         casa.addLampada(lampada3);
         lampada1.lampON();
         lampada2.lampON();
-        lampada3.lampON(); 
+        lampada3.lampON();
         Set<Lampada> esperado = new HashSet<>();
         esperado.add(lampada3);
         esperado.add(lampada1);
