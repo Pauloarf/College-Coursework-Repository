@@ -1,141 +1,153 @@
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
+import java.time.LocalDate;
 
 public class EncEficiente {
-    private static int quantidade = 0;
-
     private String nomeCliente;
-    private int nif;
-    private String morada;
-    private int nrEncomenda;
+    private String numeroFiscalCliente;
+    private String moradaCliente;
+    private int numeroEncomenda;
     private LocalDate dataEncomenda;
-    private List<LinhaEncomenda> listEncomendas;
+    private ArrayList<LinhaEncomenda> linhasEncomenda;
 
-    public EncEficiente(){
-        this.nomeCliente = "N/a";
-        this.nif = 0;
-        this.morada = "N/a";
-        this.nrEncomenda = quantidade++;
+    public EncEficiente() {
+        this.nomeCliente = "";
+        this.numeroFiscalCliente = "";
+        this.moradaCliente = "";
+        this.numeroEncomenda = 0;
         this.dataEncomenda = LocalDate.now();
-        this.listEncomendas = new ArrayList<LinhaEncomenda>();
+        this.linhasEncomenda = new ArrayList<>();
     }
 
-    public EncEficiente(String nomeCliente,
-                        int nif,
-                        String morada,
-                        LocalDate dataEncomenda,
-                        List<LinhaEncomenda> listEncomendas){
+    public EncEficiente(String nomeCliente, String numeroFiscalCliente, String moradaCliente, int numeroEncomenda, LocalDate dataEncomenda) {
         this.nomeCliente = nomeCliente;
-        this.nif = nif;
-        this.morada = morada;
-        this.nrEncomenda = quantidade++;
+        this.numeroFiscalCliente = numeroFiscalCliente;
+        this.moradaCliente = moradaCliente;
+        this.numeroEncomenda = numeroEncomenda;
         this.dataEncomenda = dataEncomenda;
-        this.listEncomendas = listEncomendas;
+        this.linhasEncomenda = new ArrayList<>();
     }
 
-    public EncEficiente(EncEficiente encomenda){
-        this.nomeCliente = encomenda.getNomeCliente();
-        this.nif = encomenda.getNif();
-        this.morada = encomenda.getMorada();
-        this.nrEncomenda = encomenda.getNrEncomenda();
-        this.dataEncomenda = encomenda.getDataEncomenda();
-        this.listEncomendas =encomenda.getListEncomendas();
+    public EncEficiente(EncEficiente enc) {
+        this.nomeCliente = enc.getNomeCliente();
+        this.numeroFiscalCliente = enc.getNumeroFiscalCliente();
+        this.moradaCliente = enc.getMoradaCliente();
+        this.numeroEncomenda = enc.getNumeroEncomenda();
+        this.dataEncomenda = enc.getDataEncomenda();
+        this.linhasEncomenda = enc.getLinhasEncomenda();
     }
 
-    public String getNomeCliente(){
-        return this.nomeCliente;
+    public String getNomeCliente() {
+        return nomeCliente;
     }
 
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
     }
 
-    public int getNif(){
-        return this.nif;
+    public String getNumeroFiscalCliente() {
+        return numeroFiscalCliente;
     }
 
-    public void setNif(int nif) {
-        this.nif = nif;
+    public void setNumeroFiscalCliente(String numeroFiscalCliente) {
+        this.numeroFiscalCliente = numeroFiscalCliente;
     }
 
-    public String getMorada(){
-        return this.morada;
+    public String getMoradaCliente() {
+        return moradaCliente;
     }
 
-    public void setMorada(String morada) {
-        this.morada = morada;
+    public void setMoradaCliente(String moradaCliente) {
+        this.moradaCliente = moradaCliente;
     }
 
-    public int getNrEncomenda(){
-        return this.nrEncomenda;
+    public int getNumeroEncomenda() {
+        return numeroEncomenda;
     }
 
-    public void setNrEncomenda(int nrEncomenda) {
-        this.nrEncomenda = nrEncomenda;
+    public void setNumeroEncomenda(int numeroEncomenda) {
+        this.numeroEncomenda = numeroEncomenda;
     }
 
-    public LocalDate getDataEncomenda(){
-        return this.dataEncomenda;
+    public LocalDate getDataEncomenda() {
+        return dataEncomenda;
     }
 
     public void setDataEncomenda(LocalDate dataEncomenda) {
         this.dataEncomenda = dataEncomenda;
     }
 
-    public List<LinhaEncomenda> getListEncomendas() {
-        return new ArrayList<LinhaEncomenda>(this.listEncomendas);
+    public ArrayList<LinhaEncomenda> getLinhasEncomenda() {
+        return new ArrayList<>(linhasEncomenda);
     }
 
-    public void setListEncomendas(List<LinhaEncomenda> listEncomendas) {
-        this.listEncomendas = listEncomendas;
-    }
-
-    public double calculaValorTotal(){
-        double total = 0;
-        for(LinhaEncomenda enc : this.listEncomendas){
-            total += enc.calculaValorLinhaEnc();
+    public double calculaValorTotal() {
+        double valorTotal = 0;
+        for (LinhaEncomenda linha : linhasEncomenda) {
+            valorTotal += linha.calculaValorLinhaEnc();
         }
-        return total;
+        return valorTotal;
     }
 
-    public double calculaValorDesconto(){
-        double desconto = 0;
-        for(LinhaEncomenda enc : this.listEncomendas){
-            desconto += enc.calculaValorDesconto();
+    public double calculaValorDesconto() {
+        double valorDescontoTotal = 0;
+        for (LinhaEncomenda linha : linhasEncomenda) {
+            valorDescontoTotal += linha.calculaValorDesconto();
         }
-        return desconto;
+        return valorDescontoTotal;
     }
 
-    public int numeroTotalProdutos(){
-        int nrProdutos = 0;
-        for(LinhaEncomenda enc : this.listEncomendas){
-            nrProdutos += enc.getQuantidade();
+    public int numeroTotalProdutos() {
+        int totalProdutos = 0;
+        for (LinhaEncomenda linha : linhasEncomenda) {
+            totalProdutos += linha.getQuantidadeEncomendada();
         }
-        return nrProdutos;
+        return totalProdutos;
     }
 
-    public boolean existeProdutoEncomenda(String refProduto){
-        Optional<LinhaEncomenda> l = this.listEncomendas.stream().filter(a -> refProduto.equals(a.getReferencia())).findFirst();
-        return  l.isPresent();
-    }
-
-    public void adicionaLinha(LinhaEncomenda linha){
-        this.listEncomendas.add(linha);
-    }
-
-    public void removeProduto(String codProd){
-        for(LinhaEncomenda enc : this.listEncomendas){
-            if (codProd.equals(enc.getReferencia())){
-                this.listEncomendas.remove(enc);
+    public boolean existeProdutoEncomenda(String refProduto) {
+        for (LinhaEncomenda linha : linhasEncomenda) {
+            if (linha.getReferenciaProduto().equals(refProduto)) {
+                return true;
             }
         }
+        return false;
+    }
+
+    public void adicionaLinha(LinhaEncomenda linha) {
+        linhasEncomenda.add(linha);
+    }
+
+    public void removeProduto(String codProd) {
+        linhasEncomenda.removeIf(linha -> linha.getReferenciaProduto().equals(codProd));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EncEficiente that = (EncEficiente) o;
+        return numeroEncomenda == that.numeroEncomenda &&
+                nomeCliente.equals(that.nomeCliente) &&
+                numeroFiscalCliente.equals(that.numeroFiscalCliente) &&
+                moradaCliente.equals(that.moradaCliente) &&
+                dataEncomenda.equals(that.dataEncomenda) &&
+                linhasEncomenda.equals(that.linhasEncomenda);
     }
 
     public EncEficiente clone(){
         return new EncEficiente(this);
     }
-}
 
+    @Override
+    public String toString() {
+        return "EncEficiente{" +
+                "nomeCliente='" + nomeCliente + '\'' +
+                ", numeroFiscalCliente='" + numeroFiscalCliente + '\'' +
+                ", moradaCliente='" + moradaCliente + '\'' +
+                ", numeroEncomenda=" + numeroEncomenda +
+                ", dataEncomenda=" + dataEncomenda +
+                ", linhasEncomenda=" + linhasEncomenda +
+                '}';
+    }
+}

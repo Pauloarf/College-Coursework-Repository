@@ -1,58 +1,69 @@
-import com.sun.source.tree.AssertTree;
-import org.junit.Assert;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import java.time.LocalDate;
-import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class EncEficienteTest {
+public class EncEficienteTest {
 
-    @Test
-    void calculaValorTotal() {
-        EncEficiente encEficiente = new EncEficiente("Paulo Ferreira", 242242242, "Rua dos lirios", LocalDate.now(), new ArrayList<LinhaEncomenda>());
-        double valor = encEficiente.calculaValorTotal();
-        double sum = 0;
-        assertTrue(valor >= 0);
-        for(LinhaEncomenda a : encEficiente.getListEncomendas()){
-            sum += a.calculaValorLinhaEnc();
-            assertTrue(valor >= a.calculaValorLinhaEnc());
-            assertEquals(valor, sum);
-        }
+    private EncEficiente encomenda;
+    private LinhaEncomenda linha1;
+    private LinhaEncomenda linha2;
+    private LinhaEncomenda linha3;
 
+    @BeforeEach
+    void setUp() {
+        encomenda = new EncEficiente();
+        linha1 = new LinhaEncomenda("001", "Produto 1", 10, 5, 0.1, 0.05);
+        linha2 = new LinhaEncomenda("002", "Produto 2", 20, 3, 0.15, 0.0);
+        linha3 = new LinhaEncomenda("003", "Produto 3", 15, 2, 0.2, 0.1);
     }
 
     @Test
-    void calculaValorDesconto() {
+    void testAdicionaLinha() {
+        encomenda.adicionaLinha(linha1);
+        encomenda.adicionaLinha(linha2);
+        assertEquals(2, encomenda.getLinhasEncomenda().size());
     }
 
     @Test
-    void numeroTotalProdutos() {
+    void testRemoveProduto() {
+        encomenda.adicionaLinha(linha1);
+        encomenda.adicionaLinha(linha2);
+        encomenda.removeProduto("002");
+        assertEquals(1,  encomenda.getLinhasEncomenda().size());
     }
 
     @Test
-    void existeProdutoEncomenda() {
-        LinhaEncomenda linha1 = new LinhaEncomenda("REF001", "Product 1", 10.50, 2, 0.5, 1.0);
-        LinhaEncomenda linha2 = new LinhaEncomenda("REF002", "Product 2", 20.75, 1, 0.75, 1.5);
-        LinhaEncomenda linha3 = new LinhaEncomenda("REF003", "Product 3", 15.25, 3, 0.25, 0.75);
-        LinhaEncomenda linha4 = new LinhaEncomenda("REF004", "Product 4", 30.00, 2, 0.0, 0.0);
-        LinhaEncomenda linha5 = new LinhaEncomenda("REF005", "Product 5", 12.99, 1, 0.1, 0.25);
-        EncEficiente encEficiente = new EncEficiente("Paulo Ferreira", 242242242, "Rua dos lirios", LocalDate.now(), new ArrayList<LinhaEncomenda>());
-        encEficiente.adicionaLinha(linha1);
-        encEficiente.adicionaLinha(linha2);
-        encEficiente.adicionaLinha(linha3);
-        encEficiente.adicionaLinha(linha5);
-        boolean verdade = encEficiente.existeProdutoEncomenda(linha1.getReferencia());
-        boolean falso = encEficiente.existeProdutoEncomenda(linha4.getReferencia());
-        assertTrue(verdade);
-        assertFalse(falso);
+    void testCalculaValorTotal() {
+        encomenda.adicionaLinha(linha1);
+        encomenda.adicionaLinha(linha2);
+        encomenda.adicionaLinha(linha3);
+        assertEquals(155.0, encomenda.calculaValorTotal());
     }
 
     @Test
-    void adicionaLinha() {
+    void testCalculaValorDesconto() {
+        encomenda.adicionaLinha(linha1);
+        encomenda.adicionaLinha(linha2);
+        encomenda.adicionaLinha(linha3);
+        assertEquals(11.0, encomenda.calculaValorDesconto());
     }
 
     @Test
-    void removeProduto() {
+    void testNumeroTotalProdutos() {
+        encomenda.adicionaLinha(linha1);
+        encomenda.adicionaLinha(linha2);
+        encomenda.adicionaLinha(linha3);
+        assertEquals(10, encomenda.numeroTotalProdutos());
+    }
+
+    @Test
+    void testExisteProdutoEncomenda() {
+        encomenda.adicionaLinha(linha1);
+        encomenda.adicionaLinha(linha2);
+        assertTrue(encomenda.existeProdutoEncomenda("002"));
+        assertFalse(encomenda.existeProdutoEncomenda("004"));
     }
 }

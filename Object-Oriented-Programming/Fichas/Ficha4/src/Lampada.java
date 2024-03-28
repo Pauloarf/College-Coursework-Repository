@@ -1,38 +1,14 @@
-/*********************************************************************************/
-/** DISCLAIMER: Este código foi criado e alterado durante as aulas práticas      */
-/** de POO. Representa uma solução em construção, com base na matéria leccionada */
-/** até ao momento da sua elaboração, e resulta da discussão e experimentação    */
-/** durante as aulas. Como tal, não deverá ser visto como uma solução canónica,  */
-/** ou mesmo acabada. É disponibilizado para auxiliar o processo de estudo.      */
-/** Os alunos são encorajados a testar adequadamente o código fornecido e a      */
-/** procurar soluções alternativas, à medida que forem adquirindo mais           */
-/** conhecimentos de POO.                                                        */
-/*********************************************************************************/
+import java.util.Objects;
 
-/**
- * Classe que implementa uma Lâmpada cf exercício da Ficha 3.
- * Esta classe foi desenvolvida durante as aulas práticas pelo que algumas das
- * linhas de código decorrem de decisões tomadas na altura. Existe naturalmente
- * espaço para melhorar e alterar este código.
- *
- * ATENÇÃO: a classe Lampada utiliza um enum para guardar os diferentes tipos
- * de consumo. Poderia também ser feito com constantes.
-
- *
- * @author  MaterialPOO
- * @version 20220321
- * @version 20230320
- */
- 
 public class Lampada
 {
-    public enum Modo {
+    public enum State {
         ON,
         OFF,
         ECO
     }
 
-    private Modo modo;
+    private State state;
 
     private double cpSOn;
     private double cpSEco;
@@ -41,7 +17,7 @@ public class Lampada
     private long stamp;
 
     public Lampada() {
-        this.modo = Modo.OFF;
+        this.state = State.OFF;
         this.cpSEco = 1;
         this.cpSOn = 2;
         this.consumoTotal = 0;
@@ -50,7 +26,7 @@ public class Lampada
     }
 
     public Lampada(Lampada l){
-        this.modo = l.getModo();
+        this.state = l.getModo();
         this.cpSEco = l.getCpSEco();
         this.cpSOn = l.getCpSOn();
         this.consumoTotal = l.totalConsumo();
@@ -58,21 +34,21 @@ public class Lampada
         this.stamp = l.getStamp();
     }
 
-    public Lampada(Modo x, double cpsE, double cpsO, double cT, double pC) {
+    public Lampada(State x, double cpsE, double cpsO, double cT, double pC) {
         this.cpSEco = cpsE;
         this.cpSOn = cpsO;
-        this.modo = x;
+        this.state = x;
         this.consumoTotal = cT;
         this.consumoPeriodo = pC;
         this.stamp = System.currentTimeMillis();
     }
 
-    public Modo getModo() {
-        return modo;
+    public State getModo() {
+        return state;
     }
 
-    public void setModo(Modo m) {
-        this.modo = m;
+    public void setModo(State m) {
+        this.state = m;
     }
 
     public long getStamp() {
@@ -113,17 +89,17 @@ public class Lampada
 
     public void lampON() {
         this.atualizaConsumo();
-        this.modo = Modo.ON;
+        this.state = State.ON;
     }
 
     public void lampOFF() {
         this.atualizaConsumo();
-        this.modo = Modo.OFF;
+        this.state = State.OFF;
     }
 
     public void lampECO() {
         this.atualizaConsumo();
-        this.modo = Modo.ECO;
+        this.state = State.ECO;
     }
 
     public void resetPeriodo(){
@@ -143,10 +119,10 @@ public class Lampada
     private void atualizaConsumo() {
         long periodo = System.currentTimeMillis() - stamp;
 
-        if(this.modo == Modo.ON) {
+        if(this.state == State.ON) {
             this.consumoTotal += cpSOn *periodo;
             this.consumoPeriodo += cpSOn *periodo;
-        } else if(this.modo == Modo.ECO) {
+        } else if(this.state == State.ECO) {
             this.consumoTotal += cpSEco *periodo;
             this.consumoPeriodo += cpSEco *periodo;
         }
@@ -161,7 +137,7 @@ public class Lampada
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Lampada: ").append(this.modo)
+        sb.append("Lampada: ").append(this.state)
                 .append("\nConsumo por segundo Eco: ").append(this.cpSEco)
                 .append("\nConsumo por segundo On: ").append(this.cpSOn)
                 .append("\nConsumoTotal: ").append(this.consumoTotal)
@@ -169,16 +145,11 @@ public class Lampada
         return sb.toString();
     }
 
-    public boolean equals(Object o){
-        if (this==o) return true;
-        if ((o == null) || (this.getClass() != o.getClass())) return false;
-
-        Lampada l = (Lampada) o;
-        return l.getModo() == this.modo &&
-                l.getCpSOn() == this.cpSOn &&
-                l.getCpSEco() == this.cpSEco &&
-                l.getConsumoTotal() == this.consumoTotal &&
-                l.getConsumoPeriodo() == this.consumoPeriodo &&
-                l.getStamp() == this.stamp;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Lampada lampada = (Lampada) o;
+        return Double.compare(cpSOn, lampada.cpSOn) == 0 && Double.compare(cpSEco, lampada.cpSEco) == 0 && Double.compare(consumoTotal, lampada.consumoTotal) == 0 && Double.compare(consumoPeriodo, lampada.consumoPeriodo) == 0 && stamp == lampada.stamp && state == lampada.state;
     }
 }
