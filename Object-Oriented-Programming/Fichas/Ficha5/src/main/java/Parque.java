@@ -1,63 +1,82 @@
+import java.util.*;
+
 public class Parque {
-    private String matricula;
     private String nome;
-    private int minutos;
-    private boolean permanente;
+    //private List<Lugar> listaLugares;
+    private Map<String,Lugar> listaLugaresOcupados;
 
     public Parque(){
-        this.matricula = "N/a";
         this.nome = "N/a";
-        this.minutos = 0;
-        this.permanente = false;
+        //this.listaLugares = new ArrayList<Lugar>();
+        this.listaLugaresOcupados = new HashMap<String,Lugar>();
     }
 
-    public Parque(String matricula, String nome, int minutos, boolean permanente){
-        this.matricula = matricula;
+    public Parque(String nome){
         this.nome = nome;
-        this.minutos = minutos;
-        this.permanente = permanente;
+        //this.listaLugares = new ArrayList<Lugar>();
+        this.listaLugaresOcupados = new HashMap<String,Lugar>();
     }
 
-    public Parque(Parque parque){
-        this.matricula = parque.getMatricula();
-        this.nome = parque.getNome();
-        this.minutos =  parque.getMinutos();
-        this.permanente = parque.getPermanente();
-    }
-
-    public String getMatricula() {
-        return this.matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+    public Parque(Parque p){
+        this.nome = p.getNome();
+        //this.listaLugares = p.getListaLugares();
+        this.listaLugaresOcupados = p.getListaLugaresOcupados();
     }
 
     public String getNome() {
         return this.nome;
     }
 
+    //public List<Lugar> getListaLugares(){
+    //    return new ArrayList<>(this.listaLugares);
+    //}
+
+    public Map<String,Lugar> getListaLugaresOcupados(){
+        return new HashMap<String,Lugar>(this.listaLugaresOcupados);
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public int getMinutos(){
-        return this.minutos;
+    public void setListaLugaresOcupados(Map<String, Lugar> listaLugaresOcupados) {
+        this.listaLugaresOcupados = listaLugaresOcupados;
     }
 
-    public void setMinutos(int minutos) {
-        this.minutos = minutos;
+    public List<String> allMatriculas(){
+        List<String> matriculas = new ArrayList<String>();
+        this.listaLugaresOcupados.forEach((k,v) -> matriculas.add(k));
+        for(String s : matriculas){
+            System.out.println(s);
+        }
+        return matriculas;
     }
 
-    public boolean getPermanente() {
-        return this.permanente;
+    public void novaOcupacao(Lugar l){
+        if(this.listaLugaresOcupados.containsKey(l.getMatricula())){
+            this.listaLugaresOcupados.get(l.getMatricula()).setMinutos(0);
+        }
     }
 
-    public void setPermanente(boolean permanente) {
-        this.permanente = permanente;
+    public void addLugar(Lugar l){
+        this.listaLugaresOcupados.put(l.getMatricula(),l.clone());
     }
 
-    public Parque clone(){
-        return new Parque(this);
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Parque{\n");
+        sb.append("\tNome = '").append(this.nome).append("'\n");
+        sb.append("\tLugares = " );
+        this.listaLugaresOcupados.forEach((k, v) -> sb.append(v.toString()));
+        sb.append('}');
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Parque parque = (Parque) o;
+        return Objects.equals(nome, parque.nome) && Objects.equals(listaLugaresOcupados, parque.listaLugaresOcupados);
     }
 }
