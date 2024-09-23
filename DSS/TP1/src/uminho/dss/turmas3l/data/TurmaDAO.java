@@ -6,6 +6,7 @@
  */
 package uminho.dss.turmas3l.data;
 
+import uminho.dss.turmas3l.business.Aluno;
 import uminho.dss.turmas3l.business.Sala;
 import uminho.dss.turmas3l.business.Turma;
 
@@ -154,7 +155,7 @@ public class TurmaDAO implements Map<String, Turma> {
                 if (rs.next()) {  // A chave existe na tabela
                     String id = rs.getString("Id");  // Podíamos usar a key, mas assim temos a certeza que é o id da BD
                     // Reconstruir a colecção de alunos da turma
-                    Collection<String> alunos = getAlunosTurma(key.toString(), pstm);
+                    Collection<Aluno> alunos = getAlunosTurma(key.toString(), pstm);
 
                     // Reconstruir a Sala
                     Sala s = null;
@@ -188,11 +189,11 @@ public class TurmaDAO implements Map<String, Turma> {
      * @param tid o id da turma
      * @return a lista de alunos da turma
      */
-    private Collection<String> getAlunosTurma(String tid, Statement stm) throws SQLException {
-        Collection<String> alunos = new TreeSet<>();
+    private Collection<Aluno> getAlunosTurma(String tid, Statement stm) throws SQLException {
+        Collection<Aluno> alunos = new TreeSet<>();
         try (ResultSet rsa = stm.executeQuery("SELECT Num FROM alunos WHERE Turma='"+tid+"'")) {
             while(rsa.next()) {
-                alunos.add(rsa.getString("Num"));
+                alunos.add(AlunoDAO.getInstance().get(rsa.getString("Num")));
             }
         } // execepção é enviada a quem chama o método - este try serve para fechar o ResultSet automaticamente
         return alunos;
@@ -232,15 +233,15 @@ public class TurmaDAO implements Map<String, Turma> {
                                 "ON DUPLICATE KEY UPDATE Sala=VALUES(Sala)");
 
             // Actualizar os alunos da turma
-            Collection<String> oldAl = getAlunosTurma(key, stm);
-            Collection<String> newAl = t.getAlunos().stream().collect(toList());
+            Collection<Aluno> oldAl = getAlunosTurma(key, stm);
+            Collection<Aluno> newAl = t.getAlunos().stream().collect(toList());
             newAl.removeAll(oldAl);         // Alunos que entram na turma, em relação ao que está na BD
             oldAl.removeAll(t.getAlunos().stream().collect(toList())); // Alunos que saem na turma, em relação ao que está na BD
             try (PreparedStatement pstm = conn.prepareStatement("UPDATE alunos SET Turma=? WHERE Num=?")) {
                 // Remover os que saem da turma (colocar a NULL a coluna que diz qual a turma dos alunos)
                 pstm.setNull(1, Types.VARCHAR);
-                for (String a: oldAl) {
-                    pstm.setString(2, a);
+                for (Aluno a: oldAl) {
+                    pstm.setString(2, a.getNumero());
                     pstm.executeUpdate();
                 }
                 // Adicionar os que entram na turma (colocar o Id da turma na coluna Turma da tabela alunos)
@@ -248,8 +249,8 @@ public class TurmaDAO implements Map<String, Turma> {
                 //          (não há lá nada para atualizar).  Funcionará quando tivermos um AlunoDAO
                 //          a guardar os alunos na tabela 'alunos'.
                 pstm.setString(1, t.getId());
-                for (String a: newAl) {
-                    pstm.setString(2, a);
+                for (Aluno a: newAl) {
+                    pstm.setString(2, a.getNumero());
                     pstm.executeUpdate();
                 }
             }
@@ -279,8 +280,8 @@ public class TurmaDAO implements Map<String, Turma> {
              PreparedStatement alunos_pstm = conn.prepareStatement("UPDATE alunos SET Turma=? WHERE Num=?")) {
             // retirar os alunos da turma
             alunos_pstm.setNull(1, Types.VARCHAR);
-            for (String na: t.getAlunos()) {
-                alunos_pstm.setString(2, na);
+            for (Aluno na: t.getAlunos()) {
+                alunos_pstm.setString(2, na.getNumero());
                 alunos_pstm.executeUpdate();
             }
             // apagar a turma

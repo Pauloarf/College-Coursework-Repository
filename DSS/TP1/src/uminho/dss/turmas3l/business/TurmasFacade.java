@@ -140,7 +140,7 @@ public class TurmasFacade implements ITurmasFacade {
     @Override
     public void adicionaAlunoTurma(String tid, String num) {
         Turma t = this.turmas.get(tid);
-        t.adiciona(num);
+        t.adiciona(AlunoDAO.getInstance().get(num));
         turmas.put(tid, t);
     }
 

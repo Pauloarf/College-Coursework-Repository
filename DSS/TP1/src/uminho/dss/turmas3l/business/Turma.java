@@ -26,7 +26,7 @@ public class Turma {
 
     private String id;
     private Sala sala;
-    private Collection<String> lstalunos;  // Apenas os números dos alunos
+    private Collection<Aluno> lstalunos;  // Apenas os números dos alunos
 
 
     public Turma() {
@@ -41,7 +41,7 @@ public class Turma {
         this.id = id;
     }
 
-    public Turma(String id, Sala sala, Collection<String> alunos) {
+    public Turma(String id, Sala sala, Collection<Aluno> alunos) {
         this();
         this.sala = sala;
         this.id = id;
@@ -74,14 +74,14 @@ public class Turma {
      *
      * @param a novo aluno
      */
-    public void adiciona(String a) {
+    public void adiciona(Aluno a) {
         this.lstalunos.add(a);
     }
 
     /**
      * @return Todos os alunos da turma
      */
-    public Collection<String> getAlunos() {
+    public Collection<Aluno> getAlunos() {
         return new ArrayList<>(this.lstalunos);
     }
 
