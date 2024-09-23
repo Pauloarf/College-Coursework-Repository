@@ -6,6 +6,7 @@
  */
 package uminho.dss.turmas3l.business;
 
+import uminho.dss.turmas3l.data.AlunoDAO;
 import uminho.dss.turmas3l.data.TurmaDAO;
 
 import java.util.*;
@@ -25,7 +26,7 @@ public class TurmasFacade implements ITurmasFacade {
 
     public TurmasFacade() {
         this.turmas = TurmaDAO.getInstance();
-        this.alunos = new HashMap<>();
+        this.alunos = AlunoDAO.getInstance();
     }
 
     /**

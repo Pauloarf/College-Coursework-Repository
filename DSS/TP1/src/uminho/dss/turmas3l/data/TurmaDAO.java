@@ -217,7 +217,6 @@ public class TurmaDAO implements Map<String, Turma> {
         Sala s = t.getSala();
         try (Connection conn = DriverManager.getConnection(DAOconfig.URL, DAOconfig.USERNAME, DAOconfig.PASSWORD);
              Statement stm = conn.createStatement()) {
-
             // Actualizar a Sala
             stm.executeUpdate(
                     "INSERT INTO salas " +
