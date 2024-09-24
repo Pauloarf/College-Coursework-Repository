@@ -1,8 +1,10 @@
 import math
+from audioop import error
 from queue import Queue
 
 import networkx as nx  # biblioteca de tratamento de grafos necessária para desnhar graficamente o grafo
 import matplotlib.pyplot as plt  # idem
+from numpy.ma.core import append
 
 from Node import Node
 
@@ -119,9 +121,54 @@ class Graph:
     #     procura DFS -- TO DO
     ####################################################################################
 
+    def procura_DFS_Rec(self, inicio, fim, path, visited):
+        pesoAtual = 0
+        visited.add(inicio)
+        path.append(inicio)
+
+        if inicio == fim:
+            custo_total = 0
+            for i in range(len(path) - 1):
+                custo_total += self.get_arc_cost(path[i], path[i + 1])
+            return path,custo_total
+
+        for vizinho, peso in self.getNeighbours(inicio):
+            if vizinho not in visited:
+                resultado = self.procura_DFS_Rec(vizinho, fim, path, visited)
+                pesoAtual = pesoAtual + peso
+                if resultado:
+                    return resultado
+
+        path.pop()
+        return None
+
+    def procura_DFS_iterativa(self, inicio, fim):
+        stack = [(inicio, [inicio], 0)]
+        visited = set()
+
+        while stack:
+            nodo, path, custo_total = stack.pop()
+
+            if nodo in visited:
+                continue
+
+            visited.add(nodo)
+
+            if nodo == fim:
+                return path, custo_total
+
+            for vizinho, peso in self.getNeighbours(nodo):
+                if vizinho not in visited:
+                    stack.append((vizinho, path + [vizinho], custo_total + peso))
+
+        return None
+
     #####################################################
     # Procura BFS  -- TO DO
     ######################################################
+
+    def procura_BFS(self, inicio, fim):
+        return 0;
 
     ####################
     # função  getneighbours, devolve vizinhos de um nó

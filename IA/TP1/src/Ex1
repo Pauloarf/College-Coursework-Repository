@@ -1,0 +1,6 @@
+Tipo: Problema de Procura
+Representação: Árvore lista de adjacencia
+Inicial: Nodo s
+Estado Objetivo: Nodo t
+Operadores: Transição entre nodos
+Custo: Custo solução do algoritmo

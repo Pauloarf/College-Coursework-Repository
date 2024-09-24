@@ -43,7 +43,7 @@ def main():
         elif saida == 5:
             inicio = input("Nodo inicial->")
             fim = input("Nodo final->")
-            print(g.procura_DFS(inicio, fim, path=[], visited=set()))
+            print(g.procura_DFS_Rec(inicio, fim, path=[], visited=set()))
             l = input("prima enter para continuar")
         elif saida == 6:
             inicio = input("Nodo inicial->")
