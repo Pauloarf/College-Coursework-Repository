@@ -1,9 +1,11 @@
 import math
 from audioop import error
+from collections import deque
 from queue import Queue
 
 import networkx as nx  # biblioteca de tratamento de grafos necessária para desnhar graficamente o grafo
 import matplotlib.pyplot as plt  # idem
+from networkx.algorithms.shortest_paths.dense import reconstruct_path
 from numpy.ma.core import append
 
 from Node import Node
@@ -80,7 +82,8 @@ class Graph:
             self.m_graph[node2] = []
 
         self.m_graph[node1].append((node2, weight))
-
+        if(self.m_directed == False):
+            self.m_graph[node2].append((node1, weight))
         #############################
 
     # devolver nodos
@@ -160,7 +163,6 @@ class Graph:
             for vizinho, peso in self.getNeighbours(nodo):
                 if vizinho not in visited:
                     stack.append((vizinho, path + [vizinho], custo_total + peso))
-
         return None
 
     #####################################################
@@ -168,7 +170,32 @@ class Graph:
     ######################################################
 
     def procura_BFS(self, inicio, fim):
-        return 0;
+        visited = set()
+        queue = [(inicio)]
+        parent = {inicio: None}
+
+        while queue:
+            vertex = queue.pop(0)
+            if vertex == fim:
+                returnValue = self.reconstroi_caminho(parent, inicio, fim)
+                return returnValue, self.calcula_custo(returnValue)
+
+            if vertex not in visited:
+                visited.add(vertex)
+
+                for vizinho, peso in self.getNeighbours(vertex):
+                    if vizinho not in visited and vizinho not in queue:
+                        queue.append(vizinho)
+                        parent[vizinho] = vertex
+        return None
+
+    def reconstroi_caminho(self, pai, inicio, fim):
+        path = []
+        while fim is not None:
+            path.append(fim)
+            fim = pai[fim]
+        path.reverse()  # Reverse the path to get it from start to target
+        return path
 
     ####################
     # função  getneighbours, devolve vizinhos de um nó
