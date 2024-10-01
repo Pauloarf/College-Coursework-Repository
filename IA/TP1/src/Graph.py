@@ -125,20 +125,15 @@ class Graph:
     ####################################################################################
 
     def procura_DFS_Rec(self, inicio, fim, path, visited):
-        pesoAtual = 0
         visited.add(inicio)
         path.append(inicio)
 
         if inicio == fim:
-            custo_total = 0
-            for i in range(len(path) - 1):
-                custo_total += self.get_arc_cost(path[i], path[i + 1])
-            return path,custo_total
+            return path,self.calcula_custo(path)
 
         for vizinho, peso in self.getNeighbours(inicio):
             if vizinho not in visited:
                 resultado = self.procura_DFS_Rec(vizinho, fim, path, visited)
-                pesoAtual = pesoAtual + peso
                 if resultado:
                     return resultado
 
@@ -146,11 +141,11 @@ class Graph:
         return None
 
     def procura_DFS_iterativa(self, inicio, fim):
-        stack = [(inicio, [inicio], 0)]
+        stack = [(inicio, [inicio])]
         visited = set()
 
         while stack:
-            nodo, path, custo_total = stack.pop()
+            nodo, path = stack.pop()
 
             if nodo in visited:
                 continue
@@ -158,11 +153,11 @@ class Graph:
             visited.add(nodo)
 
             if nodo == fim:
-                return path, custo_total
+                return path, self.calcula_custo(path)
 
             for vizinho, peso in self.getNeighbours(nodo):
                 if vizinho not in visited:
-                    stack.append((vizinho, path + [vizinho], custo_total + peso))
+                    stack.append((vizinho, path + [vizinho]))
         return None
 
     #####################################################
