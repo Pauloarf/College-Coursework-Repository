@@ -154,22 +154,12 @@ public class TurmaDAO implements Map<String, Turma> {
             try (ResultSet rs = pstm.executeQuery()) {
                 if (rs.next()) {  // A chave existe na tabela
                     String id = rs.getString("Id");  // Podíamos usar a key, mas assim temos a certeza que é o id da BD
+                    String sala = rs.getString("Sala");
                     // Reconstruir a colecção de alunos da turma
                     Collection<Aluno> alunos = getAlunosTurma(key.toString(), pstm);
 
                     // Reconstruir a Sala
-                    Sala s = null;
-                    String sql = "SELECT * FROM salas WHERE Num='"+rs.getString("Sala")+"'";
-                    try (ResultSet rsa = pstm.executeQuery(sql)) {  // Nota: abrir um novo ResultSet no mesmo Statement fecha o ResultSet anterior
-                        if (rsa.next()) {  // Encontrou a sala
-                            s = new Sala(rs.getString("Sala"),
-                                    rsa.getString("Edificio"),
-                                    rsa.getInt("Capacidade"));
-                        } else {
-                            // BD inconsistente!! Sala não existe - tratar com excepções.
-                        } // catch é feito no try inicial - este try serve para fechar o ResultSet automaticamente
-
-                    }
+                    Sala s = SalaDAO.getInstance().get(sala);
 
                     // Reconstruir a turma cokm os dados obtidos da BD
                     t = new Turma(id, s, alunos);
@@ -219,14 +209,7 @@ public class TurmaDAO implements Map<String, Turma> {
         try (Connection conn = DriverManager.getConnection(DAOconfig.URL, DAOconfig.USERNAME, DAOconfig.PASSWORD);
              Statement stm = conn.createStatement()) {
             // Actualizar a Sala
-            stm.executeUpdate(
-                    "INSERT INTO salas " +
-                                "VALUES ('"+ s.getNumero()+ "', '"+
-                                            s.getEdificio()+"', "+
-                                            s.getCapacidade()+") " +
-                                "ON DUPLICATE KEY UPDATE Edificio=Values(Edificio), " +
-                                                        "Capacidade=Values(Capacidade)");
-
+            SalaDAO.getInstance().put(s.getNumero(), s);
             // Actualizar a turma
             stm.executeUpdate(
                     "INSERT INTO turmas VALUES ('"+t.getId()+"', '"+s.getNumero()+"') " +

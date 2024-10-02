@@ -1,0 +1,8 @@
+
+
+Duvidas--- O Construtor tem de verificar a criação das tabelas??
+       --- Precisamos sempre de ter em atenção como funiconam chaves primarias e secundarias em DB certo? para eliminar uma coisa, convem eliminar outra
+                    (Se a criação de tabelas for correta, com eliminações em cascata etc, torna-se mais simples a nivel aplicacionaL)
+
+Respostas:
+Não foi necessário alterar nada na interface ITurmasFacede, tendo só alterado o construtor
