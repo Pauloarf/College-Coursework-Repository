@@ -1,4 +1,5 @@
 # Classe grafo para representaçao de grafos,
+import heapq
 import math
 from queue import Queue
 from xmlrpc.client import MAXINT
@@ -182,7 +183,36 @@ class Graph:
     #    A* - To Do
     ##########################################
     def procura_aStar(self, inicio, fim):
-        
+        fila_prioridade = []
+        # Em vez de uma heap podemos utlizar uma lista procedendo á sua organização para saber o valor mais baixo...
+        heapq.heappush(fila_prioridade, (self.getH(inicio), inicio, [inicio]))
+
+        custos_acumulados = {inicio: 0}
+        visitados = set()
+
+        while fila_prioridade:
+            _, currentNode, path = heapq.heappop(fila_prioridade)
+
+            if currentNode == fim:
+                return path
+
+            visitados.add(currentNode)
+
+            for neighbour, custo in self.getNeighbours(currentNode):
+                if neighbour in visitados:
+                    continue
+
+                custo_novo = custos_acumulados[currentNode] + custo
+
+                if neighbour not in custos_acumulados or custo_novo < custos_acumulados[neighbour]:
+                    custos_acumulados[neighbour] = custo_novo
+
+                    f_n = custo_novo + self.getH(neighbour)
+
+                    heapq.heappush(fila_prioridade, (f_n, neighbour, path + [neighbour]))
+
+        return None
+
         
 
     ###################################3
