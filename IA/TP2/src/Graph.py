@@ -1,6 +1,7 @@
 # Classe grafo para representaçao de grafos,
 import math
 from queue import Queue
+from xmlrpc.client import MAXINT
 
 import networkx as nx  # biblioteca de tratamento de grafos necessária para desnhar graficamente o grafo
 import matplotlib.pyplot as plt  # idem
@@ -180,7 +181,8 @@ class Graph:
     ##########################################
     #    A* - To Do
     ##########################################
-
+    def procura_aStar(self, inicio, fim):
+        
         
 
     ###################################3
@@ -197,14 +199,30 @@ class Graph:
     ##########################################
     #   Greedy - To Do
     ##########################################
-
+    #No caso de explorarmos nodos os quais não tem aresta para a nossa solução, o greedy fica bloqueado?
     def greedy(self, inicio, fim):
-        path = [];
-        for neighbour in self.getNeighbours(inicio):
-            candidateNode = neighbour
-            if neighbour not in path and neighbour != inicio:
+        visited = set()
+        path = [inicio]
+        currentNodeName = inicio
 
+        while currentNodeName != fim:
+            value = float('inf') # Inicializa o valor com infinito, parece-me funcionar tb com MAXINT
+            nextNode = None
 
+            for neighbour,_ in self.getNeighbours(currentNodeName):
+                if self.getH(neighbour) < value and neighbour not in visited:
+                    value = self.getH(neighbour)
+                    nextNode = neighbour
+
+            if nextNode is None:  # Se não encontrou próximo nó válido, significa que estamos bloqueados
+                print("Não há caminho disponível")
+                return None
+
+            visited.add(currentNodeName)
+            currentNodeName = nextNode
+            path.append(currentNodeName)
+
+        return path
     
 
 
