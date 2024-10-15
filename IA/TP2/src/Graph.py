@@ -252,7 +252,7 @@ class Graph:
             currentNodeName = nextNode
             path.append(currentNodeName)
 
-        return path
+        return path, self.calcula_custo(path)
     
 
 
