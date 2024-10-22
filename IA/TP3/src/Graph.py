@@ -237,7 +237,6 @@ class Grafo:
         open_list = {start}
         closed_list = set([])
 
-        
         g = {} 
 
         g[start] = 0
