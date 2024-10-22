@@ -67,4 +67,10 @@ Sabemos que 0<=x<=4 e 0<=y<=3.
 
 ### Resolva este problema utilizando a estratégia “primeiro em profundidade”
 
+- De (0,0) para (2,0) obtemos que:
+- (['(0,0)', '(4,0)', '(4,3)', '(0,3)', '(3,0)', '(3,3)', '(4,2)', '(0,2)', '(2,0)'], 8)
+
 ### Resolva este problema utilizando a estratégia “primeiro em largura”
+
+- De (0,0) para (2,0) obtemos que:
+- (['(0,0)', '(0,3)', '(3,0)', '(3,3)', '(4,2)', '(0,2)', '(2,0)'], 6)
