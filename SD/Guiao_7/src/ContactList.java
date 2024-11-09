@@ -23,4 +23,14 @@ class ContactList extends ArrayList<Contact> {
         return list;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Contact c : this) {
+            sb.append(c.toString());
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
 }
