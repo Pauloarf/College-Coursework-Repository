@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,6 +23,10 @@ public class Client {
         Socket socket = new Socket("localhost", 12345);
 
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+        DataInputStream input = new DataInputStream(socket.getInputStream());
+        ContactList ct = ContactList.deserialize(input);
+        System.out.println(ct.toString());
 
         String userInput;
         while ((userInput = in.readLine()) != null) {

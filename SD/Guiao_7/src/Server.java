@@ -50,15 +50,24 @@ class ServerWorker implements Runnable {
     // @TODO
     @Override
     public void run() {
-        try (DataInputStream in = new DataInputStream(socket.getInputStream())) {
+        try (DataInputStream in = new DataInputStream(socket.getInputStream());
+        DataOutputStream out = new DataOutputStream(socket.getOutputStream())) {
+            ContactList contL = this.manager.getContacts();
+            //Preciso de dar Manager.lock aqui???
+            /**
+             * corrida quando começamos a serializar um objecto e ele é alteraddo a meio?
+             */
+            contL.serialize(out);
+            out.flush();
             while (true) {
                 try {
                     Contact newContact = Contact.deserialize(in);
                     this.manager.update(newContact);
 
-                    System.out.println(this.manager.getContacts().toString());
                 } catch (EOFException e) {
                     System.out.println("O Cliente enviou EOF!");
+                    System.out.println("O Resultado das alterações é:");
+                    System.out.println(this.manager.getContacts().toString());
                     break;
                 } catch (IOException e) {
                     e.printStackTrace();
