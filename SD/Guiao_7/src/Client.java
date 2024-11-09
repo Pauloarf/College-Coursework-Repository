@@ -32,6 +32,7 @@ public class Client {
             Contact newContact = parseLine(userInput);
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
             newContact.serialize(out);
+            out.flush();
         }
 
         socket.close();

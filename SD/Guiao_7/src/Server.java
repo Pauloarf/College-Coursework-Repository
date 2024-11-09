@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -53,16 +50,26 @@ class ServerWorker implements Runnable {
     // @TODO
     @Override
     public void run() {
-        try {
-            DataInputStream input = new DataInputStream(this.socket.getInputStream());
-            Contact newContact = Contact.deserialize(input);
+        try (DataInputStream in = new DataInputStream(socket.getInputStream())) {
+            while (true) {
+                try {
+                    Contact newContact = Contact.deserialize(in);
+                    this.manager.update(newContact);
 
-            this.manager.update(newContact);
-
-            System.out.println(this.manager.getContacts().toString());
-
+                    System.out.println(this.manager.getContacts().toString());
+                } catch (EOFException e) {
+                    System.out.println("O Cliente enviou EOF!");
+                    break;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    break;
+                }
+            }
+            socket.shutdownOutput();
+            socket.shutdownInput();
+            System.out.println("Conexão terminada!");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
