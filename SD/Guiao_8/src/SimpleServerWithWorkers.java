@@ -1,7 +1,7 @@
+import connections.FramedConnection;
+
 import java.net.ServerSocket;
 import java.net.Socket;
-
-import static TaggedConnection.Frame;
 
 public class SimpleServerWithWorkers {
     final static int WORKERS_PER_CONNECTION = 3;

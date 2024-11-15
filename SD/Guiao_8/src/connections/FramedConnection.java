@@ -1,3 +1,5 @@
+package connections;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.concurrent.locks.Lock;

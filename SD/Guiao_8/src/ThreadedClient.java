@@ -1,3 +1,5 @@
+import connections.TaggedConnection;
+
 import java.net.Socket;
 
 public class ThreadedClient {

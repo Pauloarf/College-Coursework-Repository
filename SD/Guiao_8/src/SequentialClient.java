@@ -1,5 +1,6 @@
+import connections.TaggedConnection;
 import java.net.Socket;
-import static TaggedConnection.Frame;
+
 
 public class SequentialClient {
     public static void main(String[] args) throws Exception {
@@ -13,7 +14,7 @@ public class SequentialClient {
         c.send(0, ":-p".getBytes());
 
         // get reply
-        Frame f = c.receive();
+        TaggedConnection.Frame f = c.receive();
         assert f.tag == 1;
         System.out.println("Reply: " + new String(f.data));
 

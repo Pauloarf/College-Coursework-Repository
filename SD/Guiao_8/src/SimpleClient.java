@@ -1,3 +1,5 @@
+import connections.FramedConnection;
+
 import java.net.Socket;
 
 public class SimpleClient {
