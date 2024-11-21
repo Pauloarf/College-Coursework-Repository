@@ -1,4 +1,4 @@
-package connections;
+package connectors;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -40,7 +40,6 @@ public class TaggedConnection implements AutoCloseable {
             out.writeInt(data.length + 4);
             out.writeInt(tag);
             out.write(data);
-            out.flush();
         } finally {
             ls.unlock();
         }

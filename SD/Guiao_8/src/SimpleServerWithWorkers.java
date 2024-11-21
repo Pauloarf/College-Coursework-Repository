@@ -1,4 +1,4 @@
-import connections.FramedConnection;
+import connectors.FramedConnection;
 
 import java.net.ServerSocket;
 import java.net.Socket;

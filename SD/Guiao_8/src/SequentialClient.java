@@ -1,6 +1,7 @@
-import connections.TaggedConnection;
-import java.net.Socket;
+import connectors.TaggedConnection;
 
+import java.net.Socket;
+import static connectors.TaggedConnection.Frame;
 
 public class SequentialClient {
     public static void main(String[] args) throws Exception {
@@ -14,7 +15,7 @@ public class SequentialClient {
         c.send(0, ":-p".getBytes());
 
         // get reply
-        TaggedConnection.Frame f = c.receive();
+        Frame f = c.receive();
         assert f.tag == 1;
         System.out.println("Reply: " + new String(f.data));
 

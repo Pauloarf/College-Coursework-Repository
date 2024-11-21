@@ -1,5 +1,7 @@
-import connections.TaggedConnection;
+import connectors.TaggedConnection;
+
 import java.net.Socket;
+import static connectors.TaggedConnection.Frame;
 
 public class WrongThreadedClient {
     public static void main(String[] args) throws Exception {
@@ -14,7 +16,7 @@ public class WrongThreadedClient {
                     c.send(1, "Ola".getBytes());
                     Thread.sleep(100);
                     // get reply
-                    TaggedConnection.Frame f = c.receive();
+                    Frame f = c.receive();
                     assert f.tag == 1;  // can fail
                     System.out.println("(1) Reply: " + new String(f.data));
                 }  catch (Exception ignored) {}
@@ -26,7 +28,7 @@ public class WrongThreadedClient {
                     c.send(3, "Hello".getBytes());
                     Thread.sleep(100);
                     // get reply
-                    TaggedConnection.Frame f = c.receive();
+                    Frame f = c.receive();
                     assert f.tag == 3;  // can fail
                     System.out.println("(2) Reply: " + new String(f.data));
                 }  catch (Exception ignored) {}
@@ -44,7 +46,7 @@ public class WrongThreadedClient {
                     // Get stream of messages until empty msg
                     c.send(2, "ABCDE".getBytes());
                     for (;;) {
-                        TaggedConnection.Frame f = c.receive();
+                        Frame f = c.receive();
                         assert f.tag == 2;  // can fail
                         if (f.data.length == 0)
                             break;
@@ -58,7 +60,7 @@ public class WrongThreadedClient {
                     // Get stream of messages until empty msg
                     c.send(4, "123".getBytes());
                     for (;;) {
-                        TaggedConnection.Frame f = c.receive();
+                        Frame f = c.receive();
                         assert f.tag == 4;  // can fail
                         if (f.data.length == 0)
                             break;

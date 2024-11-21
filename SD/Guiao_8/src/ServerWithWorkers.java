@@ -1,6 +1,9 @@
-import connections.TaggedConnection;
+import connectors.TaggedConnection;
+
 import java.net.ServerSocket;
 import java.net.Socket;
+
+import static connectors.TaggedConnection.Frame;
 
 public class ServerWithWorkers {
     final static int WORKERS_PER_CONNECTION = 3;
@@ -15,7 +18,7 @@ public class ServerWithWorkers {
             Runnable worker = () -> {
                 try (c) {
                     for (;;) {
-                        TaggedConnection.Frame frame = c.receive();
+                        Frame frame = c.receive();
                         int tag = frame.tag;
                         String data = new String(frame.data);
                         if (frame.tag == 0)
