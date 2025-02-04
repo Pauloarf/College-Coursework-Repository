@@ -1,0 +1,1 @@
+Esta primeira aula será uma introdução a OpenGL e GLUT.
