@@ -135,20 +135,20 @@ dict_carros = {}
 
 json_obj = open_json('dataset_reparacoes.json')
 for reparacao in json_obj['reparacoes']:
-    for viatura in reparacao['viatura']:
-        marca = reparacao['viatura']['marca']
-        modelo = reparacao['viatura']['modelo']
+    marca = reparacao['viatura']['marca']
+    modelo = reparacao['viatura']['modelo']
 
-        if(marca in dict_carros.keys()):
-            # Verificar se o modelo existe
-            if(modelo in dict_carros[marca]):
-                # Aumentar o numero de carros
-                dict_carros[marca][modelo] += 1
-            else:
-                dict_carros[marca][modelo] = 1
+    if(marca in dict_carros):
+        # Verificar se o modelo existe
+        if(modelo in dict_carros[marca]):
+            print(f'{marca} : {modelo}')
+            # Aumentar o numero de carros
+            dict_carros[marca][modelo] += 1
         else:
-            dict_carros[marca] = {}
             dict_carros[marca][modelo] = 1
+    else:
+        dict_carros[marca] = {}
+        dict_carros[marca][modelo] = 1
 
 for marca in sorted(dict_carros.keys()):
     total = 0
