@@ -45,15 +45,15 @@ void renderScene(void)
 	rotationValue = rotationValue + 0.01;
 
 	gluLookAt(0.0f, 0.0f, 5.0f,
-		0.0f, 0.0f, -1.0f,
+		cos(rotationValue), sin(rotationValue), -1.0f,
 		0.0f, 1.0f, 0.0f);
 		
 	// put drawing instructions here
 	if (!grow) {
-		value = value + 0.1;
+		value = value + 0.01;
 	}
 	else {
-		value = value - 0.1;
+		value = value - 0.01;
 	}
 	if (value > (M_PI / 2)) {
 		grow = true;
@@ -61,7 +61,7 @@ void renderScene(void)
 	if (grow && value <= 0) {
 		grow = false;
 	}
-	glutWireTeapot(cos(value));
+	glutWireTeapot(1);
 	
 	// End of frame
 	glutSwapBuffers();

@@ -29,9 +29,10 @@ http.createServer((req, res) => {
                 axios.get('http://localhost:3000/cidades/' + id).then((resp) => {
                     var cidade = resp.data;
                     res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'});
-                    res.write(`<h1>${cidade.nome}</>`);
-                    res.write(`<pre>${JSON.stringify(cidade)}</pre>`);
-                    res.write('</ul>');
+                    res.write(`<h1>${cidade.nome}</h1>`);
+                    res.write(`<h3>${cidade.distrito}</h3>`);
+                    res.write(`<p> <b>População: </b> ${cidade.população}</p>`);
+                    res.write(`<p> <b>Descrição: </b> ${cidade.descrição}</p>`);
                     res.write("<h6><a href='/cidades'>Voltar</a></h6>");
                     res.end();    
                 }).catch((error) => {
