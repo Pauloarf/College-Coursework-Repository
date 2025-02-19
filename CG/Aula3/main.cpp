@@ -14,9 +14,9 @@ GLfloat transz = 0;
 
 GLfloat rotateXZ = 0.0f;
 // Camara Settings
-GLfloat camaraX = 15.0f;
-GLfloat camaraY = 15.0f;
-GLfloat camaraZ = 15.0f;
+GLfloat camaraX = 20.0f;
+GLfloat camaraY = -10.0f;
+GLfloat camaraZ = 20.0f;
 
 GLfloat camaraAtx = 0.0f;
 GLfloat camaraAty = 0.0f;
@@ -111,46 +111,46 @@ void coneTriangleGenerator(int radius, int height, int slices, int stacks) {
         float x2 = radius * cos((i + 1) * alpha);
         float z2 = radius * sin((i + 1) * alpha);
 
+        // Definir a cor dos triangulos
+        if (i % 2 == 0) {
+            glBegin(GL_TRIANGLES);
+            glColor3f(0.0f, 0.0f, 0.7f);
+            glEnd();
+        } else {
+            glBegin(GL_TRIANGLES);
+            glColor3f(0.7f, 0.0f, 0.0f);
+            glEnd();
+        }
+
         glBegin(GL_TRIANGLES);
         glVertex3f(0.0f, 0.0f, 0.0f);
         glVertex3f(x1, 0.0f, z1);
         glVertex3f(x2, 0.0f, z2);
         glEnd();
-    }
 
-    for (int i = 0; i < slices; i++) {
         for (int j = 0; j < stacks; j++) {
             float y1 = j * stackHeight;
             float y2 = (j + 1) * stackHeight;
 
-            float x1 = radius * cos(i * alpha) * (1 - (float)(j + 1) / stacks);
-            float z1 = radius * sin(i * alpha) * (1 - (float)(j + 1) / stacks);
-            float x2 = radius * cos((i + 1) * alpha) * (1 - (float)(j + 1) / stacks);
-            float z2 = radius * sin((i + 1) * alpha) * (1 - (float)(j + 1) / stacks);
+            x1 = radius * cos(i * alpha) * (1 - (float)(j + 1) / stacks);
+            z1 = radius * sin(i * alpha) * (1 - (float)(j + 1) / stacks);
+            x2 = radius * cos((i + 1) * alpha) * (1 - (float)(j + 1) / stacks);
+            z2 = radius * sin((i + 1) * alpha) * (1 - (float)(j + 1) / stacks);
 
             float x3 = radius * cos(i * alpha) * (1 - (float)j / stacks);
             float z3 = radius * sin(i * alpha) * (1 - (float)j / stacks);
             float x4 = radius * cos((i + 1) * alpha) * (1 - (float)j / stacks);
             float z4 = radius * sin((i + 1) * alpha) * (1 - (float)j / stacks);
 
-            // Definir a cor dos triangulos
-            if (i % 2 == 0) {
-                glBegin(GL_TRIANGLES);
-                glColor3f(0.0f, 0.0f, 0.7f);
-                glEnd();
-            } else {
-                glBegin(GL_TRIANGLES);
-                glColor3f(0.7f, 0.0f, 0.0f);
-                glEnd();
-            }
-
             glBegin(GL_TRIANGLES);
+            glColor3f(0.0f, 0.0f, 0.8f);
             glVertex3f(x2, y2, z2);
             glVertex3f(x3, y1, z3);
             glVertex3f(x1, y2, z1);
             glEnd();
 
             glBegin(GL_TRIANGLES);
+            glColor3f(0.0f, 0.0f, 0.6f);
             glVertex3f(x2, y2, z2);
             glVertex3f(x4, y1, z4);
             glVertex3f(x3, y1, z3);
@@ -160,6 +160,15 @@ void coneTriangleGenerator(int radius, int height, int slices, int stacks) {
 }
 
 void renderScene(void) {
+    // clear buffers
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // set the camera
+    glLoadIdentity();
+    gluLookAt(camaraX, camaraY, camaraZ,
+              camaraAtx, camaraAty, camaraAtz,
+              0.0f, camaraUp, 0.0f);
+
     // put axis drawing in here
     glBegin(GL_LINES);
     // x in red
@@ -176,24 +185,16 @@ void renderScene(void) {
     glVertex3f(0.0f, 0.0f, 100.0f);
     glEnd();
 
-    // clear buffers
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    // set the camera
-
-    glLoadIdentity();
-    gluLookAt(camaraX, camaraY, camaraZ,
-              camaraAtx, camaraAty, camaraAtz,
-              0.0f, camaraUp, 0.0f);
-
     // drawCylinder(1, 2, 10);
-    coneTriangleGenerator(6, 8, 8, 4);
+    coneTriangleGenerator(6, 8, 256, 4);
 
     // End of frame
     glutSwapBuffers();
 }
 
 void processKeys(unsigned char key, int x, int y) {
+    GLfloat dirX = camaraX - camaraAtx;
+    GLfloat dirZ = camaraZ - camaraAtz;
     switch (key) {
         case 'e':
             rotate += 0.5;
@@ -213,15 +214,15 @@ void processKeys(unsigned char key, int x, int y) {
         case 's':
             transy += 0.1f;
             break;
-        case 'a':
+        case 'a':  // Rotation left
             rotateXZ -= 0.01f;
-            camaraX = camaraX * cos(rotateXZ);
-            camaraZ = camaraZ * sin(rotateXZ);
+            camaraX = camaraAtx + dirX * cos(rotateXZ) - dirZ * sin(rotateXZ);
+            camaraZ = camaraAtz + dirX * sin(rotateXZ) + dirZ * cos(rotateXZ);
             break;
         case 'd':
             rotateXZ += 0.01f;
-            camaraX = (camaraX * cos(rotateXZ));
-            camaraZ = (camaraZ * sin(rotateXZ));
+            camaraX = camaraAtx + dirX * cos(rotateXZ) - dirZ * sin(rotateXZ);
+            camaraZ = camaraAtz + dirX * sin(rotateXZ) + dirZ * cos(rotateXZ);
             break;
         case 'h':
             glPolygonMode(GL_FRONT, GL_FILL);
