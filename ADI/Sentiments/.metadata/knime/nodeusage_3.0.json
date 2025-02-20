@@ -1,0 +1,240 @@
+{
+    "version": "5.4.2.v202502121104",
+    "created": "2025-02-20 09:24",
+    "nodestats": {
+        "nodes": [
+            {
+                "id": "org.knime.base.node.io.filehandling.csv.reader.CSVTableReaderNodeFactory",
+                "nodename": "CSV Reader",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 351,
+                "nrcreated": 2,
+                "nrsettingsChanged": 1,
+                "successor": "org.knime.base.node.preproc.autobinner3.AutoBinnerLearnNodeFactory",
+                "successornodename": "Auto-Binner"
+            },
+            {
+                "id": "org.knime.base.views.node.statistics.StatisticsNodeFactory",
+                "nodename": "Statistics View",
+                "nrexecs": 4,
+                "nrfails": 0,
+                "exectime": 3282,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.stats.correlation.rank2.RankCorrelationCompute2NodeFactory",
+                "nodename": "Rank Correlation",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 2364,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "org.knime.base.views.node.tableview.TableViewNodeFactory",
+                "successornodename": "Table View"
+            },
+            {
+                "id": "org.knime.explorer.nodes.writer.ExplorerWriterNodeFactory",
+                "nodename": "Explorer Writer",
+                "nrexecs": 0,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.views.node.piechart.PieChartNodeFactory",
+                "nodename": "Pie Chart",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 61,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.js.base.node.viz.pagedTable.PagedTableViewNodeFactory",
+                "nodename": "Table View (JavaScript)",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 1052,
+                "nrcreated": 2,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.views.node.tableview.TableViewNodeFactory",
+                "nodename": "Table View",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 3,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.filter.row3.RowFilterNodeFactory",
+                "nodename": "Row Filter",
+                "nrexecs": 0,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 3,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.filter.definition.apply.FilterApplyNodeFactory",
+                "nodename": "Filter Apply",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 45,
+                "nrcreated": 2,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory",
+                "nodename": "Column Filter",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 2,
+                "nrcreated": 2,
+                "nrsettingsChanged": 3,
+                "successor": "org.knime.timeseries.node.stringtotimestamp.String2DateNodeFactory",
+                "successornodename": "String to Date/Time (legacy)"
+            },
+            {
+                "id": "org.knime.base.node.preproc.pmml.missingval.compute.MissingValueHandlerNodeFactory",
+                "nodename": "Missing Value",
+                "nrexecs": 0,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.filter.missingvaluecolfilter.MissingValueColumnFilterNodeFactory",
+                "nodename": "Missing Value Column Filter",
+                "nrexecs": 0,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.duplicates.DuplicateRowFilterNodeFactory",
+                "nodename": "Duplicate Row Filter",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 290,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "org.knime.base.views.node.statistics.StatisticsNodeFactory",
+                "successornodename": "Statistics View"
+            },
+            {
+                "id": "org.knime.base.node.preproc.autobinner3.AutoBinnerLearnNodeFactory",
+                "nodename": "Auto-Binner",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 134,
+                "nrcreated": 1,
+                "nrsettingsChanged": 1,
+                "successor": "org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory",
+                "successornodename": "Column Filter"
+            },
+            {
+                "id": "org.knime.base.node.flowvariable.filter.VariableFilterNodeFactory",
+                "nodename": "Variable Filter",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 2,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.js.base.node.configuration.input.date.DateDialogNodeFactory",
+                "nodename": "Date&Time Configuration",
+                "nrexecs": 0,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.time.node.extract.datetime.ExtractDateTimeFieldsNodeFactory2",
+                "nodename": "Date&Time Part Extractor",
+                "nrexecs": 0,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 1,
+                "nrsettingsChanged": 1,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.timeseries.node.stringtotimestamp.String2DateNodeFactory",
+                "nodename": "String to Date/Time (legacy)",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 289,
+                "nrcreated": 1,
+                "nrsettingsChanged": 1,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.stringmanipulation.StringManipulationNodeFactory",
+                "nodename": "String Manipulation",
+                "nrexecs": 0,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            }
+        ],
+        "metaNodes": {
+        },
+        "wrappedNodes": {
+        },
+        "createdVia": {
+            "WEB_UI": 26
+        }
+    },
+    "uptime": 1599253,
+    "workflowsOpened": 2,
+    "remoteWorkflowsOpened": 0,
+    "workflowsCreated": 1,
+    "remoteWorkflowsCreated": 0,
+    "columnarStorageWorkflowsOpened": 0,
+    "workflowsImported": 0,
+    "workflowsExported": 0,
+    "webUIPerspectiveSwitches": 0,
+    "javaUIPerspectiveSwitches": 0,
+    "lastUsedPerspective": "none",
+    "launches": 3,
+    "lastApplicationID": "org.knime.product.KNIME_APPLICATION",
+    "timeSinceLastStart": 1323719,
+    "crashes": 0,
+    "properlyShutDown": true
+}
