@@ -1,5 +1,5 @@
 import { createServer } from 'http'
-import { myDateTime } from './aux.js'
+import { myDateTime } from './auxiliar.js'
 import { readFile } from 'fs'
 
 var myServer = createServer(function (req, res) {

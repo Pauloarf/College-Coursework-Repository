@@ -1,5 +1,5 @@
 import { createServer } from 'http'
-import { myDateTime, myName, turma } from './aux.js'
+import { myDateTime, myName, turma } from './auxiliar.js'
 
 var myServer = createServer(function (req, res) {
     console.log(req.method + " " + req.url + " " + myDateTime())

@@ -1,5 +1,5 @@
 import { createServer } from 'http'
-import { myName, myDateTime, turma } from './aux.js'
+import { myName, myDateTime, turma } from './auxiliar.js'
 
 var myServer = createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
