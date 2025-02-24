@@ -1,5 +1,5 @@
 const http = require('http');
-const meta = require('./aux');
+const meta = require('./auxiliar');
 
 http.createServer((req, res) => {
     console.log("METHOD: " + req.method);
