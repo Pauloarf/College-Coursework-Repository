@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>Form Example</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <form method="post" action="/">
+        <fieldset>
+            <legend>Name:</legend>
+            <label for="fname">First name:</label>
+            <input type="text" name="fname" maxlength="30" id="fname"/>
+            <br/>
+            <label for="lname">Last name:</label>
+            <input type="text" name="lname" maxlength="30" id="lname"/>
+        </fieldset>
+        <fieldset>
+            <legend>Gender:</legend>
+            <input type="radio" name="gender" value="male"/> Male
+            <input type="radio" name="gender" value="female"/> Female
+        </fieldset>
+        <fieldset>
+            <legend>Select sports:</legend>
+            <input type="checkbox" name=”sport" value=Fencing">Fencing
+            <input type="checkbox" name=”sport" value=Swimming">Swimming
+            <input type="checkbox" name=”sport" value=MTB">MTB
+            <input type="checkbox" name=”sport" value=”Squash">Squash
+        </fieldset>
+        <fieldset>
+            <legend>Education:</legend>
+            <select name=education"> 
+                <option>Select one</option> 
+                <option>Basic</option> 
+                <option>12º grade</option> 
+                <option>Bsc</option> 
+                <option>Msc</option> 
+                <option>Phd</option> 
+              </select>
+        </fieldset>
+        <fieldset>
+            <legend>Remarks:</legend>
+            <input type="text" name="remarks" maxlength="40"/>
+        </fieldset>
+        <input type="submit" value="Enviar"/>
+        <input type="reset" value="Clear"/>
+      </form>
+</body>
+
+ 

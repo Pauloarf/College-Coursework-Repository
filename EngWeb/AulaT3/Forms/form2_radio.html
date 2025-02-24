@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Form Example</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <form method="post" action="/">
+        <fieldset>
+            <legend>Name:</legend>
+            <label for="fname">First name:</label>
+            <input type="text" name="fname" maxlength="30" id="fname"/>
+            <br/>
+            <label for="lname">Last name:</label>
+            <input type="text" name="lname" maxlength="30" id="lname"/>
+        </fieldset>
+        <fieldset>
+            <legend>Gender:</legend>
+            <input type="radio" name="gender" value="male"/> Male
+            <input type="radio" name="gender" value="female"/> Female
+        </fieldset>
+        <fieldset>
+            <legend>Remarks:</legend>
+            <input type="text" name="remarks" maxlength="40"/>
+        </fieldset>
+        <input type="submit" value="Send"/>
+      </form>
+</body>
+
+ 

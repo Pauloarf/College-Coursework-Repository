@@ -1,0 +1,17 @@
+{
+  "name": "aulat3",
+  "version": "1.0.0",
+  "description": "Work done in class",
+  "main": "treinos_server_skeleton.js",
+  "scripts": {
+    "devStart": "nodemon src/server.js"
+  },
+  "author": "Paulo Ferreira",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
+}
