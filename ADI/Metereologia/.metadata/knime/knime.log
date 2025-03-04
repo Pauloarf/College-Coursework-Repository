@@ -1,0 +1,101 @@
+2025-02-27 10:17:42,213 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: /home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/Metereologia/dataset_meteorologia (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-02-27 10:17:42,242 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: /home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/Metereologia/dataset_meteorologia (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-02-27 10:17:42,244 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Error trying to fetch workflow group content 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-02-27 10:17:42,245 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Error captured hook ::  
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-02-27 10:20:29,683 : WARN  : comm-pool-thread-1 :  : Node : CSV Reader : 3:1 : Please specify a file
+2025-02-27 10:29:29,680 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:4 valid [3:2, 3:3, 3:5] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-02-27 10:29:29,681 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-02-27 10:29:29,681 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:4 valid [3:2, 3:3, 3:5] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-02-27 10:29:52,789 : ERROR : main :  : CEFNodeView :  :  : ResizeObserver loop completed with undelivered notifications. (source: http://org.knime.js.pagebuilder/apWrapper.html; line: 0)
+2025-02-27 10:35:10,435 : WARN  : comm-pool-thread-3 :  : Node : String to Date&Time : 3:4 : Node must be configured.
+2025-02-27 10:35:14,084 : WARN  : comm-pool-thread-3 :  : Node : String to Date&Time : 3:5 : Node must be configured.
+2025-02-27 10:36:03,454 : ERROR : KNIME-Worker-3-String to Date&Time 3:4 :  : Node : String to Date&Time : 3:4 : Could not parse date in cell [Row0, column "weather_description", row number 1]: Pattern "yyyy-MM-dd HH:mm:ss" does not match "fog".
+ RowID  |   ..   | weather_main | weather_des...
+--------+--------+--------------+----------------
+ Row0   | ..     | Fog          | fog           
+                                  ^^^
+Could not parse date in cell [Row0, column "weather_description", row number 1]: Pattern "yyyy-MM-dd HH:mm:ss" does not match "fog".
+org.knime.core.node.KNIMEException$KNIMERuntimeException: Could not parse date in cell [Row0, column "weather_description", row number 1]: Pattern "yyyy-MM-dd HH:mm:ss" does not match "fog".
+	at org.knime.core.node.KNIMEException.toUnchecked(KNIMEException.java:145)
+	at org.knime.time.node.convert.stringtodatetime.StringToDateTimeNodeModel$StringToTimeCellFactory.getCell(StringToDateTimeNodeModel.java:540)
+	at org.knime.core.data.container.SingleCellFactory.getCells(SingleCellFactory.java:105)
+	at org.knime.core.data.container.RearrangeColumnsTable.calcNewCellsForRow(RearrangeColumnsTable.java:565)
+	at org.knime.core.data.container.RearrangeColumnsTable.calcNewColsSynchronously(RearrangeColumnsTable.java:484)
+	at org.knime.core.data.container.RearrangeColumnsTable.create(RearrangeColumnsTable.java:412)
+	at org.knime.core.data.container.BufferedTableBackend.rearrange(BufferedTableBackend.java:212)
+	at org.knime.core.node.ExecutionContext.createColumnRearrangeTable(ExecutionContext.java:468)
+	at org.knime.time.node.convert.stringtodatetime.StringToDateTimeNodeModel.execute(StringToDateTimeNodeModel.java:335)
+	at org.knime.core.node.NodeModel.execute(NodeModel.java:820)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: org.knime.core.node.KNIMEException: Could not parse date in cell [Row0, column "weather_description", row number 1]: Pattern "yyyy-MM-dd HH:mm:ss" does not match "fog".
+	at org.knime.core.node.KNIMEException.of(KNIMEException.java:136)
+	... 22 more
+Caused by: java.time.format.DateTimeParseException: Text 'fog' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(Unknown Source)
+	at java.base/java.time.format.DateTimeFormatter.parse(Unknown Source)
+	at java.base/java.time.LocalDateTime.parse(Unknown Source)
+	at org.knime.time.node.convert.stringtodatetime.StringToDateTimeNodeModel$StringToTimeCellFactory.getCell(StringToDateTimeNodeModel.java:514)
+	... 21 more
+2025-02-27 10:40:02,778 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:7 valid [3:2, 3:3, 3:4, 3:5, 3:6, 3:8, 3:9] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-02-27 10:40:02,784 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-02-27 10:40:02,786 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:7 valid [3:2, 3:3, 3:4, 3:5, 3:6, 3:8, 3:9] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)

@@ -1,0 +1,162 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    --light-background: #d7d4d4;
+    --dark-background: #33333366;
+    --small-margin: 5px;
+}
+
+/* Estrutura da Página */
+.grid-container {
+    display: grid;
+    grid-template-columns: 10px 3fr 1fr 10px; /* 10px na primeira e última colunas (para ter margens), */
+    grid-template-rows: auto;    /* restanto espaço dividido 3/4 - 1/4, linhas com tamanho do conteúdo */
+    grid-template-areas:
+        ". page-header  page-header ."    /* . representa uma célula da grid que fica vazia */
+        ". nav-bar      nav-bar     ."
+        ". main-content side-panel  ." 
+        ". page-footer  page-footer .";
+}
+
+main {
+    margin-right: var(--small-margin);
+}
+
+header {
+    grid-area: page-header;
+    padding: 10px;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding-left: 0;
+}
+
+nav {
+    grid-area: nav-bar;
+    background-color: var(--light-background);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+    /* exemplo de aninhamento de seletores */
+    & > p {
+        margin: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+#menu > li {
+    list-style-type: none;
+    display: inline;
+}
+
+main {
+    grid-area: main-content;
+    min-width: 250px;
+
+    & > table {
+        width: 100%;
+        border-collapse: collapse;
+
+        tr {
+            border: 1px solid var(--dark-background);
+        }
+
+        th {
+            background-color: var(--dark-background);
+        }
+
+        th, td {
+            text-align: left;
+            padding-left: 5px;
+        }
+    }
+}
+
+aside {
+    grid-area: side-panel;
+    background-color: var(--light-background);
+    padding: 10px;
+    border-radius: 5%;
+
+    p {
+        margin-top: 0;
+    }
+
+    select {
+        width: 100%;
+        margin-bottom: var(--small-margin);
+    }
+}
+
+/* Estilo do footer */
+footer {
+    grid-area: page-footer;
+    background-color: var(--light-background);
+    padding: 10px;
+    margin-top: var(--small-margin);
+    text-align: center;
+    font-size: .75em;
+    padding: 3px;
+
+    p {
+        margin: 0;
+    }
+}
+
+
+/* Media queries overrides */
+@media (width <= 900px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;   /* uma só coluna que usa todo o espaço disponível */
+        grid-template-rows: auto;
+        grid-template-areas:
+        "page-header"
+        "nav-bar"
+        "side-panel"
+        "main-content"
+        "page-footer";
+    }
+    main {
+        margin-right: 0px;
+    }
+    aside {
+        margin-bottom: var(--small-margin);
+    }
+}
+
+@media (width <= 600px) {  /* Side panel deparece para écrans mais pequenos */
+    aside {
+        display: none;             
+    }
+} 
+
+
+/* Estilo do menu para écran ainda mais pequeno */
+@media (width <= 500px) {
+    
+    nav {
+        flex-direction: column;      /* nav bar passa a orientação vertical */
+        align-items: flex-start;
+        p {
+            margin-bottom: 1em;      /* algum espaço entre nome e menu */
+        }
+    }
+
+    #menu > li {
+        display: block;              /* menu fica também na vertical */
+    }
+    
+}
+
+/* Estilos para impressão - experimente imprimir a página com/sem esta media querie */  
+@media print {
+    #menu, aside {
+        display: none;
+    }
+}

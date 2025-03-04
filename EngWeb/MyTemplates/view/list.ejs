@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/w3.css">
+    <title><!-- Titulo da ABA--></title>
+</head>
+<body>
+    <!-- SideBar (NavBar)-->
+    <div class="w3-sidebar w3-animate-left w3-pale-green w3-border w3-bar-block" style="width:25%">
+        <h3 class="w3-bar-item w3-pale-green">Páginas Disponíveis</h3>
+        <% for (const page of pageList) { %>
+            <a href="<%= page.url %>" class="w3-bar-item w3-button w3-border-bottom"><%= page.name %></a>
+        <% } %>
+    </div>
+
+    <div>
+        <header class="w3-container w3-pale-yellow">
+            <h1><!-- Lista de algo --></h1>
+        </header>
+        <table class=" w3-table w3-striped w3-hoverable">
+            <tr class = "w3-pale-green">
+            <th class="w3-border">Header</th>
+        </tr>
+        <% for (const item of items) { %>
+            <tr>
+                <td class="w3-border"><a href="http://localhost:3001/alunos/<%= item.id %>"><%= item.id %></a></td>
+                <td class="w3-border"><%= item.campo %></td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+</body>
+</html>

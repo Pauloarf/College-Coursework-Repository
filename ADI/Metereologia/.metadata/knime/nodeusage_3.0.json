@@ -1,0 +1,108 @@
+{
+    "version": "5.4.2.v202502121104",
+    "created": "2025-02-27 10:16",
+    "nodestats": {
+        "nodes": [
+            {
+                "id": "org.knime.base.node.io.filehandling.csv.reader.CSVTableReaderNodeFactory",
+                "nodename": "CSV Reader",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 635,
+                "nrcreated": 3,
+                "nrsettingsChanged": 0,
+                "successor": "org.knime.base.node.preproc.joiner3.Joiner3NodeFactory",
+                "successornodename": "Joiner"
+            },
+            {
+                "id": "org.knime.base.node.stats.viz.extended.ExtendedStatisticsNodeFactory",
+                "nodename": "Statistics",
+                "nrexecs": 0,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.views.node.statistics.StatisticsNodeFactory",
+                "nodename": "Statistics View",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 892,
+                "nrcreated": 1,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.joiner3.Joiner3NodeFactory",
+                "nodename": "Joiner",
+                "nrexecs": 5,
+                "nrfails": 0,
+                "exectime": 540,
+                "nrcreated": 2,
+                "nrsettingsChanged": 3,
+                "successor": "org.knime.base.views.node.statistics.StatisticsNodeFactory",
+                "successornodename": "Statistics View"
+            },
+            {
+                "id": "org.knime.time.node.convert.stringtodatetime.StringToDateTimeNodeFactory",
+                "nodename": "String to Date&Time",
+                "nrexecs": 2,
+                "nrfails": 1,
+                "exectime": 291,
+                "nrcreated": 1,
+                "nrsettingsChanged": 7,
+                "successor": "org.knime.time.node.extract.datetime.ExtractDateTimeFieldsNodeFactory2",
+                "successornodename": "Date&Time Part Extractor"
+            },
+            {
+                "id": "org.knime.time.node.extract.datetime.ExtractDateTimeFieldsNodeFactory2",
+                "nodename": "Date&Time Part Extractor",
+                "nrexecs": 5,
+                "nrfails": 0,
+                "exectime": 1172,
+                "nrcreated": 1,
+                "nrsettingsChanged": 5,
+                "successor": "org.knime.base.node.preproc.joiner3.Joiner3NodeFactory",
+                "successornodename": "Joiner"
+            },
+            {
+                "id": "org.knime.base.node.preproc.duplicates.DuplicateRowFilterNodeFactory",
+                "nodename": "Duplicate Row Filter",
+                "nrexecs": 3,
+                "nrfails": 0,
+                "exectime": 411,
+                "nrcreated": 1,
+                "nrsettingsChanged": 2,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            }
+        ],
+        "metaNodes": {
+        },
+        "wrappedNodes": {
+        },
+        "createdVia": {
+            "WEB_UI": 10
+        }
+    },
+    "uptime": 862212,
+    "workflowsOpened": 2,
+    "remoteWorkflowsOpened": 0,
+    "workflowsCreated": 1,
+    "remoteWorkflowsCreated": 0,
+    "columnarStorageWorkflowsOpened": 0,
+    "workflowsImported": 0,
+    "workflowsExported": 0,
+    "webUIPerspectiveSwitches": 0,
+    "javaUIPerspectiveSwitches": 0,
+    "lastUsedPerspective": "none",
+    "launches": 2,
+    "lastApplicationID": "org.knime.product.KNIME_APPLICATION",
+    "timeSinceLastStart": 1647082,
+    "crashes": 0,
+    "properlyShutDown": true
+}

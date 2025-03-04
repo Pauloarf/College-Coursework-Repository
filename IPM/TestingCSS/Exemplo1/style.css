@@ -1,0 +1,97 @@
+/* Definições globais / exemplo de definição de variávies (começam com --)*/
+:root {
+    font-family: Arial, sans-serif;
+    --light-background: #d7d4d4;
+    --dark-background: #33333366;
+}
+
+/* Estrutura da página */
+.grid-container {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "page-header  page-header"
+        "nav-bar      nav-bar"
+        "main-content side-panel"
+        "page-footer  page-footer";
+}
+
+/* Estilos dos elementos */
+header {
+    grid-area: page-header;
+    padding: 10px;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding-left: 0;
+}
+
+nav {
+    grid-area: nav-bar;
+    background-color: var(--light-background);   /* usar a variável */
+    padding: 10px;
+    text-align: center; 
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    /* exemplo de aninhamento de seletores */
+    & > p {                  /* os <p> filhos diretos de <nav> */
+        margin: 0;
+    }
+    ul {                     /* todos os <ul> dentro de <nav> - equivalente a: & ul*/
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* apenas se aplica aos <li> filhos diretos do elemento com id menu */
+#menu > li { 
+    list-style-type: none;
+    display: inline;
+} 
+
+main {
+    grid-area: main-content;
+    margin-right: 5px;
+    & > table {
+        width: 100%;
+        border-collapse: collapse;
+        & tr {
+            border:  1px solid var(--dark-background);
+        }
+        & th, td {
+            text-align: left;
+            padding-left: 5px;
+        }
+        & th {
+            background-color: var(--dark-background);
+        }
+    }
+}
+
+aside {
+    grid-area: side-panel;
+    background-color: var(--light-background);
+    padding: 10px;
+    border-radius: 1em / 1em;
+    p {
+        margin-top: 0;
+    }
+    select {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+footer {
+    grid-area: page-footer;
+    background-color: var(--light-background);
+    padding: 10px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: .75em;
+    padding: 3px;
+    p {
+        margin: 0;
+    }
+}
