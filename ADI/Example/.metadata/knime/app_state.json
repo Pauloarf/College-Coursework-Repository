@@ -1,0 +1,22 @@
+{
+  "version" : "5.4.2.v202502121104",
+  "projects" : [ {
+    "name" : "lei3adi02_income50k",
+    "active" : true,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "lei3adi02_income50k"
+    }
+  } ],
+  "mostRecentlyUsedProjects" : [ {
+    "name" : "lei3adi02_income50k",
+    "timeUsed" : "2025-03-06T15:23:45.367730421Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "lei3adi02_income50k"
+    }
+  } ]
+}

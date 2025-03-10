@@ -1,0 +1,4 @@
+/home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/Meteorology/descricao_2020_meteorologia.csv
+/home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/Meteorology/metricas_2020_meteorologia.csv
+/home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/ChocolateBars/chocolate_bars.csv
+/home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/Titanic/titanic_dataset.csv

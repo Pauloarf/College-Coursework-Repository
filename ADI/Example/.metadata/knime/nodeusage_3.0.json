@@ -1,0 +1,129 @@
+{
+    "version": "5.4.2.v202502121104",
+    "created": "2025-03-06 15:19",
+    "nodestats": {
+        "nodes": [
+            {
+                "id": "org.knime.base.node.io.filehandling.csv.reader.FileReaderNodeFactory",
+                "nodename": "File Reader",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 493,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.stats.viz.extended.ExtendedStatisticsNodeFactory",
+                "nodename": "Statistics",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 1283,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.viz.property.color.ColorManager2NodeFactory",
+                "nodename": "Color Manager",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 0,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.partition.PartitionNodeFactory",
+                "nodename": "Partitioning",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 129,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.viz.table.TableNodeFactory",
+                "nodename": "Interactive Table (legacy)",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 3,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.decisiontree2.learner2.DecisionTreeLearnerNodeFactory3",
+                "nodename": "Decision Tree Learner",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 551,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.decisiontree2.predictor2.DecTreePredictorNodeFactory",
+                "nodename": "Decision Tree Predictor",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 574,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.scorer.accuracy.AccuracyScorer2NodeFactory",
+                "nodename": "Scorer",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 15,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.js.base.node.viz.plotter.scatterSelectionAppender.ScatterPlotNodeFactory",
+                "nodename": "Scatter Plot (JavaScript)",
+                "nrexecs": 1,
+                "nrfails": 0,
+                "exectime": 2006,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            }
+        ],
+        "metaNodes": {
+        },
+        "wrappedNodes": {
+        },
+        "createdVia": {
+        }
+    },
+    "uptime": 159821,
+    "workflowsOpened": 1,
+    "remoteWorkflowsOpened": 0,
+    "workflowsCreated": 0,
+    "remoteWorkflowsCreated": 0,
+    "columnarStorageWorkflowsOpened": 0,
+    "workflowsImported": 1,
+    "workflowsExported": 0,
+    "webUIPerspectiveSwitches": 0,
+    "javaUIPerspectiveSwitches": 0,
+    "lastUsedPerspective": "none",
+    "launches": 3,
+    "lastApplicationID": "org.knime.product.KNIME_APPLICATION",
+    "timeSinceLastStart": 319190,
+    "crashes": 0,
+    "properlyShutDown": true
+}

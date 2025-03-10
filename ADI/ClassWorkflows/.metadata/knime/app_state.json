@@ -1,0 +1,110 @@
+{
+  "version" : "5.4.2.v202502121104",
+  "projects" : [ {
+    "name" : "Meteorology",
+    "active" : true,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "Meteorology"
+    }
+  }, {
+    "name" : "ChocolateBars",
+    "active" : false,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "ChocolateBars"
+    }
+  }, {
+    "name" : "Sentiments",
+    "active" : false,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "Sentiments"
+    }
+  } ],
+  "mostRecentlyUsedProjects" : [ {
+    "name" : "BreastCancer",
+    "timeUsed" : "2025-03-06T15:15:20.677656039Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "BreastCancer"
+    }
+  }, {
+    "name" : "Flights",
+    "timeUsed" : "2025-03-06T15:15:48.887195816Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "Flights"
+    }
+  }, {
+    "name" : "Flowers",
+    "timeUsed" : "2025-03-06T15:15:57.041171815Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "Flowers"
+    }
+  }, {
+    "name" : "StudentGrades",
+    "timeUsed" : "2025-03-06T15:16:39.833886402Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "StudentGrades"
+    }
+  }, {
+    "name" : "TrafficAccidents",
+    "timeUsed" : "2025-03-06T15:17:06.205130149Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "TrafficAccidents"
+    }
+  }, {
+    "name" : "Meteorology",
+    "timeUsed" : "2025-03-07T16:11:06.590687283Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "Meteorology"
+    }
+  }, {
+    "name" : "ChocolateBars",
+    "timeUsed" : "2025-03-10T09:02:50.330884968Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "ChocolateBars"
+    }
+  }, {
+    "name" : "Sentiments",
+    "timeUsed" : "2025-03-10T09:03:02.496192423Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "Sentiments"
+    }
+  }, {
+    "name" : "Titanic",
+    "timeUsed" : "2025-03-10T09:03:08.971569527Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "Titanic"
+    }
+  } ]
+}

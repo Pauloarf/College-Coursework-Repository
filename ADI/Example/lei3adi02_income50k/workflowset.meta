@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file is auto-generated and is overwritten each time the workflow is saved.
+    The metadata have moved to the `workflow-metadata.xml` file.-->
+<KNIMEMetaInfo nrOfElements="4" xmlns="http://www.knime.org/2.9/metainfo">
+    <element form="text" name="Author" read-only="false">KNIME</element>
+    <element form="date" name="Creation Date" read-only="false">25/6/2016/00:00:00 +01:00</element>
+    <element form="multiline" name="Comments" read-only="false">Simple Model Training for Classification
+
+Task. From adult data set (census data) predict income group from demographic attributes.
+
+URL: Learning Hub http://www.knime.org/learning-hub
+
+TAGS: model training,classification,training,testing</element>
+    <element form="text" name="Last Edited" read-only="true">2024-06-03 00:23:18 +0100</element>
+</KNIMEMetaInfo>
