@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "cmath": "cpp",
+        "random": "cpp",
+        "limits": "cpp"
+    }
+}
