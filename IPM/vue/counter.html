@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <script src="https://unpkg.com/vue@latest" defer></script>
+    <script src="counter.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Contador</h1>
+        <p id="display"> {{ counter }} </p>
+        <button v-on:click="incrementa">Incrementar</button>
+        <button v-on:click="decrementa">Decrementar</button>
+    </div>
+</body>
+</html>

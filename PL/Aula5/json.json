@@ -1,0 +1,60 @@
+{
+    "name": "John Doe",
+    "age": 21,
+    "gender": "male",
+    "height": 1.68,
+    "address": {
+        "street": "123 Main Street",
+        "city": "New York",
+        "country": "USA",
+        "zip": "10001"
+    },
+    "married": false,
+    "hobbies": [
+        {
+            "name": "reading",
+            "books": [
+                {
+                    "title": "Heartstopper: Volume 1",
+                    "author": "Alice Oseman",
+                    "genres": [
+                        "Graphic Novels",
+                        "Romance",
+                        "Queer"
+                    ]
+                },
+                {
+                    "title": "1984",
+                    "author": "George Orwell",
+                    "genres": [
+                        "Science Fiction",
+                        "Dystopia",
+                        "Politics"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "gaming",
+            "games": [
+                {
+                    "title": "Portal 2",
+                    "platform": [
+                        "PC",
+                        "PlayStation 3",
+                        "Xbox 360"
+                    ]
+                },
+                {
+                    "title": "Synth Riders",
+                    "platform": [
+                        "PSVR",
+                        "PSVR2",
+                        "PCVR",
+                        "Oculus Quest"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,12 +1,12 @@
 {
   "version" : "5.4.2.v202502121104",
   "projects" : [ {
-    "name" : "Meteorology",
+    "name" : "Wine",
     "active" : true,
     "origin" : {
       "providerId" : "local",
       "spaceId" : "local",
-      "relativePath" : "Meteorology"
+      "relativePath" : "Wine"
     }
   }, {
     "name" : "ChocolateBars",
@@ -15,14 +15,6 @@
       "providerId" : "local",
       "spaceId" : "local",
       "relativePath" : "ChocolateBars"
-    }
-  }, {
-    "name" : "Sentiments",
-    "active" : false,
-    "origin" : {
-      "providerId" : "local",
-      "spaceId" : "local",
-      "relativePath" : "Sentiments"
     }
   } ],
   "mostRecentlyUsedProjects" : [ {
@@ -80,15 +72,6 @@
       "relativePath" : "Meteorology"
     }
   }, {
-    "name" : "ChocolateBars",
-    "timeUsed" : "2025-03-10T09:02:50.330884968Z",
-    "origin" : {
-      "providerId" : "local",
-      "spaceId" : "local",
-      "projectType" : "WORKFLOW",
-      "relativePath" : "ChocolateBars"
-    }
-  }, {
     "name" : "Sentiments",
     "timeUsed" : "2025-03-10T09:03:02.496192423Z",
     "origin" : {
@@ -105,6 +88,24 @@
       "spaceId" : "local",
       "projectType" : "WORKFLOW",
       "relativePath" : "Titanic"
+    }
+  }, {
+    "name" : "Wine",
+    "timeUsed" : "2025-03-13T09:20:46.083723739Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "Wine"
+    }
+  }, {
+    "name" : "ChocolateBars",
+    "timeUsed" : "2025-03-13T09:21:11.69692646Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "ChocolateBars"
     }
   } ]
 }

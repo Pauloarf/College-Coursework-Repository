@@ -1,3 +1,8 @@
+/home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/Wine/winequality-white test.csv
+/home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/Wine/winequality-white train.csv
+/home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/Wine/winequality-red train.csv
+/home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/Wine/winequality-red test.csv
+/home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/Wine/winequality-red new.csv
 /home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/Meteorology/descricao_2020_meteorologia.csv
 /home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/Meteorology/metricas_2020_meteorologia.csv
 /home/paulo/Desktop/Repos/College-Coursework-Repository/ADI/ClassWorkflows/ChocolateBars/chocolate_bars.csv

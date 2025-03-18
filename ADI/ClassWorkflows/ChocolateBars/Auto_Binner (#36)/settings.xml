@@ -56,7 +56,7 @@
         <entry key="roundingMode" type="xstring" value="HALF_UP"/>
     </config>
     <entry key="customDescription" type="xstring" isnull="true" value=""/>
-    <entry key="state" type="xstring" value="CONFIGURED"/>
+    <entry key="state" type="xstring" value="EXECUTED"/>
     <entry key="factory" type="xstring" value="org.knime.base.node.preproc.autobinner3.AutoBinnerLearnNodeFactory"/>
     <entry key="node-name" type="xstring" value="Auto-Binner"/>
     <entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
@@ -69,20 +69,28 @@
     <entry key="node-feature-version" type="xstring" value="5.4.1.v202501291459"/>
     <config key="factory_settings"/>
     <entry key="name" type="xstring" value="Auto-Binner"/>
-    <entry key="hasContent" type="xboolean" value="false"/>
+    <entry key="hasContent" type="xboolean" value="true"/>
     <entry key="isInactive" type="xboolean" value="false"/>
     <config key="ports">
         <config key="port_1">
             <entry key="index" type="xint" value="1"/>
-            <entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+            <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+            <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+            <entry key="port_object_summary" type="xstring" value="Rows: 2530, Cols: 10"/>
+            <entry key="port_dir_location" type="xstring" value="port_1"/>
         </config>
         <config key="port_2">
             <entry key="index" type="xint" value="2"/>
-            <entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+            <entry key="port_spec_class" type="xstring" value="org.knime.base.node.preproc.autobinner.pmml.PMMLDiscretizePreprocPortObjectSpec"/>
+            <entry key="port_object_class" type="xstring" value="org.knime.base.node.preproc.autobinner.pmml.PMMLDiscretizePreprocPortObject"/>
+            <entry key="port_object_summary" type="xstring" value="Discretized columns : [cocoa_percent [Binned]]%%00010"/>
+            <entry key="port_spec_location" type="xstring" value="spec/spec.zip"/>
+            <entry key="port_object_location" type="xstring" value="object/portobject.zip"/>
+            <entry key="port_dir_location" type="xstring" value="port_2"/>
         </config>
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" isnull="true" value=""/>
+        <entry key="file_store_id" type="xstring" value="a188f8eb-7a58-4e7c-90b9-206a9d4dd598"/>
     </config>
 </config>
