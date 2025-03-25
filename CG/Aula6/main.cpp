@@ -17,7 +17,7 @@
 #include <GL/glut.h>
 #endif
 
-float camX = 00, camY = 30, camZ = 40;
+float camX = 0, camY = 30, camZ = 40;
 int startX, startY, tracking = 0;
 
 int alpha = 0, beta = 45, r = 200;
@@ -186,7 +186,7 @@ void init() {
 
     // 	OpenGL settings
     glEnable(GL_DEPTH_TEST);
-    // glEnable(GL_CULL_FACE);
+    glEnable(GL_CULL_FACE);
 }
 
 int main(int argc, char **argv) {

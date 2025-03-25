@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Rainbow colors array
+    var colors = [
+      "#FF0000", // red
+      "#FF7F00", // orange
+      "#FFFF00", // yellow
+      "#00FF00", // green
+      "#0000FF", // blue
+      "#4B0082", // indigo
+      "#9400D3"  // violet
+    ];
+    var currentIndex = 0;
+    var intervalSpeed = 500;
+    
+    // Start the color animation automatically
+    var colorInterval = setInterval(function() {
+      $("#p1").css("color", colors[currentIndex]);
+      currentIndex = (currentIndex + 1) % colors.length;
+    }, intervalSpeed);
+    
+    // Optional: Stop animation on click
+    $("#p1").click(function() {
+      if (colorInterval) {
+        clearInterval(colorInterval);
+        colorInterval = null;
+        $(this).text("Animation stopped. Refresh page to restart.");
+      }
+    });
+  });
+</script>
+</head>
+<body>
+  <p id="p1">Sou um parágrafo e agora mudo de cor automaticamente!</p>
+</body>
+</html>

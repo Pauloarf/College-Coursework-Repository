@@ -1,20 +1,20 @@
 {
   "version" : "5.4.2.v202502121104",
   "projects" : [ {
-    "name" : "Wine",
-    "active" : true,
-    "origin" : {
-      "providerId" : "local",
-      "spaceId" : "local",
-      "relativePath" : "Wine"
-    }
-  }, {
     "name" : "ChocolateBars",
     "active" : false,
     "origin" : {
       "providerId" : "local",
       "spaceId" : "local",
       "relativePath" : "ChocolateBars"
+    }
+  }, {
+    "name" : "Wine",
+    "active" : true,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "Wine"
     }
   } ],
   "mostRecentlyUsedProjects" : [ {
@@ -90,15 +90,6 @@
       "relativePath" : "Titanic"
     }
   }, {
-    "name" : "Wine",
-    "timeUsed" : "2025-03-13T09:20:46.083723739Z",
-    "origin" : {
-      "providerId" : "local",
-      "spaceId" : "local",
-      "projectType" : "WORKFLOW",
-      "relativePath" : "Wine"
-    }
-  }, {
     "name" : "ChocolateBars",
     "timeUsed" : "2025-03-13T09:21:11.69692646Z",
     "origin" : {
@@ -106,6 +97,15 @@
       "spaceId" : "local",
       "projectType" : "WORKFLOW",
       "relativePath" : "ChocolateBars"
+    }
+  }, {
+    "name" : "Wine",
+    "timeUsed" : "2025-03-20T09:08:46.130967836Z",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "Wine"
     }
   } ]
 }

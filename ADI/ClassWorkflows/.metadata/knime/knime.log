@@ -3165,3 +3165,905 @@ java.lang.IllegalStateException: Missing value support disabled, see node config
 2025-03-13 10:54:56,804 : WARN  : main :  : Node : Regression Predictor : 3:45 : The column "quality_bin" in the table of prediction is expected to be  compatible with "NominalValue".
 2025-03-13 10:54:57,401 : WARN  : main :  : Node : Regression Predictor : 3:45 : The column "quality_bin" in the table of prediction is expected to be  compatible with "NominalValue".
 2025-03-13 10:55:13,548 : WARN  : KNIME-Worker-230-Linear Regression Learner 3:42 :  : Node : Regression Predictor : 3:45 : The column "quality_bin" in the table of prediction is expected to be  compatible with "NominalValue".
+2025-03-20 09:03:29,669 : ERROR : main :  : ProjectAPI :  :  : Workflow with ID 'Wine_7b61af98-8941-4452-8d77-bb3d40c3e00e' couldn't be loaded. Workflow closed.
+2025-03-20 09:03:29,821 : WARN  : comm-pool-thread-1 :  : JsonRpcErrorResolver :  :  : An unexpected json rpc error occurred
+java.util.NoSuchElementException: Workflow project for ID "Wine_7b61af98-8941-4452-8d77-bb3d40c3e00e" not found.
+	at org.knime.gateway.impl.service.util.DefaultServiceUtil.lambda$0(DefaultServiceUtil.java:126)
+	at java.base/java.util.Optional.orElseThrow(Unknown Source)
+	at org.knime.gateway.impl.service.util.DefaultServiceUtil.getRootWorkflowManager(DefaultServiceUtil.java:125)
+	at org.knime.gateway.impl.service.util.DefaultServiceUtil.getWorkflowManager(DefaultServiceUtil.java:155)
+	at org.knime.gateway.impl.webui.WorkflowMiddleware$WorkflowState.<init>(WorkflowMiddleware.java:434)
+	at org.knime.gateway.impl.webui.WorkflowMiddleware.createWorkflowStateAndEventuallyClearCache(WorkflowMiddleware.java:388)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(Unknown Source)
+	at org.knime.gateway.impl.webui.WorkflowMiddleware.getWorkflowState(WorkflowMiddleware.java:384)
+	at org.knime.gateway.impl.webui.WorkflowMiddleware.buildWorkflowSnapshotEnt(WorkflowMiddleware.java:188)
+	at org.knime.gateway.impl.webui.service.DefaultWorkflowService.getWorkflow(DefaultWorkflowService.java:125)
+	at org.knime.gateway.impl.webui.jsonrpc.service.JsonRpcWorkflowServiceWrapper.getWorkflow(JsonRpcWorkflowServiceWrapper.java:124)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.invoke(JsonRpcBasicServer.java:478)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleObject(JsonRpcBasicServer.java:349)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleJsonNodeRequest(JsonRpcBasicServer.java:274)
+	at com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleRequest(JsonRpcBasicServer.java:242)
+	at org.knime.gateway.impl.jsonrpc.JsonRpcRequestHandler.handle(JsonRpcRequestHandler.java:104)
+	at org.knime.ui.java.browser.lifecycle.Init.lambda$13(Init.java:290)
+	at com.equo.comm.common.MessageHandler.processReceivedEventMessage(MessageHandler.java:131)
+	at com.equo.comm.ee.provider.service.ChromiumService.receiveMessage(ChromiumService.java:98)
+	at com.equo.comm.ee.provider.CommunicationManagerChromiumImpl.receiveMessage(CommunicationManagerChromiumImpl.java:48)
+	at com.equo.chromium.swt.internal.spi.CommRouterHandler.handleRequest(CommRouterHandler.java:33)
+	at com.equo.chromium.swt.internal.spi.CommRouterHandler.lambda$1(CommRouterHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2025-03-20 09:03:29,934 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: Workflow project for ID "Wine_7b61af98-8941-4452-8d77-bb3d40c3e00e" not found. (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:03:29,941 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c lifecycle::loadWorkflow failed to load workflow 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:20:21,831 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:61 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:20:21,832 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:20:21,833 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:61 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 09:22:25,510 : WARN  : comm-pool-thread-9 :  : Node : Number to String : 3:62 : No columns selected.
+2025-03-20 09:23:25,848 : WARN  : comm-pool-thread-9 :  : Node : Linear Regression Learner : 3:42 : Type of column "quality1_10" is not numeric.
+2025-03-20 09:23:25,849 : WARN  : comm-pool-thread-9 :  : Node : Linear Regression Learner : 3:53 : Type of column "quality1_10" is not numeric.
+2025-03-20 09:23:38,375 : WARN  : KNIME-Worker-32-String to Number 3:39 :  : Node : Linear Regression Learner : 3:42 : Type of column "quality1_10" is not numeric.
+2025-03-20 09:23:38,377 : WARN  : KNIME-Worker-32-String to Number 3:39 :  : Node : Linear Regression Learner : 3:53 : Type of column "quality1_10" is not numeric.
+2025-03-20 09:23:38,421 : WARN  : KNIME-Worker-30-Partitioning 3:55 :  : Node : Linear Regression Learner : 3:53 : Type of column "quality1_10" is not numeric.
+2025-03-20 09:23:55,913 : WARN  : comm-pool-thread-9 :  : Node : Decision Tree Learner : 3:63 : Guessing target column: "quality_bin".
+2025-03-20 09:23:55,993 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Error captured hook ::  
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:24:26,685 : WARN  : comm-pool-thread-9 :  : Node : Linear Regression Learner : 3:53 : Type of column "quality1_10" is not numeric.
+2025-03-20 09:24:28,285 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:61 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:62, 3:63, 3:64] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:24:28,286 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:24:28,287 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:61 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:62, 3:63, 3:64] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 09:24:31,692 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:62 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:24:31,693 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:24:31,698 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:62 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 09:25:00,339 : WARN  : comm-pool-thread-9 :  : Node : Scorer : 3:65 : No columns selected yet.
+2025-03-20 09:39:39,121 : WARN  : KNIME-Worker-62-String to Number 3:68 :  : Node : String to Number : 3:68 : Problems in 900 rows, first error: "10,9" in cell ["Row0", column "fixed acidity", row 1] can not be transformed into a number
+2025-03-20 09:39:39,126 : WARN  : KNIME-Worker-62-String to Number 3:68 :  : Node : String to Number : 3:68 : Problems in 900 rows, first error: "10,9" in cell ["Row0", column "fixed acidity", row 1] can not be transformed into a number
+ RowID  | fixed acidity | volatile ac...
+--------+---------------+----------------
+ Row0   | 10,9          | 0,26          
+          ^^^^
+For input string: "10,9"
+2025-03-20 09:39:48,806 : WARN  : KNIME-Worker-69-String to Number 3:68 :  : Node : String to Number : 3:68 : Problems in 900 rows, first error: "10,9" in cell ["Row0", column "fixed acidity", row 1] can not be transformed into a number
+2025-03-20 09:39:48,807 : WARN  : KNIME-Worker-69-String to Number 3:68 :  : Node : String to Number : 3:68 : Problems in 900 rows, first error: "10,9" in cell ["Row0", column "fixed acidity", row 1] can not be transformed into a number
+ RowID  | fixed acidity | volatile ac...
+--------+---------------+----------------
+ Row0   | 10,9          | 0,26          
+          ^^^^
+For input string: "10,9"
+2025-03-20 09:40:24,854 : WARN  : main :  : Node : Scorer : 3:65 : Column 'Prediction (quality_bin)' not found.
+2025-03-20 09:40:29,732 : WARN  : main :  : Node : Scorer : 3:65 : Column 'Prediction (quality_bin)' not found.
+2025-03-20 09:40:33,416 : WARN  : KNIME-Worker-60-Decision Tree Predictor 3:64 :  : Node : Scorer : 3:65 : Column 'Prediction (quality_bin)' not found.
+2025-03-20 09:42:28,970 : WARN  : comm-pool-thread-12 :  : Node : Decision Tree Predictor : 3:69 : Learning column "quality_bin" not found in input data to be predicted
+2025-03-20 09:43:11,048 : WARN  : comm-pool-thread-12 :  : Node : Regression Predictor : 3:45 : The table for prediction does not contain the column "quality_bin".
+2025-03-20 09:43:11,052 : WARN  : comm-pool-thread-12 :  : Node : Decision Tree Predictor : 3:69 : Learning column "quality_bin" not found in input data to be predicted
+2025-03-20 09:43:13,600 : WARN  : KNIME-Worker-81-String to Number 3:41 :  : Node : Regression Predictor : 3:45 : The table for prediction does not contain the column "quality_bin".
+2025-03-20 09:43:13,770 : WARN  : KNIME-Worker-85-Decision Tree Learner 3:63 :  : Node : Decision Tree Predictor : 3:69 : Learning column "quality_bin" not found in input data to be predicted
+2025-03-20 09:46:26,028 : WARN  : comm-pool-thread-12 :  : Node : Decision Tree Learner : 3:63 : Class column "quality1_10" not found or incompatible
+2025-03-20 09:46:33,587 : WARN  : main :  : Node : Scorer : 3:65 : Column 'quality1_10' not found.
+2025-03-20 09:46:34,040 : WARN  : main :  : Node : Scorer : 3:65 : Column 'quality1_10' not found.
+2025-03-20 09:46:36,231 : WARN  : KNIME-Worker-96-Decision Tree Learner 3:63 :  : Node : Decision Tree Learner : 3:63 : 830 rows removed due to missing class value;
+2025-03-20 09:46:36,404 : WARN  : KNIME-Worker-97-Decision Tree Predictor 3:64 :  : Node : Scorer : 3:65 : Column 'quality1_10' not found.
+2025-03-20 09:47:55,439 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:71 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:47:55,440 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:47:55,441 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:71 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 09:49:15,991 : WARN  : comm-pool-thread-14 :  : Node : Scorer : 3:65 : Column 'quality1_10' not found.
+2025-03-20 09:49:28,141 : WARN  : main :  : Node : Scorer : 3:65 : Column 'quality1_10' not found.
+2025-03-20 09:49:28,591 : WARN  : main :  : Node : Scorer : 3:65 : Column 'quality1_10' not found.
+2025-03-20 09:49:32,011 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Error captured hook ::  
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:49:36,334 : WARN  : KNIME-Worker-113-Decision Tree Learner 3:63 :  : Node : Decision Tree Learner : 3:63 : 830 rows removed due to missing class value;
+2025-03-20 09:51:37,429 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:72 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:71] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:51:37,430 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:51:37,431 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:72 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:71] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 09:54:02,908 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:72 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:71] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:54:02,912 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:54:02,913 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:72 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:71] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 09:54:06,378 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Error captured hook ::  
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 09:56:04,041 : WARN  : comm-pool-thread-14 :  : Node : Scorer : 3:65 : Column 'quality1_10' not found.
+2025-03-20 09:56:22,365 : WARN  : KNIME-Worker-131-String to Number 3:41 :  : Node : Scorer : 3:65 : Column 'quality1_10' not found.
+2025-03-20 09:56:25,955 : WARN  : KNIME-Worker-136-Decision Tree Predictor 3:64 :  : Node : Scorer : 3:65 : Column 'quality1_10' not found.
+2025-03-20 10:06:35,073 : WARN  : comm-pool-thread-14 :  : Node : CSV Writer : 3:74 : Please specify a file
+2025-03-20 10:09:44,566 : WARN  : KNIME-Worker-194-Statistics 3:71 :  : Node : Statistics : 3:71 : Maximum number of unique possible values (1000) exceeds for column(s): "density"
+2025-03-20 10:13:59,389 : WARN  : comm-pool-thread-17 :  : Node : Rank Correlation : 3:75 : Auto configuration: Using all suitable columns (in total 12)
+2025-03-20 10:14:57,510 : WARN  : comm-pool-thread-18 :  : Node : Decision Tree Learner : 3:63 : Class column "quality_bin" not found or incompatible
+2025-03-20 10:22:41,462 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:75 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:71, 3:72, 3:73, 3:74, 3:76] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 10:22:41,463 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:75 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:71, 3:72, 3:73, 3:74, 3:76] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 10:22:42,462 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:75 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:71, 3:72, 3:73, 3:74, 3:76] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 10:22:43,458 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:71 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 10:22:43,459 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 10:22:43,460 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:71 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 10:28:06,962 : WARN  : comm-pool-thread-18 :  : Node : Numeric Outliers : 3:80 : Auto configuration: Outlier Selection uses all suitable columns (in total 11).
+2025-03-20 10:28:32,593 : WARN  : comm-pool-thread-19 :  : Node : Decision Tree Learner : 3:63 : Class column "quality_bin" not found or incompatible
+2025-03-20 10:51:50,354 : ERROR : KNIME-Worker-0-CSV Writer 3:74 :  : Node : CSV Writer : 3:74 : Execute failed: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268PL4.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
+2025-03-20 14:03:59,285 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:81 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:77, 3:78, 3:79, 3:80, 3:82, 3:83] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:03:59,294 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:03:59,300 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:81 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:77, 3:78, 3:79, 3:80, 3:82, 3:83] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 14:04:07,665 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:82 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:77, 3:78, 3:80, 3:83] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:04:07,666 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:04:07,667 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:82 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:77, 3:78, 3:80, 3:83] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 14:04:13,922 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:78 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:77, 3:80, 3:83] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:04:13,923 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:04:13,924 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:78 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:66, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:77, 3:80, 3:83] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 14:04:47,253 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:66 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:77, 3:80, 3:83] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:04:47,254 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:04:47,255 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:66 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:77, 3:80, 3:83] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 14:06:41,501 : WARN  : comm-pool-thread-1 :  : Node : Row Filter : 3:85 : At least one filter criterion is needed.
+2025-03-20 14:07:34,745 : WARN  : KNIME-Worker-22-Row Filter 3:85 :  : Node : Row Filter : 3:85 : Node created an empty data table.
+2025-03-20 14:08:56,281 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:77 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:80, 3:83, 3:84, 3:85] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:08:56,282 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:08:56,283 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:77 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:80, 3:83, 3:84, 3:85] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 14:31:22,153 : WARN  : comm-pool-thread-9 :  : Node : Linear Regression Learner : 3:53 : The target is not in the input.
+2025-03-20 14:33:23,865 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:87 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:80, 3:83, 3:84, 3:85, 3:86] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:33:23,866 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:33:23,867 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:87 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:80, 3:83, 3:84, 3:85, 3:86] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 14:42:27,487 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:85 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:80, 3:83, 3:84, 3:86] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:42:27,488 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:85 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:80, 3:83, 3:84, 3:86] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 14:42:28,491 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:85 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:80, 3:83, 3:84, 3:86] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:44:08,027 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:88 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:80, 3:83, 3:84, 3:86, 3:87] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:44:08,028 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:44:08,029 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:88 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:80, 3:83, 3:84, 3:86, 3:87] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 14:45:07,011 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:87 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:80, 3:83, 3:84, 3:86, 3:88] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:45:07,016 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:45:07,019 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:87 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:80, 3:83, 3:84, 3:86, 3:88] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 14:52:30,886 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:80 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:83, 3:84, 3:86, 3:88, 3:89, 3:90, 3:91, 3:92, 3:93, 3:94, 3:95, 3:96, 3:97, 3:98, 3:99, 3:100, 3:101, 3:102, 3:103, 3:104, 3:105, 3:106, 3:107, 3:108, 3:109] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:52:30,888 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:52:30,888 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:80 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:83, 3:84, 3:86, 3:88, 3:89, 3:90, 3:91, 3:92, 3:93, 3:94, 3:95, 3:96, 3:97, 3:98, 3:99, 3:100, 3:101, 3:102, 3:103, 3:104, 3:105, 3:106, 3:107, 3:108, 3:109] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 14:54:53,789 : WARN  : comm-pool-thread-12 :  : Node : Numeric Outliers : 3:110 : Auto configuration: Outlier Selection uses all suitable columns (in total 11).
+2025-03-20 14:56:48,262 : WARN  : comm-pool-thread-12 :  : Node : Random Forest Learner : 3:111 : No configuration available
+2025-03-20 14:58:04,412 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:111 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:83, 3:84, 3:86, 3:88, 3:89, 3:90, 3:91, 3:92, 3:93, 3:94, 3:95, 3:96, 3:97, 3:98, 3:99, 3:100, 3:101, 3:102, 3:103, 3:104, 3:105, 3:106, 3:107, 3:108, 3:109, 3:110] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:58:04,413 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 14:58:04,413 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:111 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:64, 3:65, 3:67, 3:68, 3:69, 3:70, 3:72, 3:73, 3:74, 3:76, 3:83, 3:84, 3:86, 3:88, 3:89, 3:90, 3:91, 3:92, 3:93, 3:94, 3:95, 3:96, 3:97, 3:98, 3:99, 3:100, 3:101, 3:102, 3:103, 3:104, 3:105, 3:106, 3:107, 3:108, 3:109, 3:110] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 14:58:16,478 : WARN  : comm-pool-thread-12 :  : Node : Gradient Boosted Trees Learner : 3:111 : No configuration available
+2025-03-20 14:58:40,568 : WARN  : comm-pool-thread-12 :  : Node : Scorer : 3:113 : No columns selected yet.
+2025-03-20 14:58:43,161 : WARN  : KNIME-Worker-165-Gradient Boosted Trees Predictor 3:112 :  : Node : Scorer : 3:113 : No columns selected yet.
+2025-03-20 15:05:53,229 : WARN  : comm-pool-thread-12 :  : Node : Random Forest Learner (Regression) : 3:114 : No configuration available
+2025-03-20 18:24:22,918 : WARN  : comm-pool-thread-4 :  : Node : X-Aggregator : 3:120 : Selected columns 'Prediction (quality_bin)' and 'quality_bin' as prediction and target columns
+2025-03-20 18:35:56,457 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: Cannot reset node (wrong state of node or successors) 3:63 (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 18:35:56,460 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 18:35:56,463 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: Cannot reset node (wrong state of node or successors) 3:63 (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 18:50:52,102 : ERROR : KNIME-Worker-3-CSV Writer 3:74 :  : Node : CSV Writer : 3:74 : Execute failed: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268PL4.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
+2025-03-20 18:50:52,524 : ERROR : KNIME-Worker-5-CSV Writer 3:74 :  : Node : CSV Writer : 3:74 : Execute failed: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268PL4.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
+2025-03-20 18:50:55,076 : ERROR : KNIME-Worker-12-X-Aggregator 3:120 :  : Node : X-Aggregator : 3:120 : Execute failed: Encountered duplicate row ID "Row18"
+org.knime.core.util.DuplicateKeyException: Encountered duplicate row ID "Row18"
+	at org.knime.core.data.container.BufferedDataContainerDelegate.checkAsyncWriteThrowable(BufferedDataContainerDelegate.java:389)
+	at org.knime.core.data.container.BufferedDataContainerDelegate.flushRows(BufferedDataContainerDelegate.java:449)
+	at org.knime.core.data.container.DataContainer.flushRows(DataContainer.java:274)
+	at org.knime.base.node.meta.xvalidation.AggregateOutputNodeModel.flushRows(AggregateOutputNodeModel.java:360)
+	at org.knime.core.node.Node.execute(Node.java:1052)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: org.knime.core.util.DuplicateKeyException: Encountered duplicate row ID "Row18"
+	at org.knime.core.data.container.BufferedDataContainerDelegate.addRowKeyForDuplicateCheck(BufferedDataContainerDelegate.java:728)
+	at org.knime.core.data.container.BufferedDataContainerDelegate$ContainerRunnable.run(BufferedDataContainerDelegate.java:791)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2025-03-20 18:51:17,422 : ERROR : KNIME-Worker-12-CSV Writer 3:74 :  : Node : CSV Writer : 3:74 : Execute failed: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268PL4.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
+2025-03-20 18:51:31,661 : ERROR : KNIME-Worker-18-CSV Writer 3:74 :  : Node : CSV Writer : 3:74 : Execute failed: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268PL4.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
+2025-03-20 18:51:32,118 : ERROR : KNIME-Worker-1-CSV Writer 3:74 :  : Node : CSV Writer : 3:74 : Execute failed: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268PL4.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
+2025-03-20 18:51:35,290 : ERROR : KNIME-Worker-8-X-Aggregator 3:120 :  : Node : X-Aggregator : 3:120 : Execute failed: Encountered duplicate row ID "Row18"
+org.knime.core.util.DuplicateKeyException: Encountered duplicate row ID "Row18"
+	at org.knime.core.data.container.BufferedDataContainerDelegate.checkAsyncWriteThrowable(BufferedDataContainerDelegate.java:389)
+	at org.knime.core.data.container.BufferedDataContainerDelegate.addRowToTableAsynchronously(BufferedDataContainerDelegate.java:603)
+	at org.knime.core.data.container.BufferedDataContainerDelegate.addRowToTable(BufferedDataContainerDelegate.java:554)
+	at org.knime.core.data.container.DataContainer.addRowToTable(DataContainer.java:269)
+	at org.knime.base.node.meta.xvalidation.AggregateOutputNodeModel.execute(AggregateOutputNodeModel.java:324)
+	at org.knime.core.node.NodeModel.execute(NodeModel.java:820)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: org.knime.core.util.DuplicateKeyException: Encountered duplicate row ID "Row18"
+	at org.knime.core.data.container.BufferedDataContainerDelegate.addRowKeyForDuplicateCheck(BufferedDataContainerDelegate.java:728)
+	at org.knime.core.data.container.BufferedDataContainerDelegate$ContainerRunnable.run(BufferedDataContainerDelegate.java:791)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2025-03-20 18:51:41,447 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:64 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:65, 3:67, 3:68, 3:70, 3:72, 3:73, 3:74, 3:76, 3:83, 3:84, 3:86, 3:88, 3:89, 3:90, 3:91, 3:92, 3:93, 3:94, 3:95, 3:96, 3:97, 3:98, 3:99, 3:100, 3:101, 3:102, 3:103, 3:104, 3:105, 3:106, 3:107, 3:108, 3:109, 3:110, 3:111, 3:112, 3:113, 3:114, 3:115, 3:116, 3:117, 3:118, 3:119, 3:120] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 18:51:41,457 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 18:51:41,466 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:64 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:63, 3:65, 3:67, 3:68, 3:70, 3:72, 3:73, 3:74, 3:76, 3:83, 3:84, 3:86, 3:88, 3:89, 3:90, 3:91, 3:92, 3:93, 3:94, 3:95, 3:96, 3:97, 3:98, 3:99, 3:100, 3:101, 3:102, 3:103, 3:104, 3:105, 3:106, 3:107, 3:108, 3:109, 3:110, 3:111, 3:112, 3:113, 3:114, 3:115, 3:116, 3:117, 3:118, 3:119, 3:120] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 18:51:54,607 : ERROR : KNIME-Worker-17-X-Aggregator 3:120 :  : Node : X-Aggregator : 3:120 : Execute failed: Loop Head claims this is NOT the first iteration but the tail believes it is?!
+java.lang.Exception: Loop Head claims this is NOT the first iteration but the tail believes it is?!
+	at org.knime.base.node.meta.xvalidation.AggregateOutputNodeModel.execute(AggregateOutputNodeModel.java:234)
+	at org.knime.core.node.NodeModel.execute(NodeModel.java:820)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-03-20 18:51:56,859 : ERROR : KNIME-Worker-6-X-Aggregator 3:120 :  : Node : X-Aggregator : 3:120 : Execute failed: Loop Head claims this is NOT the first iteration but the tail believes it is?!
+java.lang.Exception: Loop Head claims this is NOT the first iteration but the tail believes it is?!
+	at org.knime.base.node.meta.xvalidation.AggregateOutputNodeModel.execute(AggregateOutputNodeModel.java:234)
+	at org.knime.core.node.NodeModel.execute(NodeModel.java:820)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-03-20 18:52:19,956 : ERROR : KNIME-Worker-15-CSV Writer 3:74 :  : Node : CSV Writer : 3:74 : Execute failed: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268PL4.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
+2025-03-20 18:52:21,834 : ERROR : KNIME-Worker-8-CSV Writer 3:74 :  : Node : CSV Writer : 3:74 : Execute failed: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268PL4.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
+2025-03-20 18:52:23,289 : ERROR : KNIME-Worker-16-CSV Writer 3:74 :  : Node : CSV Writer : 3:74 : Execute failed: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268PL4.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
+2025-03-20 18:52:25,897 : ERROR : KNIME-Worker-17-CSV Writer 3:74 :  : Node : CSV Writer : 3:74 : Execute failed: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268PL4.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
+2025-03-20 18:52:27,730 : ERROR : KNIME-Worker-7-CSV Writer 3:74 :  : Node : CSV Writer : 3:74 : Execute failed: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+java.io.IOException: Output file '/home/paulo/Desktop/a96268PL4.csv' exists and must not be overwritten due to user settings.
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:217)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.writeToFile(CSVWriter2NodeModel.java:167)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:147)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.execute(CSVWriter2NodeModel.java:1)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268PL4.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(Unknown Source)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(Unknown Source)
+	at org.knime.filehandling.core.fs.local.fs.LocalFileSystemProvider.newByteChannel(LocalFileSystemProvider.java:148)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(Unknown Source)
+	at java.base/java.nio.file.Files.newOutputStream(Unknown Source)
+	at org.knime.filehandling.core.connections.FSFiles.newOutputStream(FSFiles.java:146)
+	at org.knime.base.node.io.filehandling.csv.writer.CSVWriter2NodeModel.createOutputStream(CSVWriter2NodeModel.java:214)
+	... 16 more
+2025-03-20 18:52:59,019 : WARN  : comm-pool-thread-5 :  : Node : Random Forest Learner : 3:122 : No configuration available
+2025-03-20 18:55:27,874 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:123 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:65, 3:67, 3:68, 3:70, 3:72, 3:73, 3:74, 3:76, 3:83, 3:84, 3:86, 3:88, 3:89, 3:90, 3:91, 3:92, 3:93, 3:94, 3:95, 3:96, 3:97, 3:98, 3:99, 3:100, 3:101, 3:102, 3:103, 3:104, 3:105, 3:106, 3:107, 3:108, 3:109, 3:110, 3:113, 3:114, 3:115, 3:116, 3:117, 3:118, 3:119, 3:120, 3:121, 3:122] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 18:55:27,879 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 18:55:27,884 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:123 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:65, 3:67, 3:68, 3:70, 3:72, 3:73, 3:74, 3:76, 3:83, 3:84, 3:86, 3:88, 3:89, 3:90, 3:91, 3:92, 3:93, 3:94, 3:95, 3:96, 3:97, 3:98, 3:99, 3:100, 3:101, 3:102, 3:103, 3:104, 3:105, 3:106, 3:107, 3:108, 3:109, 3:110, 3:113, 3:114, 3:115, 3:116, 3:117, 3:118, 3:119, 3:120, 3:121, 3:122] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 18:57:46,787 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Error captured hook ::  
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 18:59:59,332 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 3:124 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:65, 3:67, 3:68, 3:70, 3:72, 3:73, 3:74, 3:76, 3:83, 3:84, 3:86, 3:88, 3:89, 3:90, 3:91, 3:92, 3:93, 3:94, 3:95, 3:96, 3:97, 3:98, 3:99, 3:100, 3:101, 3:102, 3:103, 3:104, 3:105, 3:106, 3:107, 3:108, 3:109, 3:110, 3:113, 3:114, 3:115, 3:116, 3:117, 3:118, 3:119, 3:120, 3:121, 3:122, 3:123] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 18:59:59,332 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 18:59:59,334 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 3:124 valid [3:1, 3:2, 3:3, 3:6, 3:7, 3:8, 3:9, 3:10, 3:11, 3:12, 3:15, 3:16, 3:18, 3:19, 3:20, 3:21, 3:22, 3:23, 3:24, 3:25, 3:26, 3:27, 3:28, 3:29, 3:30, 3:31, 3:32, 3:33, 3:35, 3:36, 3:37, 3:38, 3:39, 3:40, 3:41, 3:42, 3:43, 3:44, 3:45, 3:46, 3:48, 3:50, 3:51, 3:52, 3:53, 3:54, 3:55, 3:56, 3:57, 3:58, 3:59, 3:60, 3:65, 3:67, 3:68, 3:70, 3:72, 3:73, 3:74, 3:76, 3:83, 3:84, 3:86, 3:88, 3:89, 3:90, 3:91, 3:92, 3:93, 3:94, 3:95, 3:96, 3:97, 3:98, 3:99, 3:100, 3:101, 3:102, 3:103, 3:104, 3:105, 3:106, 3:107, 3:108, 3:109, 3:110, 3:113, 3:114, 3:115, 3:116, 3:117, 3:118, 3:119, 3:120, 3:121, 3:122, 3:123] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 45)
+2025-03-20 19:00:42,520 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
+2025-03-20 19:00:42,521 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) TypeError: Cannot read properties of null (reading 'rowCount') (source: http://org.knime.core.ui.port/uiext/tableview/TableView.js; line: 15187)
+2025-03-20 19:01:04,895 : WARN  : comm-pool-thread-1 :  : Node : Numeric Outliers : 3:125 : Auto configuration: Outlier Selection uses all suitable columns (in total 12).

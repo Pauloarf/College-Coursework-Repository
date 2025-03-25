@@ -9,7 +9,7 @@
         <config key="column-filter">
             <entry key="filter-type" type="xstring" value="STANDARD"/>
             <config key="included_names">
-                <entry key="array-size" type="xint" value="13"/>
+                <entry key="array-size" type="xint" value="12"/>
                 <entry key="0" type="xstring" value="fixed acidity"/>
                 <entry key="1" type="xstring" value="volatile acidity"/>
                 <entry key="2" type="xstring" value="citric acid"/>
@@ -22,10 +22,10 @@
                 <entry key="9" type="xstring" value="sulphates"/>
                 <entry key="10" type="xstring" value="alcohol"/>
                 <entry key="11" type="xstring" value="quality1_10"/>
-                <entry key="12" type="xstring" value="quality_bin"/>
             </config>
             <config key="excluded_names">
-                <entry key="array-size" type="xint" value="0"/>
+                <entry key="array-size" type="xint" value="1"/>
+                <entry key="0" type="xstring" value="quality_bin"/>
             </config>
             <entry key="enforce_option" type="xstring" value="EnforceInclusion"/>
             <config key="name_pattern">
@@ -61,12 +61,12 @@
             <entry key="index" type="xint" value="1"/>
             <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
             <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-            <entry key="port_object_summary" type="xstring" value="Rows: 1200, Cols: 13"/>
+            <entry key="port_object_summary" type="xstring" value="Rows: 1200, Cols: 12"/>
             <entry key="port_dir_location" type="xstring" value="port_1"/>
         </config>
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" value="f08860de-75d4-4819-8ddd-ed7b812a2f9e"/>
+        <entry key="file_store_id" type="xstring" value="48759587-39f5-4f41-9734-25b760fd1cfd"/>
     </config>
 </config>

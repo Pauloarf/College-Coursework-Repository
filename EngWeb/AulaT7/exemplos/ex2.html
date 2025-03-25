@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    var colors = ["red", "black"];
+    var currentIndex = 0;
+    
+    $("#p1").click(function() {
+      var nextColor = colors[currentIndex];
+      
+      $(this).css("color", nextColor);
+      
+      currentIndex = (currentIndex + 1) % colors.length;
+    });
+  });
+</script>
+</head>
+<body>
+  <p id="p1">Sou um parágrafo e mudo de cor quando me clicas com o rato.</p>
+</body>
+</html>
