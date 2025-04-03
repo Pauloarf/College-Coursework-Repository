@@ -1,0 +1,184 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> categorias
+Rule 1     categorias -> categoria
+Rule 2     categorias -> categorias categoria
+Rule 3     categoria -> NOMECAT DOISPONTOS produtos
+Rule 4     produtos -> produto
+Rule 5     produtos -> produtos produto
+Rule 6     produto -> INICIOPROD NUMERO SEP TEXTO SEP REAL SEP NUMERO PONTOVIRG
+
+Terminals, with rules where they appear
+
+DOISPONTOS           : 3
+INICIOPROD           : 6
+NOMECAT              : 3
+NUMERO               : 6 6
+PONTOVIRG            : 6
+REAL                 : 6
+SEP                  : 6 6 6
+TEXTO                : 6
+error                : 
+
+Nonterminals, with rules where they appear
+
+categoria            : 1 2
+categorias           : 2 0
+produto              : 4 5
+produtos             : 3 5
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . categorias
+    (1) categorias -> . categoria
+    (2) categorias -> . categorias categoria
+    (3) categoria -> . NOMECAT DOISPONTOS produtos
+
+    NOMECAT         shift and go to state 3
+
+    categorias                     shift and go to state 1
+    categoria                      shift and go to state 2
+
+state 1
+
+    (0) S' -> categorias .
+    (2) categorias -> categorias . categoria
+    (3) categoria -> . NOMECAT DOISPONTOS produtos
+
+    NOMECAT         shift and go to state 3
+
+    categoria                      shift and go to state 4
+
+state 2
+
+    (1) categorias -> categoria .
+
+    NOMECAT         reduce using rule 1 (categorias -> categoria .)
+    $end            reduce using rule 1 (categorias -> categoria .)
+
+
+state 3
+
+    (3) categoria -> NOMECAT . DOISPONTOS produtos
+
+    DOISPONTOS      shift and go to state 5
+
+
+state 4
+
+    (2) categorias -> categorias categoria .
+
+    NOMECAT         reduce using rule 2 (categorias -> categorias categoria .)
+    $end            reduce using rule 2 (categorias -> categorias categoria .)
+
+
+state 5
+
+    (3) categoria -> NOMECAT DOISPONTOS . produtos
+    (4) produtos -> . produto
+    (5) produtos -> . produtos produto
+    (6) produto -> . INICIOPROD NUMERO SEP TEXTO SEP REAL SEP NUMERO PONTOVIRG
+
+    INICIOPROD      shift and go to state 8
+
+    produtos                       shift and go to state 6
+    produto                        shift and go to state 7
+
+state 6
+
+    (3) categoria -> NOMECAT DOISPONTOS produtos .
+    (5) produtos -> produtos . produto
+    (6) produto -> . INICIOPROD NUMERO SEP TEXTO SEP REAL SEP NUMERO PONTOVIRG
+
+    NOMECAT         reduce using rule 3 (categoria -> NOMECAT DOISPONTOS produtos .)
+    $end            reduce using rule 3 (categoria -> NOMECAT DOISPONTOS produtos .)
+    INICIOPROD      shift and go to state 8
+
+    produto                        shift and go to state 9
+
+state 7
+
+    (4) produtos -> produto .
+
+    INICIOPROD      reduce using rule 4 (produtos -> produto .)
+    NOMECAT         reduce using rule 4 (produtos -> produto .)
+    $end            reduce using rule 4 (produtos -> produto .)
+
+
+state 8
+
+    (6) produto -> INICIOPROD . NUMERO SEP TEXTO SEP REAL SEP NUMERO PONTOVIRG
+
+    NUMERO          shift and go to state 10
+
+
+state 9
+
+    (5) produtos -> produtos produto .
+
+    INICIOPROD      reduce using rule 5 (produtos -> produtos produto .)
+    NOMECAT         reduce using rule 5 (produtos -> produtos produto .)
+    $end            reduce using rule 5 (produtos -> produtos produto .)
+
+
+state 10
+
+    (6) produto -> INICIOPROD NUMERO . SEP TEXTO SEP REAL SEP NUMERO PONTOVIRG
+
+    SEP             shift and go to state 11
+
+
+state 11
+
+    (6) produto -> INICIOPROD NUMERO SEP . TEXTO SEP REAL SEP NUMERO PONTOVIRG
+
+    TEXTO           shift and go to state 12
+
+
+state 12
+
+    (6) produto -> INICIOPROD NUMERO SEP TEXTO . SEP REAL SEP NUMERO PONTOVIRG
+
+    SEP             shift and go to state 13
+
+
+state 13
+
+    (6) produto -> INICIOPROD NUMERO SEP TEXTO SEP . REAL SEP NUMERO PONTOVIRG
+
+    REAL            shift and go to state 14
+
+
+state 14
+
+    (6) produto -> INICIOPROD NUMERO SEP TEXTO SEP REAL . SEP NUMERO PONTOVIRG
+
+    SEP             shift and go to state 15
+
+
+state 15
+
+    (6) produto -> INICIOPROD NUMERO SEP TEXTO SEP REAL SEP . NUMERO PONTOVIRG
+
+    NUMERO          shift and go to state 16
+
+
+state 16
+
+    (6) produto -> INICIOPROD NUMERO SEP TEXTO SEP REAL SEP NUMERO . PONTOVIRG
+
+    PONTOVIRG       shift and go to state 17
+
+
+state 17
+
+    (6) produto -> INICIOPROD NUMERO SEP TEXTO SEP REAL SEP NUMERO PONTOVIRG .
+
+    INICIOPROD      reduce using rule 6 (produto -> INICIOPROD NUMERO SEP TEXTO SEP REAL SEP NUMERO PONTOVIRG .)
+    NOMECAT         reduce using rule 6 (produto -> INICIOPROD NUMERO SEP TEXTO SEP REAL SEP NUMERO PONTOVIRG .)
+    $end            reduce using rule 6 (produto -> INICIOPROD NUMERO SEP TEXTO SEP REAL SEP NUMERO PONTOVIRG .)
+

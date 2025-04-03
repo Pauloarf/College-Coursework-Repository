@@ -12,7 +12,7 @@
 //----- Camera settings -----//
 
 // Camera distance
-GLfloat distance = 10.0f;
+GLfloat distance = 30.0f;
 
 // Using distance and 45 degrees to calculate initial position
 GLfloat alpha = M_PI / 4;  // Vertical angle
@@ -45,7 +45,7 @@ void changeSize(int w, int h) {
     glViewport(0, 0, w, h);
 
     // Set perspective
-    gluPerspective(45.0f, ratio, 1.0f, 1000.0f);
+    gluPerspective(45.0f, ratio, 1.0f, 10000.0f);
 
     // return to the model view matrix mode
     glMatrixMode(GL_MODELVIEW);
@@ -347,24 +347,25 @@ void renderScene(void) {
     // x in red
     glColor3f(1.0f, 0.0f, 0.0f);
     glVertex3f(-100.f, 0.0f, 0.0f);
-    glVertex3f(100.0f, 0.0f, 0.0f);
+    glVertex3f(10000.0f, 0.0f, 0.0f);
     // y in green
     glColor3f(0.0f, 1.0f, 0.0f);
     glVertex3f(0.0f, -100.0f, 0.0f);
-    glVertex3f(0.0f, 100.0f, 0.0f);
+    glVertex3f(0.0f, 10000.0f, 0.0f);
     // z in blue
     glColor3f(0.0f, 0.0f, 1.0f);
     glVertex3f(0.f, 0.0f, -100.0f);
-    glVertex3f(0.0f, 0.0f, 100.0f);
+    glVertex3f(0.0f, 0.0f, 10000.0f);
 
     // Changes color back to white
     glColor3f(1.0f, 1.0f, 1.0f);
     glEnd();
 
-    // drawCylinder(4, 6, 20);
+    glRotatef(70, 1.0f, 0.0f, 0.1f);
+    drawCylinder(2, 3, 10);
     // torusTriangleGenerator(4, 2, 72, 36);
     // diskTriangleGenerator(10, 2, 36);
-    renderIcosphere();
+    // renderIcosphere();
 
     // End of frame
     glutSwapBuffers();
