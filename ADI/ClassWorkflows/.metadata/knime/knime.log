@@ -4067,3 +4067,150 @@ Caused by: java.nio.file.FileAlreadyExistsException: /home/paulo/Desktop/a96268P
       [object Object] (source: http://org.knime.ui.java/assets/index-CPG1Nwkw.js; line: 87)
 2025-03-20 19:00:42,521 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) TypeError: Cannot read properties of null (reading 'rowCount') (source: http://org.knime.core.ui.port/uiext/tableview/TableView.js; line: 15187)
 2025-03-20 19:01:04,895 : WARN  : comm-pool-thread-1 :  : Node : Numeric Outliers : 3:125 : Auto configuration: Outlier Selection uses all suitable columns (in total 12).
+2025-04-03 09:53:39,601 : WARN  : comm-pool-thread-1 :  : Node : CSV Reader : 4:1 : Please specify a file
+2025-04-03 09:54:06,654 : ERROR : KNIME-Worker-1-CSV Reader 4:1 :  : Node : CSV Reader : 4:1 : Execute failed: The data row has too many data elements.
+java.lang.IllegalArgumentException: The data row has too many data elements.
+	at org.knime.core.node.util.CheckUtils.checkArgument(CheckUtils.java:259)
+	at org.knime.core.node.util.CheckUtils.checkArgument(CheckUtils.java:120)
+	at org.knime.filehandling.core.node.table.reader.read.CheckSameSizeRead.next(CheckSameSizeRead.java:84)
+	at org.knime.filehandling.core.node.table.reader.spec.DefaultExtractColumnHeaderRead.next(DefaultExtractColumnHeaderRead.java:167)
+	at org.knime.filehandling.core.node.table.reader.spec.TableSpecGuesser.guessTypes(TableSpecGuesser.java:218)
+	at org.knime.filehandling.core.node.table.reader.spec.TableSpecGuesser.guessSpec(TableSpecGuesser.java:129)
+	at org.knime.filehandling.core.node.table.reader.spec.TableSpecGuesser.guessSpec(TableSpecGuesser.java:110)
+	at org.knime.base.node.io.filehandling.csv.reader.api.CSVTableReader.checkSpecs(CSVTableReader.java:240)
+	at org.knime.base.node.io.filehandling.csv.reader.api.CSVTableReader.checkSpecs(CSVTableReader.java:1)
+	at org.knime.filehandling.core.node.table.reader.DefaultMultiTableReadFactory.validateIndividualSpecs(DefaultMultiTableReadFactory.java:229)
+	at org.knime.filehandling.core.node.table.reader.DefaultMultiTableReadFactory.createFromConfig(DefaultMultiTableReadFactory.java:214)
+	at org.knime.filehandling.core.node.table.reader.MultiTableReader.createMultiRead(MultiTableReader.java:128)
+	at org.knime.filehandling.core.node.table.reader.MultiTableReader.getMultiRead(MultiTableReader.java:209)
+	at org.knime.filehandling.core.node.table.reader.MultiTableReader.readTable(MultiTableReader.java:167)
+	at org.knime.filehandling.core.node.table.reader.TableReaderNodeModel.execute(TableReaderNodeModel.java:160)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-04-03 09:59:50,659 : WARN  : comm-pool-thread-1 :  : Node : RProp MLP Learner : 4:6 : Class column not set
+2025-04-03 10:01:04,544 : WARN  : main :  : Node : RProp MLP Learner : 4:6 : Only double columns for input
+2025-04-03 10:01:04,982 : WARN  : main :  : Node : RProp MLP Learner : 4:6 : Only double columns for input
+2025-04-03 10:02:42,045 : WARN  : comm-pool-thread-1 :  : Node : Normalizer (Apply) : 4:5 : Column "XX" is to be normalized, but is not numeric
+2025-04-03 10:03:09,980 : WARN  : KNIME-Worker-4-Normalizer (Apply) 4:5 :  : Node : Normalizer (Apply) : 4:5 : Normalized value is out of bounds. Original value: -1.565338407 Transformed value: -0.01320012319756686 Lower Bound: 0.0
+2025-04-03 10:03:53,864 : WARN  : KNIME-Worker-4-Denormalizer 4:8 :  : Node : Denormalizer : 4:8 : Normalized value is out of bounds. Original value: -0.01320012319756686 Transformed value: -1.565338407 Lower Bound: -1.51194834
+2025-04-03 10:04:48,330 : WARN  : KNIME-Worker-8-Normalizer (Apply) 4:5 :  : Node : Normalizer (Apply) : 4:5 : Normalized value is out of bounds. Original value: -1.565338407 Transformed value: -0.01320012319756686 Lower Bound: 0.0
+2025-04-03 10:05:23,507 : WARN  : KNIME-Worker-4-Normalizer 4:3 :  : Node : RProp MLP Learner : 4:6 : Input data not normalized. Please consider using the Normalizer Node first.
+2025-04-03 10:05:23,515 : WARN  : KNIME-Worker-7-Normalizer (Apply) 4:5 :  : Node : Normalizer (Apply) : 4:5 : Normalized value is out of bounds. Original value: -1.565338407 Transformed value: -1.0264002463951338 Lower Bound: -1.0
+2025-04-03 10:05:30,974 : WARN  : KNIME-Worker-7-Denormalizer 4:8 :  : Node : Denormalizer : 4:8 : Normalized value is out of bounds. Original value: -1.0264002463951338 Transformed value: -1.5653384070000005 Lower Bound: -1.51194834
+2025-04-03 10:06:29,540 : WARN  : KNIME-Worker-4-Normalizer (Apply) 4:5 :  : Node : Normalizer (Apply) : 4:5 : Normalized value is out of bounds. Original value: -1.565338407 Transformed value: -0.01320012319756686 Lower Bound: 0.0
+2025-04-03 10:06:30,019 : WARN  : KNIME-Worker-4-Denormalizer 4:8 :  : Node : Denormalizer : 4:8 : Normalized value is out of bounds. Original value: -0.01320012319756686 Transformed value: -1.565338407 Lower Bound: -1.51194834
+2025-04-03 10:07:05,460 : WARN  : comm-pool-thread-1 :  : Node : Color Manager : 4:12 : No column selected and no categorical column available.
+2025-04-03 10:18:13,956 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c RPC Client:: Error RPC request 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      Error: No such node ID: 4:3 valid [4:1, 4:2, 4:5, 4:6, 4:7, 4:8, 4:9, 4:10, 4:11, 4:12, 4:13, 4:14, 4:15, 4:16, 4:17, 4:18, 4:19] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-03 10:18:13,958 : ERROR : main :  : KnimeBrowserView :  :  : %cerror%c Unhandled rejection:: 
+      background: #c0392b;
+      border-radius: 0.5em;
+      color: white;
+      font-weight: bold;
+      padding: 2px 0.5em;
+      [object Object] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 87)
+2025-04-03 10:18:13,959 : ERROR : main :  : KnimeBrowserView :  :  : Uncaught (in promise) Error: No such node ID: 4:3 valid [4:1, 4:2, 4:5, 4:6, 4:7, 4:8, 4:9, 4:10, 4:11, 4:12, 4:13, 4:14, 4:15, 4:16, 4:17, 4:18, 4:19] (source: http://org.knime.ui.java/assets/index-L_Vmx7rg.js; line: 45)
+2025-04-03 10:19:38,766 : WARN  : KNIME-Worker-15-String to Number 4:10 :  : Node : String to Number : 4:10 : Problems in 2000 rows, first error: "-0,50056858" in cell ["Row0", column "XX", row 1] can not be transformed into a number
+2025-04-03 10:19:38,772 : WARN  : KNIME-Worker-15-String to Number 4:10 :  : Node : String to Number : 4:10 : Problems in 2000 rows, first error: "-0,50056858" in cell ["Row0", column "XX", row 1] can not be transformed into a number
+ RowID  |     XX      |     YY     
+--------+-------------+-------------
+ Row0   | -0,50056858 | 0,687106472
+          ^^^^^^^^^^^
+For input string: "-0,50056858"
+2025-04-03 10:19:38,795 : WARN  : KNIME-Worker-16-String to Number 4:9 :  : Node : String to Number : 4:9 : Problems in 4000 rows, first error: "0,610651378" in cell ["Row0", column "XX", row 1] can not be transformed into a number
+2025-04-03 10:19:38,795 : WARN  : KNIME-Worker-16-String to Number 4:9 :  : Node : String to Number : 4:9 : Problems in 4000 rows, first error: "0,610651378" in cell ["Row0", column "XX", row 1] can not be transformed into a number
+ RowID  |     XX      |      YY     
+--------+-------------+--------------
+ Row0   | 0,610651378 | -0,459645658
+          ^^^^^^^^^^^
+For input string: "0,610651378"
+2025-04-03 10:19:38,830 : ERROR : KNIME-Worker-15-RProp MLP Learner 4:6 :  : Node : RProp MLP Learner : 4:6 : Execute failed: Missing values in input datatable
+java.lang.Exception: Missing values in input datatable
+	at org.knime.base.node.mine.neural.rprop.RPropNodeModel.execute(RPropNodeModel.java:478)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-04-03 10:19:39,613 : ERROR : KNIME-Worker-14-RProp MLP Learner 4:6 :  : Node : RProp MLP Learner : 4:6 : Execute failed: Missing values in input datatable
+java.lang.Exception: Missing values in input datatable
+	at org.knime.base.node.mine.neural.rprop.RPropNodeModel.execute(RPropNodeModel.java:478)
+	at org.knime.core.node.NodeModel.executeModel(NodeModel.java:596)
+	at org.knime.core.node.Node.invokeFullyNodeModelExecute(Node.java:1284)
+	at org.knime.core.node.Node.execute(Node.java:1049)
+	at org.knime.core.node.workflow.NativeNodeContainer.performExecuteNode(NativeNodeContainer.java:603)
+	at org.knime.core.node.exec.LocalNodeExecutionJob.mainExecute(LocalNodeExecutionJob.java:98)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:198)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:117)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:123)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:246)
+2025-04-03 10:20:03,549 : WARN  : KNIME-Worker-16-String to Number 4:10 :  : Node : String to Number : 4:10 : Problems in 2000 rows, first error: "-0,50056858" in cell ["Row0", column "XX", row 1] can not be transformed into a number
+2025-04-03 10:20:03,550 : WARN  : KNIME-Worker-16-String to Number 4:10 :  : Node : String to Number : 4:10 : Problems in 2000 rows, first error: "-0,50056858" in cell ["Row0", column "XX", row 1] can not be transformed into a number
+ RowID  |     XX      |     YY     
+--------+-------------+-------------
+ Row0   | -0,50056858 | 0,687106472
+          ^^^^^^^^^^^
+For input string: "-0,50056858"
+2025-04-03 10:36:22,953 : WARN  : comm-pool-thread-5 :  : Node : RProp MLP Learner : 4:6 : Only double columns for input
+2025-04-03 10:36:29,798 : WARN  : comm-pool-thread-5 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:36:38,208 : WARN  : comm-pool-thread-5 :  : Node : Scorer : 4:22 : No columns selected yet.
+2025-04-03 10:36:39,296 : WARN  : KNIME-Worker-21-Normalizer (Apply) 4:5 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:36:39,297 : WARN  : KNIME-Worker-21-Normalizer (Apply) 4:5 :  : Node : Scorer : 4:22 : No columns selected yet.
+2025-04-03 10:36:39,301 : WARN  : KNIME-Worker-22-Number to String 4:20 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:36:39,301 : WARN  : KNIME-Worker-22-Number to String 4:20 :  : Node : Scorer : 4:22 : No columns selected yet.
+2025-04-03 10:36:41,643 : WARN  : KNIME-Worker-21-MultiLayerPerceptron Predictor 4:7 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:36:41,644 : WARN  : KNIME-Worker-21-MultiLayerPerceptron Predictor 4:7 :  : Node : Scorer : 4:22 : No columns selected yet.
+2025-04-03 10:36:41,654 : WARN  : KNIME-Worker-22-Denormalizer 4:8 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:36:41,655 : WARN  : KNIME-Worker-22-Denormalizer 4:8 :  : Node : Scorer : 4:22 : No columns selected yet.
+2025-04-03 10:37:54,838 : WARN  : main :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:37:55,348 : WARN  : main :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:38:01,710 : WARN  : KNIME-Worker-22-MultiLayerPerceptron Predictor 4:7 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:38:01,716 : WARN  : KNIME-Worker-20-Denormalizer 4:8 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:38:15,175 : WARN  : main :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:38:15,599 : WARN  : main :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:38:29,356 : WARN  : KNIME-Worker-20-MultiLayerPerceptron Predictor 4:7 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:38:29,363 : WARN  : KNIME-Worker-21-Denormalizer 4:8 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:38:45,928 : WARN  : main :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:38:46,601 : WARN  : main :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:39:23,315 : WARN  : KNIME-Worker-21-MultiLayerPerceptron Predictor 4:7 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:39:23,320 : WARN  : KNIME-Worker-22-Denormalizer 4:8 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:39:37,653 : WARN  : main :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:39:38,662 : WARN  : main :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:39:49,829 : WARN  : KNIME-Worker-22-MultiLayerPerceptron Predictor 4:7 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:39:49,835 : WARN  : KNIME-Worker-20-Denormalizer 4:8 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:43:34,070 : WARN  : main :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:43:34,483 : WARN  : main :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:43:40,277 : WARN  : KNIME-Worker-24-MultiLayerPerceptron Predictor 4:7 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:43:40,282 : WARN  : KNIME-Worker-25-Denormalizer 4:8 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:43:48,237 : WARN  : main :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:43:58,604 : WARN  : KNIME-Worker-25-MultiLayerPerceptron Predictor 4:7 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:43:58,609 : WARN  : KNIME-Worker-23-Denormalizer 4:8 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring
+2025-04-03 10:45:08,716 : WARN  : comm-pool-thread-5 :  : Node : Color Manager : 4:12 : Column "Prediction (class)" is not numeric (but String) and not valid for numeric range coloring

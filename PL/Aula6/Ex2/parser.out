@@ -1,0 +1,350 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> pred
+Rule 1     pred -> pred AND pred
+Rule 2     pred -> pred OR pred
+Rule 3     pred -> NOT pred
+Rule 4     pred -> pred IMPL pred
+Rule 5     pred -> pred EQUIV pred
+Rule 6     pred -> LPAR pred RPAR
+Rule 7     pred -> LETRA
+
+Terminals, with rules where they appear
+
+AND                  : 1
+EQUIV                : 5
+IMPL                 : 4
+LETRA                : 7
+LPAR                 : 6
+NOT                  : 3
+OR                   : 2
+RPAR                 : 6
+error                : 
+
+Nonterminals, with rules where they appear
+
+pred                 : 1 1 2 2 3 4 4 5 5 6 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . pred
+    (1) pred -> . pred AND pred
+    (2) pred -> . pred OR pred
+    (3) pred -> . NOT pred
+    (4) pred -> . pred IMPL pred
+    (5) pred -> . pred EQUIV pred
+    (6) pred -> . LPAR pred RPAR
+    (7) pred -> . LETRA
+
+    NOT             shift and go to state 2
+    LPAR            shift and go to state 3
+    LETRA           shift and go to state 4
+
+    pred                           shift and go to state 1
+
+state 1
+
+    (0) S' -> pred .
+    (1) pred -> pred . AND pred
+    (2) pred -> pred . OR pred
+    (4) pred -> pred . IMPL pred
+    (5) pred -> pred . EQUIV pred
+
+    AND             shift and go to state 5
+    OR              shift and go to state 6
+    IMPL            shift and go to state 7
+    EQUIV           shift and go to state 8
+
+
+state 2
+
+    (3) pred -> NOT . pred
+    (1) pred -> . pred AND pred
+    (2) pred -> . pred OR pred
+    (3) pred -> . NOT pred
+    (4) pred -> . pred IMPL pred
+    (5) pred -> . pred EQUIV pred
+    (6) pred -> . LPAR pred RPAR
+    (7) pred -> . LETRA
+
+    NOT             shift and go to state 2
+    LPAR            shift and go to state 3
+    LETRA           shift and go to state 4
+
+    pred                           shift and go to state 9
+
+state 3
+
+    (6) pred -> LPAR . pred RPAR
+    (1) pred -> . pred AND pred
+    (2) pred -> . pred OR pred
+    (3) pred -> . NOT pred
+    (4) pred -> . pred IMPL pred
+    (5) pred -> . pred EQUIV pred
+    (6) pred -> . LPAR pred RPAR
+    (7) pred -> . LETRA
+
+    NOT             shift and go to state 2
+    LPAR            shift and go to state 3
+    LETRA           shift and go to state 4
+
+    pred                           shift and go to state 10
+
+state 4
+
+    (7) pred -> LETRA .
+
+    AND             reduce using rule 7 (pred -> LETRA .)
+    OR              reduce using rule 7 (pred -> LETRA .)
+    IMPL            reduce using rule 7 (pred -> LETRA .)
+    EQUIV           reduce using rule 7 (pred -> LETRA .)
+    $end            reduce using rule 7 (pred -> LETRA .)
+    RPAR            reduce using rule 7 (pred -> LETRA .)
+
+
+state 5
+
+    (1) pred -> pred AND . pred
+    (1) pred -> . pred AND pred
+    (2) pred -> . pred OR pred
+    (3) pred -> . NOT pred
+    (4) pred -> . pred IMPL pred
+    (5) pred -> . pred EQUIV pred
+    (6) pred -> . LPAR pred RPAR
+    (7) pred -> . LETRA
+
+    NOT             shift and go to state 2
+    LPAR            shift and go to state 3
+    LETRA           shift and go to state 4
+
+    pred                           shift and go to state 11
+
+state 6
+
+    (2) pred -> pred OR . pred
+    (1) pred -> . pred AND pred
+    (2) pred -> . pred OR pred
+    (3) pred -> . NOT pred
+    (4) pred -> . pred IMPL pred
+    (5) pred -> . pred EQUIV pred
+    (6) pred -> . LPAR pred RPAR
+    (7) pred -> . LETRA
+
+    NOT             shift and go to state 2
+    LPAR            shift and go to state 3
+    LETRA           shift and go to state 4
+
+    pred                           shift and go to state 12
+
+state 7
+
+    (4) pred -> pred IMPL . pred
+    (1) pred -> . pred AND pred
+    (2) pred -> . pred OR pred
+    (3) pred -> . NOT pred
+    (4) pred -> . pred IMPL pred
+    (5) pred -> . pred EQUIV pred
+    (6) pred -> . LPAR pred RPAR
+    (7) pred -> . LETRA
+
+    NOT             shift and go to state 2
+    LPAR            shift and go to state 3
+    LETRA           shift and go to state 4
+
+    pred                           shift and go to state 13
+
+state 8
+
+    (5) pred -> pred EQUIV . pred
+    (1) pred -> . pred AND pred
+    (2) pred -> . pred OR pred
+    (3) pred -> . NOT pred
+    (4) pred -> . pred IMPL pred
+    (5) pred -> . pred EQUIV pred
+    (6) pred -> . LPAR pred RPAR
+    (7) pred -> . LETRA
+
+    NOT             shift and go to state 2
+    LPAR            shift and go to state 3
+    LETRA           shift and go to state 4
+
+    pred                           shift and go to state 14
+
+state 9
+
+    (3) pred -> NOT pred .
+    (1) pred -> pred . AND pred
+    (2) pred -> pred . OR pred
+    (4) pred -> pred . IMPL pred
+    (5) pred -> pred . EQUIV pred
+
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for IMPL resolved as shift
+  ! shift/reduce conflict for EQUIV resolved as shift
+    $end            reduce using rule 3 (pred -> NOT pred .)
+    RPAR            reduce using rule 3 (pred -> NOT pred .)
+    AND             shift and go to state 5
+    OR              shift and go to state 6
+    IMPL            shift and go to state 7
+    EQUIV           shift and go to state 8
+
+  ! AND             [ reduce using rule 3 (pred -> NOT pred .) ]
+  ! OR              [ reduce using rule 3 (pred -> NOT pred .) ]
+  ! IMPL            [ reduce using rule 3 (pred -> NOT pred .) ]
+  ! EQUIV           [ reduce using rule 3 (pred -> NOT pred .) ]
+
+
+state 10
+
+    (6) pred -> LPAR pred . RPAR
+    (1) pred -> pred . AND pred
+    (2) pred -> pred . OR pred
+    (4) pred -> pred . IMPL pred
+    (5) pred -> pred . EQUIV pred
+
+    RPAR            shift and go to state 15
+    AND             shift and go to state 5
+    OR              shift and go to state 6
+    IMPL            shift and go to state 7
+    EQUIV           shift and go to state 8
+
+
+state 11
+
+    (1) pred -> pred AND pred .
+    (1) pred -> pred . AND pred
+    (2) pred -> pred . OR pred
+    (4) pred -> pred . IMPL pred
+    (5) pred -> pred . EQUIV pred
+
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for IMPL resolved as shift
+  ! shift/reduce conflict for EQUIV resolved as shift
+    $end            reduce using rule 1 (pred -> pred AND pred .)
+    RPAR            reduce using rule 1 (pred -> pred AND pred .)
+    AND             shift and go to state 5
+    OR              shift and go to state 6
+    IMPL            shift and go to state 7
+    EQUIV           shift and go to state 8
+
+  ! AND             [ reduce using rule 1 (pred -> pred AND pred .) ]
+  ! OR              [ reduce using rule 1 (pred -> pred AND pred .) ]
+  ! IMPL            [ reduce using rule 1 (pred -> pred AND pred .) ]
+  ! EQUIV           [ reduce using rule 1 (pred -> pred AND pred .) ]
+
+
+state 12
+
+    (2) pred -> pred OR pred .
+    (1) pred -> pred . AND pred
+    (2) pred -> pred . OR pred
+    (4) pred -> pred . IMPL pred
+    (5) pred -> pred . EQUIV pred
+
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for IMPL resolved as shift
+  ! shift/reduce conflict for EQUIV resolved as shift
+    $end            reduce using rule 2 (pred -> pred OR pred .)
+    RPAR            reduce using rule 2 (pred -> pred OR pred .)
+    AND             shift and go to state 5
+    OR              shift and go to state 6
+    IMPL            shift and go to state 7
+    EQUIV           shift and go to state 8
+
+  ! AND             [ reduce using rule 2 (pred -> pred OR pred .) ]
+  ! OR              [ reduce using rule 2 (pred -> pred OR pred .) ]
+  ! IMPL            [ reduce using rule 2 (pred -> pred OR pred .) ]
+  ! EQUIV           [ reduce using rule 2 (pred -> pred OR pred .) ]
+
+
+state 13
+
+    (4) pred -> pred IMPL pred .
+    (1) pred -> pred . AND pred
+    (2) pred -> pred . OR pred
+    (4) pred -> pred . IMPL pred
+    (5) pred -> pred . EQUIV pred
+
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for IMPL resolved as shift
+  ! shift/reduce conflict for EQUIV resolved as shift
+    $end            reduce using rule 4 (pred -> pred IMPL pred .)
+    RPAR            reduce using rule 4 (pred -> pred IMPL pred .)
+    AND             shift and go to state 5
+    OR              shift and go to state 6
+    IMPL            shift and go to state 7
+    EQUIV           shift and go to state 8
+
+  ! AND             [ reduce using rule 4 (pred -> pred IMPL pred .) ]
+  ! OR              [ reduce using rule 4 (pred -> pred IMPL pred .) ]
+  ! IMPL            [ reduce using rule 4 (pred -> pred IMPL pred .) ]
+  ! EQUIV           [ reduce using rule 4 (pred -> pred IMPL pred .) ]
+
+
+state 14
+
+    (5) pred -> pred EQUIV pred .
+    (1) pred -> pred . AND pred
+    (2) pred -> pred . OR pred
+    (4) pred -> pred . IMPL pred
+    (5) pred -> pred . EQUIV pred
+
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for IMPL resolved as shift
+  ! shift/reduce conflict for EQUIV resolved as shift
+    $end            reduce using rule 5 (pred -> pred EQUIV pred .)
+    RPAR            reduce using rule 5 (pred -> pred EQUIV pred .)
+    AND             shift and go to state 5
+    OR              shift and go to state 6
+    IMPL            shift and go to state 7
+    EQUIV           shift and go to state 8
+
+  ! AND             [ reduce using rule 5 (pred -> pred EQUIV pred .) ]
+  ! OR              [ reduce using rule 5 (pred -> pred EQUIV pred .) ]
+  ! IMPL            [ reduce using rule 5 (pred -> pred EQUIV pred .) ]
+  ! EQUIV           [ reduce using rule 5 (pred -> pred EQUIV pred .) ]
+
+
+state 15
+
+    (6) pred -> LPAR pred RPAR .
+
+    AND             reduce using rule 6 (pred -> LPAR pred RPAR .)
+    OR              reduce using rule 6 (pred -> LPAR pred RPAR .)
+    IMPL            reduce using rule 6 (pred -> LPAR pred RPAR .)
+    EQUIV           reduce using rule 6 (pred -> LPAR pred RPAR .)
+    $end            reduce using rule 6 (pred -> LPAR pred RPAR .)
+    RPAR            reduce using rule 6 (pred -> LPAR pred RPAR .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for AND in state 9 resolved as shift
+WARNING: shift/reduce conflict for OR in state 9 resolved as shift
+WARNING: shift/reduce conflict for IMPL in state 9 resolved as shift
+WARNING: shift/reduce conflict for EQUIV in state 9 resolved as shift
+WARNING: shift/reduce conflict for AND in state 11 resolved as shift
+WARNING: shift/reduce conflict for OR in state 11 resolved as shift
+WARNING: shift/reduce conflict for IMPL in state 11 resolved as shift
+WARNING: shift/reduce conflict for EQUIV in state 11 resolved as shift
+WARNING: shift/reduce conflict for AND in state 12 resolved as shift
+WARNING: shift/reduce conflict for OR in state 12 resolved as shift
+WARNING: shift/reduce conflict for IMPL in state 12 resolved as shift
+WARNING: shift/reduce conflict for EQUIV in state 12 resolved as shift
+WARNING: shift/reduce conflict for AND in state 13 resolved as shift
+WARNING: shift/reduce conflict for OR in state 13 resolved as shift
+WARNING: shift/reduce conflict for IMPL in state 13 resolved as shift
+WARNING: shift/reduce conflict for EQUIV in state 13 resolved as shift
+WARNING: shift/reduce conflict for AND in state 14 resolved as shift
+WARNING: shift/reduce conflict for OR in state 14 resolved as shift
+WARNING: shift/reduce conflict for IMPL in state 14 resolved as shift
+WARNING: shift/reduce conflict for EQUIV in state 14 resolved as shift

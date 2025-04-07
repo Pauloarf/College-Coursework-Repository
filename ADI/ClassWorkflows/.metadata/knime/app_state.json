@@ -1,5 +1,5 @@
 {
-  "version" : "5.4.2.v202502121104",
+  "version" : "5.4.3.v202503031608",
   "projects" : [ {
     "name" : "ChocolateBars",
     "active" : false,
@@ -9,12 +9,12 @@
       "relativePath" : "ChocolateBars"
     }
   }, {
-    "name" : "Wine",
+    "name" : "Moon",
     "active" : true,
     "origin" : {
       "providerId" : "local",
       "spaceId" : "local",
-      "relativePath" : "Wine"
+      "relativePath" : "Moon"
     }
   } ],
   "mostRecentlyUsedProjects" : [ {
@@ -106,6 +106,15 @@
       "spaceId" : "local",
       "projectType" : "WORKFLOW",
       "relativePath" : "Wine"
+    }
+  }, {
+    "name" : "Moon",
+    "timeUsed" : "2025-04-03T09:52:29.385306718+01:00",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "Moon"
     }
   } ]
 }
