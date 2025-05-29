@@ -1,0 +1,3 @@
+/home/paulo/Desktop/Repos/College-Coursework-Repository/CG/Aula10/build/CMakeFiles/class10.dir
+/home/paulo/Desktop/Repos/College-Coursework-Repository/CG/Aula10/build/CMakeFiles/edit_cache.dir
+/home/paulo/Desktop/Repos/College-Coursework-Repository/CG/Aula10/build/CMakeFiles/rebuild_cache.dir

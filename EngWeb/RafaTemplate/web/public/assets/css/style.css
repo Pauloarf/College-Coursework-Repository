@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+.flex {
+    display: flex !important;
+}
+.flex.fc {
+    align-items: center;
+    justify-content: center;
+}
+.flex.fh {
+    flex-wrap: nowrap;
+}
+.flex.fsb {
+    justify-content: space-between;
+}
+
+.center.center-parent {
+    position: relative;
+}
+
+.center.center-child {
+    position: absolute;
+    top: 0;
+
+    height: 100%;
+}
+
+td.center.center-cell {
+    vertical-align: middle;
+}
+
+.no-margin.mh {
+    margin-left: 0;
+    margin-right: 0;
+}
+.no-margin.ml {
+    margin-left: 0;
+}
+.no-margin.mr {
+    margin-right: 0;
+}
+.no-margin.mv {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.no-margin.mt {
+    margin-top: 0;
+}
+.no-margin.mb {
+    margin-bottom: 0;
+}
+
+.errorLabel {
+    display: none;
+    color: red;
+}

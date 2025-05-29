@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "rootDir": ".",
+
+        "target": "ESNext",
+        "module": "ESNext",
+        "declaration": true,
+		"sourceMap": true, 
+
+        "typeRoots": ["../node_modules/@types", "../../node_modules/@types", "../types"],
+        "types": ["node"],
+
+        "baseUrl": ".",
+        "paths": {
+            "$types/*": ["./types/*"]
+        },
+
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true
+    },
+
+    "exclude": [ "node_modules", "types", "dist" ],
+}
