@@ -4,23 +4,21 @@ Welcome to my College Coursework Repository! This repository serves as a compreh
 
 ## Courses Included
 
-1. **Algoritmos e Complexidade**
-   - Explore solutions and analyses of algorithmic challenges.
-
-2. **Laboratórios de Informática**
-   - Find practical and hands-on work from computer labs.
-
-3. **Programação Orientada a Objetos**
-   - Uncover object-oriented programming projects and design principles.
-
-4. **Sistemas Operativos**
-   - Delve into the intricacies of operating systems with practical implementations.
-
-5. **Programação Funcional**
-   - Discover functional programming concepts and code examples.
-
-6. **Programação Imperativa**
-   - Review projects and exercises focusing on imperative programming paradigms.
+1. [**ADI**](./ADI) - Aprendizagem e Decisão Inteligente
+2. [**AlgC**](./AlgC) - Algoritmos e Complexidade
+3. [**CG**](./CG) - Computação Gráfica
+4. [**CP**](./CP) - Calculo de Programas
+5. [**DSS**](./DSS) - Desenvolvimento de Sistemas de Software
+6. [**EngWeb**](./EngWeb) - Engenharia Web
+7. [**IA**](./IA) - Inteligência Artificial
+8. [**IPM**](./IPM) - Interface Pessoa-Máquina
+9. [**LI3**](./LI3) - Laboratórios de Informática III
+10. [**PF**](./PF) - Programação Funcional
+11. [**PI**](./PI) - Programação Imperativa
+12. [**PL**](./PL) - Processamento de Linguagens
+13. [**POO**](./POO) - Programação Orientada a Objetos
+14. [**SD**](./SD) - Sistemas Distribuídos
+15. [**SO**](./SO) - Sistemas Operativos
 
 ## Navigation
 
