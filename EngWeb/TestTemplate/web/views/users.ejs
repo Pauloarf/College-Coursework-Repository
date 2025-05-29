@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Utilizadores</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <header>
+    <h1>Lista de Utilizadores</h1>
+    <nav>
+      <a href="/">Início</a>
+    </nav>
+  </header>
+
+  <main>
+    <table border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Idade</th>
+          <th>Função</th>
+          <th>Ver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.age || 'N/A' %></td>
+            <td><%= user.role %></td>
+            <td><a href="/users/<%= user._id %>">Ver</a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %></p>
+  </footer>
+</body>
+</html>

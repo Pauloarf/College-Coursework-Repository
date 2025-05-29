@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Utilizador - <%= user.name %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <header>
+    <h1>Detalhes do Utilizador</h1>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/users">Todos os Utilizadores</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2><%= user.name %></h2>
+    <ul>
+      <li><strong>Email:</strong> <%= user.email %></li>
+      <li><strong>Idade:</strong> <%= user.age || 'N/A' %></li>
+      <li><strong>Função:</strong> <%= user.role %></li>
+      <li><strong>Registado em:</strong> <%= new Date(user.createdAt).toLocaleString() %></li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Criar Utilizador</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <header>
+    <h1>Criar Novo Utilizador</h1>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/users">Lista de Utilizadores</a>
+    </nav>
+  </header>
+
+  <main>
+    <form action="/users" method="POST">
+      <div>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div>
+        <label for="age">Idade:</label>
+        <input type="number" id="age" name="age" min="0">
+      </div>
+
+      <div>
+        <label for="role">Função:</label>
+        <select id="role" name="role">
+          <option value="viewer" selected>Viewer</option>
+          <option value="editor">Editor</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <button type="submit">Criar Utilizador</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %></p>
+  </footer>
+</body>
+</html>

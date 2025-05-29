@@ -1,0 +1,19 @@
+services:
+  mongo:
+    container_name: testeDocker
+    image: mongo:7
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db/nomeDB.json:/tmp/nomeDB.json
+      - mongo-data:/data/db
+    command: mongod --bind_ip_all
+
+volumes:
+  mongo-data:
+
+
+
+# docker compose up --build -d
+# docker exec -it testeDocker mongoimport --db nomeDB --collection nomeDB --file /tmp/nomeDB.json --jsonArray
